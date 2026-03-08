@@ -14,6 +14,7 @@ import { StoryContent } from '@/types/story';
 import ChapterCard from './ChapterCard';
 import FloatingWindow from './FloatingWindow';
 import ResponsiveSceneImage from './ResponsiveSceneImage';
+import ToastContainer, { useToast } from '../system/Toast';
 
 const AnalyzerInterface = dynamic(() => import('./AnalyzerInterface'));
 const CollabTools = dynamic(() => import('./CollabTools'));
@@ -65,6 +66,7 @@ export default function GameDashboard({ content }: GameDashboardProps) {
   });
   const [showChapterCard, setShowChapterCard] = useState(true);
   const orientation = useOrientation();
+  const { messages: toastMessages, showToast, dismissToast } = useToast();
 
   if (!session) return null;
 
@@ -85,15 +87,18 @@ export default function GameDashboard({ content }: GameDashboardProps) {
   const runAnalysis = () => {
     if (!selectedEvidence) {
       setAnalyzerOutput('Select evidence from inventory first.');
+      showToast('No evidence selected', 'warning');
       return;
     }
     const result = analyzeEvidence(selectedEvidence.id);
     if (!result.ok) {
       setAnalyzerOutput(result.error ?? 'Analysis failed.');
+      showToast(result.error ?? 'Analysis failed', 'error');
       return;
     }
     const item = content.evidence.find((entry) => entry.id === selectedEvidence.id);
     setAnalyzerOutput(item?.analysisData.result ?? 'Analysis complete.');
+    showToast(`Analysis complete: ${selectedEvidence.name}`, 'success');
   };
 
   const phaseLabel = getPhaseDisplayName(content.story, session.phaseId);
@@ -128,6 +133,7 @@ export default function GameDashboard({ content }: GameDashboardProps) {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-black text-slate-100">
+      <ToastContainer messages={toastMessages} onDismiss={dismissToast} />
       <div className="absolute inset-0">
         <ResponsiveSceneImage
           src={currentScene?.image ?? content.metadata.sceneGallery[0]?.image ?? '/assets/terminal-velocity/cover.svg'}
@@ -240,9 +246,11 @@ export default function GameDashboard({ content }: GameDashboardProps) {
                     if (!inInventory) {
                       collectEvidence(item.id);
                       dispatchFlowEvent({ type: 'CLUE_COLLECTED' });
+                      showToast(`Evidence collected: ${item.name}`, 'success');
                     } else {
                       examineEvidence(item.id);
                       dispatchFlowEvent({ type: 'CLUE_EXAMINED' });
+                      showToast(`Examined: ${item.name}`, 'info');
                     }
                   }}
                   className={`w-full rounded-xl border-2 p-3 text-left transition-all ${
