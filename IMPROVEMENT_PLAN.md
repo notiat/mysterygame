@@ -28,11 +28,11 @@
 
 **Goal:** Make it look like a game, not a web form
 
-### 1.1 Color & Contrast ⏳
-- [ ] Remove grayscale filter from evidence images
-- [ ] Increase all font sizes (14px → 16px minimum)
-- [ ] Better color coding (amber for clues, red for suspects, blue for data)
-- [ ] Reduce overlay opacity (grain, vignette)
+### 1.1 Color & Contrast ✅
+- [x] Remove grayscale filter from evidence images
+- [x] Increase all font sizes (14px → 16px minimum)
+- [x] Better color coding (amber for clues, cyan for analyzer, emerald for success)
+- [x] Reduce overlay opacity (grain removed, vignette at 40%)
 
 ### 1.2 Layout Simplification ⏳
 - [ ] Replace 6-button toolbar with 3-tab system (Investigate / Interrogate / Accuse)
@@ -128,7 +128,10 @@
 ## Commit Log
 
 - `ca886aa` - fix: update JSON import syntax to 'with' for Node 22 compatibility
-- (more commits to follow)
+- `3dc5ef3` - feat: Phase 1.1 - improve visual foundation (remove grayscale, bigger fonts, better colors)
+- `186dbce` - feat: improve homepage design - better story cards, gradient text, improved forms
+- `557d937` - feat: improve chapter cards and deduction panel - more cinematic and readable
+- `f72fe62` - feat: improve dialogue and analyzer interfaces - more immersive and polished
 
 ---
 
