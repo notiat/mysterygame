@@ -1,16 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import { useGameStore } from '@/lib/store/gameStore';
+import Image from 'next/image';
 import { Clue } from '@/types/schema';
 
 interface LockInterfaceProps {
   clue: Clue;
+  onUnlock?: (clueId: string, inputCode: string) => Promise<boolean>;
 }
 
-export default function LockInterface({ clue }: LockInterfaceProps) {
+export default function LockInterface({ clue, onUnlock }: LockInterfaceProps) {
   const [inputCode, setInputCode] = useState('');
-  const unlockClue = useGameStore((state) => state.unlockClue);
   const [error, setError] = useState(false);
 
   // 1. Handle Unlocked State (The Reward View)
@@ -19,9 +19,11 @@ export default function LockInterface({ clue }: LockInterfaceProps) {
       <div className="animate-fade-in w-full h-full flex flex-col items-center justify-center p-4">
         <div className="relative w-full aspect-video rounded-lg overflow-hidden border-2 border-green-500/50 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
            {/* Use the rewardImage from metadata, or a fallback if missing */}
-          <img 
-            src={clue.metadata.rewardImage || 'https://placehold.co/600x400/333?text=Unlocked'} 
+          <Image
+            src={(clue.metadata.rewardImage as string) || 'https://placehold.co/600x400/333?text=Unlocked'}
             alt="Unlocked Content"
+            width={600}
+            height={400}
             className="w-full h-full object-cover"
           />
         </div>
@@ -35,7 +37,14 @@ export default function LockInterface({ clue }: LockInterfaceProps) {
   // 2. Handle Locked State (The Keypad View)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const success = await unlockClue(clue.id, inputCode);
+    if (!onUnlock) {
+      setError(true);
+      setInputCode('');
+      setTimeout(() => setError(false), 1200);
+      return;
+    }
+
+    const success = await onUnlock(clue.id, inputCode);
     if (!success) {
       setError(true);
       setInputCode(''); // Clear input on fail
@@ -52,6 +61,9 @@ export default function LockInterface({ clue }: LockInterfaceProps) {
       <form onSubmit={handleSubmit} className="w-full max-w-xs space-y-4">
         <input
           type="text"
+          inputMode="numeric"
+          pattern="[0-9]*"
+          aria-label="4 digit passcode"
           value={inputCode}
           onChange={(e) => setInputCode(e.target.value)}
           placeholder="ENTER PASSCODE"

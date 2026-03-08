@@ -1,0 +1,7 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="28" fill="#0b1120"/>
+  <circle cx="128" cy="100" r="50" fill="#f1c9b8"/>
+  <path d="M78 90C80 56 103 36 128 36C153 36 176 56 178 90V116H78V90Z" fill="#1e293b"/>
+  <path d="M72 214C75 174 98 150 128 150C158 150 181 174 184 214V224H72V214Z" fill="#0c4a6e"/>
+  <text x="128" y="242" text-anchor="middle" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">REBECCA</text>
+</svg>

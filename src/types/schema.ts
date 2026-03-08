@@ -12,7 +12,9 @@ export interface Clue {
   type: string
   status: 'LOCKED' | 'UNLOCKED'
   metadata: {
-    src: string
-    // Add other metadata fields as needed
+    src?: string
+    rewardImage?: string
+    lockSolution?: string
+    [key: string]: unknown
   }
 }

@@ -1,0 +1,9 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#08090b"/>
+  <rect x="140" y="90" width="1320" height="720" rx="24" fill="#101218" stroke="#2d2e36" stroke-width="4"/>
+  <rect x="220" y="190" width="760" height="500" rx="16" fill="#181a22"/>
+  <rect x="1030" y="190" width="340" height="150" rx="12" fill="#1f2129"/>
+  <rect x="1030" y="370" width="340" height="150" rx="12" fill="#1f2129"/>
+  <rect x="1030" y="550" width="340" height="140" rx="12" fill="#1f2129"/>
+  <text x="220" y="160" fill="#efeff1" font-family="Arial" font-size="32" font-weight="700">GALLEY CLOSE-UP</text>
+</svg>

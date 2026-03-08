@@ -1,0 +1,9 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="768" fill="#090a0d"/>
+  <rect x="92" y="72" width="840" height="624" rx="28" fill="#121418" stroke="#353d4a" stroke-width="4"/>
+  <rect x="220" y="250" width="120" height="280" rx="20" fill="#7f8795"/>
+  <rect x="380" y="290" width="90" height="220" rx="18" fill="#b6becb"/>
+  <rect x="520" y="220" width="140" height="320" rx="22" fill="#6f7a8d"/>
+  <rect x="700" y="330" width="110" height="150" rx="18" fill="#9ea9bb"/>
+  <text x="126" y="150" fill="#eceff5" font-family="Arial" font-size="44" font-weight="700">MURDER KIT CONTENTS</text>
+</svg>

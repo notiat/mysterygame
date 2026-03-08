@@ -1,0 +1,9 @@
+<svg width="900" height="1600" viewBox="0 0 900 1600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1600" fill="#0a0b0f" />
+  <ellipse cx="450" cy="1380" rx="350" ry="70" fill="#030304" opacity="0.7"/>
+  <path d="M90 980L620 900L810 930L620 970L90 980Z" fill="#d8d8df" />
+  <path d="M320 900L430 780L490 788L440 915L320 900Z" fill="#a2a2ad"/>
+  <path d="M360 980L470 1120L510 1112L450 960L360 980Z" fill="#7a7a87"/>
+  <rect x="90" y="120" width="720" height="120" rx="14" fill="#111218" stroke="#2c2c34" stroke-width="2"/>
+  <text x="120" y="195" fill="#f1f1f1" font-family="Arial" font-size="40" font-weight="700">IMPOUNDED G650</text>
+</svg>

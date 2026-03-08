@@ -1,0 +1,7 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="28" fill="#0f172a"/>
+  <circle cx="128" cy="100" r="50" fill="#f5c9a7"/>
+  <path d="M78 88C84 56 102 40 128 40C154 40 172 56 178 88V110H78V88Z" fill="#334155"/>
+  <path d="M74 214C78 174 98 150 128 150C158 150 178 174 182 214V224H74V214Z" fill="#0f766e"/>
+  <text x="128" y="242" text-anchor="middle" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">JULIAN</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#07080b"/>
+  <rect x="130" y="100" width="1340" height="700" rx="24" fill="#10131a" stroke="#2b2f38" stroke-width="4"/>
+  <rect x="210" y="200" width="560" height="470" rx="16" fill="#151a24"/>
+  <rect x="810" y="200" width="580" height="120" rx="12" fill="#1c2230"/>
+  <rect x="810" y="350" width="580" height="120" rx="12" fill="#1c2230"/>
+  <rect x="810" y="500" width="580" height="170" rx="12" fill="#1c2230"/>
+  <text x="210" y="170" fill="#eff1f6" font-family="Arial" font-size="32" font-weight="700">COCKPIT LOG RECONSTRUCTION</text>
+</svg>

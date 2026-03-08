@@ -1,6 +1,15 @@
 # OpenCase
 
-A web-based detective game built with Next.js 14+, TypeScript, Tailwind CSS, and App Router.
+A multi-story detective game platform built with Next.js 14+, TypeScript, Tailwind CSS, and App Router.
+
+Terminal Velocity is installed as the first playable story pack.
+
+## Beta Routes
+
+- `/` - Story launcher
+- `/game/terminal-velocity` - Playable Terminal Velocity beta
+- `/debug` - Story debug tools
+- `/stories` - Story catalog
 
 ## Developer Setup
 
@@ -28,7 +37,8 @@ Follow these steps to set up your development environment:
    ```
    cp .env.example .env.local
    ```
-   Edit `.env.local` and replace the placeholder values with your actual Supabase credentials and game version.
+   Supabase variables are optional for local single-player mode.
+   Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` to enable realtime co-op presence/sync.
 
 5. **Run the development server**:
    ```
@@ -41,3 +51,21 @@ Follow these steps to set up your development environment:
 - Ensure you have the recommended VS Code extensions installed (see `.vscode/extensions.json`).
 - Follow the project's coding standards and use Prettier for code formatting.
 - Test your changes thoroughly before submitting a pull request.
+
+## Architecture Docs
+
+- `docs/ARCHITECTURE.md`
+- `docs/ASSET_PLAN.md`
+- `docs/ASSET_PIPELINE.md`
+- `docs/DESIGN_SYSTEM.md`
+- `docs/ANIMATION_SYSTEM.md`
+- `docs/DATABASE.md`
+- `docs/DEPLOYMENT.md`
+- `docs/OBSERVABILITY.md`
+
+## Quality Commands
+
+- `npm run lint`
+- `npm run assets:validate`
+- `npm run build`
+- `npm run smoke`

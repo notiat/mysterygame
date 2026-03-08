@@ -1,0 +1,10 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0a0a0c"/>
+  <rect x="120" y="130" width="1360" height="640" rx="24" fill="#111217" stroke="#303039" stroke-width="4"/>
+  <rect x="200" y="230" width="280" height="210" rx="12" fill="#1b1c23"/>
+  <rect x="520" y="230" width="280" height="210" rx="12" fill="#1b1c23"/>
+  <rect x="840" y="230" width="280" height="210" rx="12" fill="#1b1c23"/>
+  <rect x="1160" y="230" width="240" height="210" rx="12" fill="#1b1c23"/>
+  <rect x="200" y="480" width="1200" height="220" rx="12" fill="#1a1a20"/>
+  <text x="220" y="200" fill="#f0f0f2" font-family="Arial" font-size="32" font-weight="700">EVIDENCE TABLE</text>
+</svg>

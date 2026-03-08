@@ -1,0 +1,7 @@
+<svg width="768" height="1024" viewBox="0 0 768 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="768" height="1024" fill="#0c0c10"/>
+  <rect x="84" y="84" width="600" height="856" rx="28" fill="#15151b" stroke="#34343d" stroke-width="3"/>
+  <ellipse cx="384" cy="320" rx="150" ry="165" fill="#6f6f79"/>
+  <rect x="224" y="520" width="320" height="280" rx="36" fill="#2a2b33"/>
+  <text x="132" y="882" fill="#f1f1f4" font-family="Arial" font-size="44" font-weight="700">CHLOE EVANS</text>
+</svg>

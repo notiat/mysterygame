@@ -1,0 +1,120 @@
+export type AssetKind = 'scene' | 'character' | 'evidence' | 'ui' | 'audio';
+
+export interface AssetManifestEntry {
+  id: string;
+  kind: AssetKind;
+  path: string;
+  maxBytes: number;
+  orientation?: 'portrait' | 'landscape' | 'both';
+}
+
+export const terminalVelocityAssetManifest: AssetManifestEntry[] = [
+  { id: 'cover', kind: 'scene', path: 'public/assets/terminal-velocity/cover.svg', maxBytes: 220_000, orientation: 'landscape' },
+  {
+    id: 'scene-hangar-landscape',
+    kind: 'scene',
+    path: 'public/assets/terminal-velocity/scenes/hangar-briefing--landscape.svg',
+    maxBytes: 250_000,
+    orientation: 'landscape'
+  },
+  {
+    id: 'scene-hangar-portrait',
+    kind: 'scene',
+    path: 'public/assets/terminal-velocity/scenes/hangar-briefing--portrait.svg',
+    maxBytes: 250_000,
+    orientation: 'portrait'
+  },
+  {
+    id: 'scene-aircraft-landscape',
+    kind: 'scene',
+    path: 'public/assets/terminal-velocity/scenes/aircraft-exterior--landscape.svg',
+    maxBytes: 250_000,
+    orientation: 'landscape'
+  },
+  {
+    id: 'scene-aircraft-portrait',
+    kind: 'scene',
+    path: 'public/assets/terminal-velocity/scenes/aircraft-exterior--portrait.svg',
+    maxBytes: 250_000,
+    orientation: 'portrait'
+  },
+  {
+    id: 'scene-evidence-landscape',
+    kind: 'scene',
+    path: 'public/assets/terminal-velocity/scenes/evidence-table--landscape.svg',
+    maxBytes: 250_000,
+    orientation: 'landscape'
+  },
+  {
+    id: 'scene-evidence-portrait',
+    kind: 'scene',
+    path: 'public/assets/terminal-velocity/scenes/evidence-table--portrait.svg',
+    maxBytes: 250_000,
+    orientation: 'portrait'
+  },
+  {
+    id: 'scene-cabin-landscape',
+    kind: 'scene',
+    path: 'public/assets/terminal-velocity/scenes/cabin-main--landscape.svg',
+    maxBytes: 250_000,
+    orientation: 'landscape'
+  },
+  {
+    id: 'scene-cabin-portrait',
+    kind: 'scene',
+    path: 'public/assets/terminal-velocity/scenes/cabin-main--portrait.svg',
+    maxBytes: 250_000,
+    orientation: 'portrait'
+  },
+  {
+    id: 'scene-galley-landscape',
+    kind: 'scene',
+    path: 'public/assets/terminal-velocity/scenes/galley-close--landscape.svg',
+    maxBytes: 250_000,
+    orientation: 'landscape'
+  },
+  {
+    id: 'scene-galley-portrait',
+    kind: 'scene',
+    path: 'public/assets/terminal-velocity/scenes/galley-close--portrait.svg',
+    maxBytes: 250_000,
+    orientation: 'portrait'
+  },
+  {
+    id: 'scene-cockpit-landscape',
+    kind: 'scene',
+    path: 'public/assets/terminal-velocity/scenes/cockpit-log--landscape.svg',
+    maxBytes: 250_000,
+    orientation: 'landscape'
+  },
+  {
+    id: 'scene-cockpit-portrait',
+    kind: 'scene',
+    path: 'public/assets/terminal-velocity/scenes/cockpit-log--portrait.svg',
+    maxBytes: 250_000,
+    orientation: 'portrait'
+  },
+  { id: 'character-chloe-neutral', kind: 'character', path: 'public/assets/terminal-velocity/characters/chloe-evans-neutral.svg', maxBytes: 220_000 },
+  { id: 'character-chloe-confident', kind: 'character', path: 'public/assets/terminal-velocity/characters/chloe-evans-confident.svg', maxBytes: 220_000 },
+  { id: 'character-julian-neutral', kind: 'character', path: 'public/assets/terminal-velocity/characters/julian-ricci-neutral.svg', maxBytes: 220_000 },
+  { id: 'character-julian-stressed', kind: 'character', path: 'public/assets/terminal-velocity/characters/julian-ricci-stressed.svg', maxBytes: 220_000 },
+  { id: 'character-marcus-neutral', kind: 'character', path: 'public/assets/terminal-velocity/characters/marcus-stone-neutral.svg', maxBytes: 220_000 },
+  { id: 'character-marcus-defensive', kind: 'character', path: 'public/assets/terminal-velocity/characters/marcus-stone-defensive.svg', maxBytes: 220_000 },
+  { id: 'character-rebecca-neutral', kind: 'character', path: 'public/assets/terminal-velocity/characters/rebecca-park-neutral.svg', maxBytes: 220_000 },
+  { id: 'character-rebecca-focused', kind: 'character', path: 'public/assets/terminal-velocity/characters/rebecca-park-focused.svg', maxBytes: 220_000 },
+  { id: 'character-torres-briefing', kind: 'character', path: 'public/assets/terminal-velocity/characters/agent-torres-briefing.svg', maxBytes: 220_000 },
+  { id: 'evidence-whiskey-glass', kind: 'evidence', path: 'public/assets/terminal-velocity/evidence/whiskey-glass.svg', maxBytes: 220_000 },
+  { id: 'evidence-fake-epipen', kind: 'evidence', path: 'public/assets/terminal-velocity/evidence/fake-epipen.svg', maxBytes: 220_000 },
+  { id: 'evidence-medical-records', kind: 'evidence', path: 'public/assets/terminal-velocity/evidence/medical-records.svg', maxBytes: 220_000 },
+  { id: 'evidence-practice-log', kind: 'evidence', path: 'public/assets/terminal-velocity/evidence/practice-log.svg', maxBytes: 220_000 },
+  { id: 'evidence-video-call-logs', kind: 'evidence', path: 'public/assets/terminal-velocity/evidence/video-call-logs.svg', maxBytes: 220_000 },
+  { id: 'evidence-murder-kit', kind: 'evidence', path: 'public/assets/terminal-velocity/evidence/murder-kit.svg', maxBytes: 220_000 },
+  { id: 'ui-icon-inventory', kind: 'ui', path: 'public/assets/terminal-velocity/ui/icons/inventory.svg', maxBytes: 80_000 },
+  { id: 'ui-icon-puzzle', kind: 'ui', path: 'public/assets/terminal-velocity/ui/icons/puzzle.svg', maxBytes: 80_000 },
+  { id: 'ui-icon-dialogue', kind: 'ui', path: 'public/assets/terminal-velocity/ui/icons/dialogue.svg', maxBytes: 80_000 },
+  { id: 'ui-icon-analyzer', kind: 'ui', path: 'public/assets/terminal-velocity/ui/icons/analyzer.svg', maxBytes: 80_000 },
+  { id: 'ui-icon-deduction', kind: 'ui', path: 'public/assets/terminal-velocity/ui/icons/deduction.svg', maxBytes: 80_000 },
+  { id: 'ui-icon-collab', kind: 'ui', path: 'public/assets/terminal-velocity/ui/icons/collab.svg', maxBytes: 80_000 },
+  { id: 'ui-overlay-grain', kind: 'ui', path: 'public/assets/terminal-velocity/ui/overlays/grain-overlay.svg', maxBytes: 200_000, orientation: 'both' },
+  { id: 'ui-overlay-vignette', kind: 'ui', path: 'public/assets/terminal-velocity/ui/overlays/vignette-overlay.svg', maxBytes: 120_000, orientation: 'both' }
+];

@@ -1,0 +1,19 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1600" y2="900">
+      <stop stop-color="#020617"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g1)"/>
+  <rect x="90" y="130" width="1420" height="660" rx="24" fill="#0f172a" stroke="#334155" stroke-width="4"/>
+  <rect x="180" y="220" width="520" height="420" rx="16" fill="#111827" stroke="#475569"/>
+  <rect x="760" y="220" width="650" height="120" rx="12" fill="#1e293b"/>
+  <rect x="760" y="360" width="650" height="120" rx="12" fill="#1e293b"/>
+  <rect x="760" y="500" width="650" height="120" rx="12" fill="#1e293b"/>
+  <text x="210" y="275" fill="#e2e8f0" font-size="38" font-family="Arial" font-weight="700">FBI ANCHORAGE</text>
+  <text x="210" y="325" fill="#94a3b8" font-size="24" font-family="Arial">HANGAR 7 BRIEFING</text>
+  <text x="780" y="295" fill="#cbd5e1" font-size="30" font-family="Arial">Case Intake Board</text>
+  <text x="780" y="435" fill="#cbd5e1" font-size="30" font-family="Arial">Suspect Status</text>
+  <text x="780" y="575" fill="#cbd5e1" font-size="30" font-family="Arial">Evidence Dispatch</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg width="768" height="1024" viewBox="0 0 768 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="768" height="1024" fill="#0d0d11"/>
+  <rect x="84" y="84" width="600" height="856" rx="28" fill="#16161d" stroke="#34343f" stroke-width="3"/>
+  <ellipse cx="384" cy="320" rx="145" ry="160" fill="#7a7a84"/>
+  <rect x="234" y="520" width="300" height="278" rx="30" fill="#2a2d35"/>
+  <text x="142" y="884" fill="#f0f0f4" font-family="Arial" font-size="41" font-weight="700">JULIAN RICCI</text>
+</svg>

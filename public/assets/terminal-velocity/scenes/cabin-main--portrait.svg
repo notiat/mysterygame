@@ -1,0 +1,10 @@
+<svg width="900" height="1600" viewBox="0 0 900 1600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1600" fill="#09090b"/>
+  <rect x="70" y="100" width="760" height="1420" rx="24" fill="#111217" stroke="#2d2d34" stroke-width="4"/>
+  <rect x="140" y="230" width="620" height="190" rx="14" fill="#1b1c23"/>
+  <rect x="140" y="460" width="620" height="190" rx="14" fill="#1b1c23"/>
+  <rect x="140" y="690" width="620" height="190" rx="14" fill="#1b1c23"/>
+  <rect x="140" y="920" width="620" height="190" rx="14" fill="#1b1c23"/>
+  <rect x="140" y="1150" width="620" height="260" rx="14" fill="#171820"/>
+  <text x="140" y="190" fill="#f1f1f3" font-family="Arial" font-size="34" font-weight="700">CABIN MAIN</text>
+</svg>

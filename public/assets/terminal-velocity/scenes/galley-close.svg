@@ -1,0 +1,10 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0b1222"/>
+  <rect x="140" y="140" width="1320" height="620" rx="24" fill="#111827" stroke="#334155" stroke-width="4"/>
+  <rect x="230" y="250" width="320" height="420" rx="14" fill="#1e293b"/>
+  <rect x="610" y="250" width="320" height="420" rx="14" fill="#1e293b"/>
+  <rect x="990" y="250" width="320" height="420" rx="14" fill="#1e293b"/>
+  <text x="250" y="300" fill="#e2e8f0" font-size="26" font-family="Arial">Whiskey Prep</text>
+  <text x="630" y="300" fill="#e2e8f0" font-size="26" font-family="Arial">Water Splash Zone</text>
+  <text x="1010" y="300" fill="#e2e8f0" font-size="26" font-family="Arial">Capsule Drop Area</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg width="768" height="1024" viewBox="0 0 768 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="768" height="1024" fill="#0c0c10"/>
+  <rect x="84" y="84" width="600" height="856" rx="28" fill="#14141b" stroke="#383844" stroke-width="3"/>
+  <ellipse cx="384" cy="320" rx="152" ry="164" fill="#7a7a86"/>
+  <path d="M218 798C257 673 315 620 384 620C453 620 511 673 550 798H218Z" fill="#262932"/>
+  <text x="112" y="884" fill="#f2f2f5" font-family="Arial" font-size="42" font-weight="700">CHLOE (CONFIDENT)</text>
+</svg>

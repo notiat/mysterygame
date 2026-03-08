@@ -1,0 +1,7 @@
+<svg width="768" height="1024" viewBox="0 0 768 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="768" height="1024" fill="#0d0d11"/>
+  <rect x="84" y="84" width="600" height="856" rx="28" fill="#171820" stroke="#393947" stroke-width="3"/>
+  <ellipse cx="384" cy="320" rx="145" ry="162" fill="#898993"/>
+  <path d="M232 792C266 676 317 620 384 620C451 620 502 676 536 792H232Z" fill="#2b2d38"/>
+  <text x="112" y="884" fill="#f0f0f4" font-family="Arial" font-size="38" font-weight="700">JULIAN (STRESSED)</text>
+</svg>

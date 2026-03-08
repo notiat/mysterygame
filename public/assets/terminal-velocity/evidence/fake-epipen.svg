@@ -1,0 +1,8 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="768" fill="#090b0f"/>
+  <rect x="92" y="72" width="840" height="624" rx="28" fill="#11151d" stroke="#2f3b4e" stroke-width="4"/>
+  <rect x="320" y="200" width="384" height="120" rx="30" fill="#bcc4cf"/>
+  <rect x="300" y="340" width="420" height="130" rx="24" fill="#8f9aab"/>
+  <rect x="360" y="490" width="300" height="90" rx="20" fill="#5e6776"/>
+  <text x="126" y="150" fill="#edf1f7" font-family="Arial" font-size="44" font-weight="700">TAMPERED INJECTOR</text>
+</svg>

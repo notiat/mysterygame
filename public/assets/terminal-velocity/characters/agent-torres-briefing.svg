@@ -1,0 +1,7 @@
+<svg width="768" height="1024" viewBox="0 0 768 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="768" height="1024" fill="#0c0c10"/>
+  <rect x="84" y="84" width="600" height="856" rx="28" fill="#151720" stroke="#36425a" stroke-width="3"/>
+  <ellipse cx="384" cy="320" rx="150" ry="165" fill="#7a889f"/>
+  <rect x="220" y="520" width="328" height="290" rx="34" fill="#273247"/>
+  <text x="128" y="884" fill="#eef1f7" font-family="Arial" font-size="40" font-weight="700">AGENT TORRES</text>
+</svg>

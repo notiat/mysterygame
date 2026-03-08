@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020617"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="plane" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.25">
+    <circle cx="1050" cy="120" r="220" fill="#0ea5e9"/>
+    <circle cx="130" cy="540" r="180" fill="#7c3aed"/>
+  </g>
+  <path d="M160 360L860 290L1010 310L860 335L160 360Z" fill="url(#plane)"/>
+  <path d="M430 278L560 190L600 198L545 292L430 278Z" fill="#38bdf8"/>
+  <path d="M480 350L560 440L600 435L550 340L480 350Z" fill="#818cf8"/>
+  <text x="90" y="140" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="72" font-weight="700">TERMINAL VELOCITY</text>
+  <text x="92" y="188" fill="#94a3b8" font-family="Arial, sans-serif" font-size="26">FBI Murder Mystery Story Pack</text>
+  <rect x="90" y="220" width="360" height="3" fill="#38bdf8"/>
+</svg>

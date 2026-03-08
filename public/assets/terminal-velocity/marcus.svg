@@ -1,0 +1,7 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="28" fill="#111827"/>
+  <circle cx="128" cy="100" r="50" fill="#ddb08f"/>
+  <path d="M78 90C80 58 102 38 128 38C154 38 176 58 178 90V114H78V90Z" fill="#1f2937"/>
+  <rect x="74" y="150" width="108" height="74" rx="18" fill="#7f1d1d"/>
+  <text x="128" y="242" text-anchor="middle" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16">MARCUS</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="768" fill="#0a0b0f"/>
+  <rect x="90" y="70" width="844" height="628" rx="28" fill="#12141b" stroke="#343b4a" stroke-width="4"/>
+  <ellipse cx="512" cy="590" rx="210" ry="35" fill="#1a1e29"/>
+  <rect x="380" y="250" width="264" height="300" rx="20" fill="#252b38"/>
+  <ellipse cx="512" cy="250" rx="132" ry="20" fill="#5f697f"/>
+  <text x="126" y="150" fill="#eceef5" font-family="Arial" font-size="44" font-weight="700">WHISKEY GLASS</text>
+</svg>

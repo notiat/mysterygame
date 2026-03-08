@@ -1,0 +1,9 @@
+<svg width="900" height="1600" viewBox="0 0 900 1600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1600" fill="#090a0d"/>
+  <rect x="70" y="100" width="760" height="1420" rx="24" fill="#0f1117" stroke="#2d2e35" stroke-width="4"/>
+  <rect x="130" y="250" width="640" height="580" rx="16" fill="#191b23"/>
+  <rect x="130" y="870" width="640" height="180" rx="12" fill="#1f212a"/>
+  <rect x="130" y="1080" width="640" height="180" rx="12" fill="#1f212a"/>
+  <rect x="130" y="1290" width="640" height="180" rx="12" fill="#1f212a"/>
+  <text x="130" y="200" fill="#f1f1f2" font-family="Arial" font-size="34" font-weight="700">GALLEY DETAIL</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="768" fill="#090b0f"/>
+  <rect x="92" y="72" width="840" height="624" rx="28" fill="#101624" stroke="#30425f" stroke-width="4"/>
+  <rect x="186" y="180" width="652" height="380" rx="20" fill="#1a2438"/>
+  <path d="M220 438L340 438L430 312L510 438L590 438L670 346L760 438" fill="none" stroke="#9db0d1" stroke-width="8"/>
+  <rect x="220" y="470" width="560" height="32" rx="10" fill="#344a71"/>
+  <text x="126" y="150" fill="#eef2f8" font-family="Arial" font-size="42" font-weight="700">VIDEO CALL LOGS</text>
+</svg>

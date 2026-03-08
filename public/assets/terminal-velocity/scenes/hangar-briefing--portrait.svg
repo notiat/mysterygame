@@ -1,0 +1,16 @@
+<svg width="900" height="1600" viewBox="0 0 900 1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050505" />
+      <stop offset="100%" stop-color="#18181c" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1600" fill="url(#bg)" />
+  <rect x="70" y="90" width="760" height="1420" rx="24" fill="#0d0d10" stroke="#303035" stroke-width="4" />
+  <rect x="130" y="230" width="640" height="450" rx="18" fill="#151519" />
+  <rect x="130" y="730" width="640" height="130" rx="12" fill="#1a1a1f" />
+  <rect x="130" y="890" width="640" height="130" rx="12" fill="#1a1a1f" />
+  <rect x="130" y="1050" width="640" height="130" rx="12" fill="#1a1a1f" />
+  <text x="150" y="170" fill="#f3f3f3" font-family="Arial" font-size="34" font-weight="700">HANGAR 7</text>
+  <text x="150" y="210" fill="#aaaaaf" font-family="Arial" font-size="22">Briefing Board</text>
+</svg>

@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import ClientErrorMonitor from '@/components/system/ClientErrorMonitor';
 
 export const metadata: Metadata = {
-  title: 'OpenCase',
-  description: 'A web-based detective game',
-}
+  title: 'OpenCase Platform Beta',
+  description: 'Story-driven detective game platform with reusable architecture'
+};
 
 export default function RootLayout({
   children,
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ClientErrorMonitor />
+        {children}
+      </body>
     </html>
   )
 }

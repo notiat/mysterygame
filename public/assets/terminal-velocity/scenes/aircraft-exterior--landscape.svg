@@ -1,0 +1,9 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#090a0d" />
+  <ellipse cx="800" cy="760" rx="640" ry="80" fill="#020203" opacity="0.7"/>
+  <path d="M230 560L1110 470L1350 500L1110 540L230 560Z" fill="#d5d5dd" />
+  <path d="M620 460L790 330L860 340L770 478L620 460Z" fill="#9d9da7"/>
+  <path d="M690 560L820 680L860 675L785 548L690 560Z" fill="#787885"/>
+  <rect x="120" y="110" width="460" height="84" rx="12" fill="#0f1015" stroke="#2f2f37" stroke-width="2"/>
+  <text x="155" y="165" fill="#f1f1f1" font-family="Arial" font-size="36" font-weight="700">IMPOUNDED AIRCRAFT</text>
+</svg>

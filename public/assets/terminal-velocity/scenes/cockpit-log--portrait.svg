@@ -1,0 +1,9 @@
+<svg width="900" height="1600" viewBox="0 0 900 1600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1600" fill="#07090c"/>
+  <rect x="70" y="100" width="760" height="1420" rx="24" fill="#0f131b" stroke="#2a2f39" stroke-width="4"/>
+  <rect x="130" y="250" width="640" height="560" rx="16" fill="#151b25"/>
+  <rect x="130" y="850" width="640" height="180" rx="12" fill="#1c2331"/>
+  <rect x="130" y="1060" width="640" height="180" rx="12" fill="#1c2331"/>
+  <rect x="130" y="1270" width="640" height="200" rx="12" fill="#1c2331"/>
+  <text x="130" y="200" fill="#eef0f5" font-family="Arial" font-size="33" font-weight="700">COCKPIT LOGS</text>
+</svg>

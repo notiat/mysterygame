@@ -1,0 +1,7 @@
+<svg width="768" height="1024" viewBox="0 0 768 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="768" height="1024" fill="#0c0d10"/>
+  <rect x="84" y="84" width="600" height="856" rx="28" fill="#141821" stroke="#374154" stroke-width="3"/>
+  <ellipse cx="384" cy="320" rx="158" ry="170" fill="#7a8496"/>
+  <path d="M208 800C246 674 304 616 384 616C464 616 522 674 560 800H208Z" fill="#242c3a"/>
+  <text x="94" y="884" fill="#eff1f5" font-family="Arial" font-size="36" font-weight="700">MARCUS (DEFENSIVE)</text>
+</svg>
