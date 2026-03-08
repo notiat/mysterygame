@@ -7,29 +7,57 @@ export default async function HomePage() {
   const stories = await loadStories();
 
   return (
-    <main className="min-h-screen bg-slate-950 p-8 text-slate-100">
+    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 md:p-10 text-slate-100">
       <div className="mx-auto max-w-6xl">
-        <p className="mb-2 text-xs uppercase tracking-[0.2em] text-slate-400">OpenCase Platform</p>
-        <h1 className="text-4xl font-bold">Mystery Story Launcher</h1>
-        <p className="mt-2 text-slate-300">
-          Story-agnostic architecture. Terminal Velocity is installed as Story Pack #1.
-        </p>
+        <div className="text-center mb-10">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-amber-400 font-bold">OpenCase Platform</p>
+          <h1 className="text-5xl md:text-6xl font-black bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 bg-clip-text text-transparent mb-4">
+            Detective Case Files
+          </h1>
+          <p className="mt-3 text-lg text-slate-300 max-w-2xl mx-auto">
+            Solve murder mysteries with your team. Examine evidence, interrogate suspects, and crack the case.
+          </p>
+        </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
           {stories.map((story) => (
-            <article key={story.id} className="overflow-hidden rounded-xl border border-slate-700 bg-slate-900">
-              <Image src={story.meta.thumbnail} alt={story.name} width={1200} height={630} className="h-44 w-full object-cover" />
-              <div className="p-4">
-                <h2 className="text-2xl font-semibold">{story.name}</h2>
-                <p className="mt-2 text-sm text-slate-300">{story.meta.description}</p>
-                <p className="mt-2 text-xs text-slate-400">Setting: {story.meta.setting}</p>
-                <p className="mt-1 text-xs text-slate-400">Players: {story.meta.playerCount}</p>
-                <div className="mt-4 flex gap-2">
-                  <Link href={`/game/${story.id}`} className="rounded bg-blue-600 px-4 py-2 text-sm font-semibold text-white">
-                    Solo Preview
+            <article 
+              key={story.id} 
+              className="group overflow-hidden rounded-2xl border-2 border-slate-700 bg-slate-900/80 backdrop-blur hover:border-amber-500/50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-amber-500/20"
+            >
+              <div className="relative overflow-hidden">
+                <Image 
+                  src={story.meta.thumbnail} 
+                  alt={story.name} 
+                  width={1200} 
+                  height={630} 
+                  className="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+              </div>
+              <div className="p-6">
+                <h2 className="text-3xl font-bold text-white mb-3">{story.name}</h2>
+                <p className="mt-2 text-base text-slate-300 leading-relaxed">{story.meta.description}</p>
+                <div className="mt-4 space-y-2">
+                  <p className="text-sm text-slate-400">
+                    <span className="text-amber-400 font-semibold">📍 Setting:</span> {story.meta.setting}
+                  </p>
+                  <p className="text-sm text-slate-400">
+                    <span className="text-amber-400 font-semibold">👥 Players:</span> {story.meta.playerCount}
+                  </p>
+                </div>
+                <div className="mt-6 flex gap-3">
+                  <Link 
+                    href={`/game/${story.id}`} 
+                    className="flex-1 text-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-5 py-3 text-base font-bold text-white hover:from-blue-500 hover:to-blue-400 transition-all shadow-lg hover:shadow-blue-500/50"
+                  >
+                    🔍 Play Solo
                   </Link>
-                  <Link href="/debug" className="rounded bg-slate-700 px-4 py-2 text-sm font-semibold text-slate-100">
-                    Debug Tools
+                  <Link 
+                    href="/debug" 
+                    className="rounded-xl bg-slate-800 hover:bg-slate-700 px-5 py-3 text-base font-bold text-slate-100 hover:text-white transition-colors border border-slate-700"
+                  >
+                    ⚙️
                   </Link>
                 </div>
                 <StoryLauncherForm storyId={story.id} />
