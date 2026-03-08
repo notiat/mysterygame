@@ -17,42 +17,57 @@ export default function DialogueInterface({
   onSelectResponse
 }: DialogueInterfaceProps) {
   return (
-    <section className="rounded-lg border border-slate-700 bg-slate-950 p-4">
-      <div className="mb-3 flex items-center gap-3">
+    <section className="rounded-xl border-2 border-slate-700 bg-slate-950/90 p-5">
+      <div className="mb-5 flex items-start gap-4 border-b border-slate-700 pb-4">
         <Image
           src={character.portrait}
           alt={character.name}
-          width={48}
-          height={48}
-          className="h-12 w-12 rounded-full border border-slate-600"
+          width={80}
+          height={80}
+          className="h-20 w-20 rounded-xl border-2 border-slate-600 shadow-lg"
         />
-        <div>
-          <h3 className="text-base font-semibold text-slate-100">{character.name}</h3>
-          <p className="text-xs text-slate-400">{character.role}</p>
+        <div className="flex-1">
+          <h3 className="text-xl font-bold text-white mb-1">{character.name}</h3>
+          <p className="text-sm text-amber-400 font-semibold uppercase tracking-wide">{character.role}</p>
+          <p className="text-xs text-slate-400 mt-1">{character.bio}</p>
         </div>
       </div>
 
-      <div className="rounded border border-slate-700 bg-slate-900 p-3 text-sm text-slate-200">
-        {node?.text ?? 'No dialogue loaded for this character.'}
+      <div className="rounded-xl border-2 border-slate-700 bg-slate-900/50 p-5 mb-5 min-h-[120px]">
+        <p className="text-sm uppercase tracking-wider text-slate-500 mb-2">💬 Statement</p>
+        <p className="text-base text-slate-100 leading-relaxed italic">
+          "{node?.text ?? 'No dialogue loaded for this character.'}"
+        </p>
       </div>
 
-      <div className="mt-3 space-y-2">
-        {(node?.responses ?? []).map((response) => {
-          const missing =
-            response.requiresEvidence?.filter((evidenceId) => !inventory.includes(evidenceId)) ?? [];
-          const disabled = missing.length > 0;
-          return (
-            <button
-              key={response.id}
-              disabled={disabled}
-              onClick={() => onSelectResponse(response.nextNodeId)}
-              className="w-full rounded border border-slate-700 bg-slate-900 px-3 py-2 text-left text-sm text-slate-100 disabled:cursor-not-allowed disabled:opacity-40"
-            >
-              {response.text}
-              {disabled ? <span className="mt-1 block text-xs text-rose-300">Missing: {missing.join(', ')}</span> : null}
-            </button>
-          );
-        })}
+      <div>
+        <p className="text-xs uppercase tracking-wider text-amber-400 font-bold mb-3">🔍 Your Questions</p>
+        <div className="space-y-3">
+          {(node?.responses ?? []).map((response) => {
+            const missing =
+              response.requiresEvidence?.filter((evidenceId) => !inventory.includes(evidenceId)) ?? [];
+            const disabled = missing.length > 0;
+            return (
+              <button
+                key={response.id}
+                disabled={disabled}
+                onClick={() => onSelectResponse(response.nextNodeId)}
+                className={`w-full rounded-xl border-2 px-4 py-3 text-left text-sm transition-all min-h-[52px] ${
+                  disabled
+                    ? 'border-slate-800 bg-slate-900/30 text-slate-600 cursor-not-allowed'
+                    : 'border-slate-700 bg-slate-900 text-slate-100 hover:border-amber-500 hover:bg-slate-800 hover:text-white'
+                }`}
+              >
+                <span className="font-medium">{response.text}</span>
+                {disabled ? (
+                  <span className="mt-2 block text-xs text-rose-400">
+                    🔒 Requires evidence: {missing.join(', ')}
+                  </span>
+                ) : null}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
