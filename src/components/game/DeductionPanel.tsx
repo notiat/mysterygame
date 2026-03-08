@@ -8,21 +8,35 @@ interface DeductionPanelProps {
 }
 
 export default function DeductionPanel({ deductions, unlockedIds }: DeductionPanelProps) {
+  const unlockedCount = unlockedIds.length;
+  const totalCount = deductions.length;
+  
   return (
-    <section className="rounded-lg border border-slate-700 bg-slate-900/70 p-3">
-      <h3 className="mb-2 text-sm font-semibold uppercase tracking-wider text-slate-200">Deduction Board</h3>
-      <div className="space-y-2">
+    <section className="rounded-xl border-2 border-slate-700 bg-slate-900/80 p-5">
+      <div className="mb-4 flex items-center justify-between border-b border-slate-700 pb-3">
+        <h3 className="text-base font-bold uppercase tracking-wider text-amber-400">🧩 Deductions</h3>
+        <span className="rounded-lg bg-slate-800 px-3 py-1 text-sm font-bold text-slate-300">
+          {unlockedCount}/{totalCount}
+        </span>
+      </div>
+      <div className="space-y-3">
         {deductions.map((deduction) => {
           const unlocked = unlockedIds.includes(deduction.id);
           return (
             <div
               key={deduction.id}
-              className={`rounded border p-2 text-xs ${
-                unlocked ? 'border-emerald-500 bg-emerald-900/20 text-emerald-100' : 'border-slate-700 bg-slate-950 text-slate-400'
+              className={`rounded-lg border-2 p-4 text-sm transition-all ${
+                unlocked 
+                  ? 'border-emerald-500/50 bg-emerald-950/30 text-emerald-100 shadow-lg shadow-emerald-500/10' 
+                  : 'border-slate-700 bg-slate-950/50 text-slate-500'
               }`}
             >
-              <p className="font-semibold">{deduction.title}</p>
-              <p className="mt-1">{unlocked ? deduction.description : 'Locked: gather required evidence.'}</p>
+              <p className="font-bold text-base mb-2 flex items-center gap-2">
+                {unlocked ? '✓' : '🔒'} {deduction.title}
+              </p>
+              <p className="leading-relaxed">
+                {unlocked ? deduction.description : '🔍 Locked: Collect required evidence to unlock this deduction.'}
+              </p>
             </div>
           );
         })}
