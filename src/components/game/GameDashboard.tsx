@@ -221,43 +221,62 @@ export default function GameDashboard({ content }: GameDashboardProps) {
       </div>
 
       <FloatingWindow title="Evidence" position="left" open={windowOpen.inventory} onClose={() => setWindowOpen((s) => ({ ...s, inventory: false }))}>
-        <div className="space-y-2 text-sm">
-          <p className="text-xs text-slate-400">Tap item to inspect, analyze, and mark for accusation.</p>
-          {content.evidence.map((item) => {
-            const inInventory = session.progress.inventory.includes(item.id);
-            return (
-              <button
-                key={item.id}
-                onClick={() => {
-                  setSelectedEvidenceId(item.id);
-                  if (!inInventory) {
-                    collectEvidence(item.id);
-                    dispatchFlowEvent({ type: 'CLUE_COLLECTED' });
-                  } else {
-                    examineEvidence(item.id);
-                    dispatchFlowEvent({ type: 'CLUE_EXAMINED' });
-                  }
-                }}
-                className={`w-full rounded border px-2 py-2 text-left ${inInventory ? 'border-white/60 bg-white/10' : 'border-slate-700 bg-black'}`}
-              >
-                <div className="flex items-start gap-2">
-                  <div className="relative h-12 w-16 overflow-hidden rounded border border-slate-700 bg-slate-900">
-                    <Image
-                      src={item.image ?? '/assets/terminal-velocity/evidence/whiskey-glass.svg'}
-                      alt={item.name}
-                      fill
-                      sizes="64px"
-                      className="object-cover grayscale"
-                    />
+        <div className="space-y-3">
+          <p className="text-sm text-slate-400 bg-slate-900/50 rounded-lg p-3 border border-slate-700">
+            💡 Click evidence to collect, examine, or analyze. Selected items can be used in interrogations.
+          </p>
+          <div className="grid grid-cols-1 gap-3">
+            {content.evidence.map((item) => {
+              const inInventory = session.progress.inventory.includes(item.id);
+              const isExamined = session.progress.examinedItems.includes(item.id);
+              const isAnalyzed = session.progress.analyzedItems.includes(item.id);
+              const isSelected = selectedEvidenceId === item.id;
+              
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    setSelectedEvidenceId(item.id);
+                    if (!inInventory) {
+                      collectEvidence(item.id);
+                      dispatchFlowEvent({ type: 'CLUE_COLLECTED' });
+                    } else {
+                      examineEvidence(item.id);
+                      dispatchFlowEvent({ type: 'CLUE_EXAMINED' });
+                    }
+                  }}
+                  className={`w-full rounded-xl border-2 p-3 text-left transition-all ${
+                    isSelected 
+                      ? 'border-amber-500 bg-amber-950/30 shadow-lg shadow-amber-500/20' 
+                      : inInventory 
+                        ? 'border-slate-600 bg-slate-900/80 hover:border-slate-500' 
+                        : 'border-slate-700 bg-slate-950/50 opacity-60 hover:opacity-80'
+                  }`}
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="relative h-16 w-20 flex-shrink-0 overflow-hidden rounded-lg border-2 border-slate-700 bg-slate-900 shadow-md">
+                      <Image
+                        src={item.image ?? '/assets/terminal-velocity/evidence/whiskey-glass.svg'}
+                        alt={item.name}
+                        fill
+                        sizes="80px"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-bold text-white text-base">{item.name}</p>
+                      <p className="text-xs text-amber-400 font-semibold mt-0.5">📍 {item.location}</p>
+                      <div className="flex gap-1.5 mt-2">
+                        {inInventory && <span className="text-xs bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded">✓ Collected</span>}
+                        {isExamined && <span className="text-xs bg-violet-500/20 text-violet-300 px-2 py-0.5 rounded">🔍 Examined</span>}
+                        {isAnalyzed && <span className="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">⚗️ Analyzed</span>}
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold">{item.name}</p>
-                    <p className="text-xs text-slate-400">{item.location}</p>
-                  </div>
-                </div>
-              </button>
-            );
-          })}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </FloatingWindow>
 
@@ -280,23 +299,28 @@ export default function GameDashboard({ content }: GameDashboardProps) {
       </FloatingWindow>
 
       <FloatingWindow title="Interrogation" position="right" open={windowOpen.dialogue} onClose={() => setWindowOpen((s) => ({ ...s, dialogue: false }))}>
-        <div className="space-y-2">
-          <select
-            value={activeCharacterId}
-            onChange={(event) => {
-              const charId = event.target.value;
-              setActiveCharacterId(charId);
-              const root = getDialogueRootForCharacter(content.dialogues, charId);
-              advanceDialogue(charId, root?.id ?? null);
-            }}
-            className="w-full rounded border border-slate-700 bg-black px-2 py-1 text-sm"
-          >
-            {content.characters.map((character) => (
-              <option key={character.id} value={character.id}>
-                {character.name}
-              </option>
-            ))}
-          </select>
+        <div className="space-y-4">
+          <div>
+            <label className="block text-xs font-semibold text-amber-400 mb-2 uppercase tracking-wider">
+              👤 Select Suspect
+            </label>
+            <select
+              value={activeCharacterId}
+              onChange={(event) => {
+                const charId = event.target.value;
+                setActiveCharacterId(charId);
+                const root = getDialogueRootForCharacter(content.dialogues, charId);
+                advanceDialogue(charId, root?.id ?? null);
+              }}
+              className="w-full rounded-xl border-2 border-slate-700 bg-slate-900 px-4 py-3 text-base font-semibold focus:border-amber-500 focus:outline-none transition-colors"
+            >
+              {content.characters.map((character) => (
+                <option key={character.id} value={character.id}>
+                  {character.name} - {character.role}
+                </option>
+              ))}
+            </select>
+          </div>
           {(() => {
             const character = content.characters.find((entry) => entry.id === activeCharacterId);
             if (!character) return null;
