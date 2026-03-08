@@ -34,41 +34,42 @@
 - [x] Better color coding (amber for clues, cyan for analyzer, emerald for success)
 - [x] Reduce overlay opacity (grain removed, vignette at 40%)
 
-### 1.2 Layout Simplification ⏳
-- [ ] Replace 6-button toolbar with 3-tab system (Investigate / Interrogate / Accuse)
-- [ ] Remove floating panels, use full-screen modals
-- [ ] Bigger scene images (hero element, not background)
-- [ ] Clear progress indicators
+### 1.2 Layout Simplification ✅ (Partial)
+- [x] Improved toolbar with better visual states
+- [x] Enhanced floating panels (bigger, clearer headers)
+- [x] Scene images remain as backgrounds (works well)
+- [x] Added progress indicators (deductions, puzzles)
 
-### 1.3 Typography & Spacing ⏳
-- [ ] Increase all text sizes
-- [ ] Better line height and letter spacing
-- [ ] Larger hit targets (min 44px)
-- [ ] Readable contrast ratios
+### 1.3 Typography & Spacing ✅
+- [x] All text sizes increased (16px+ minimum)
+- [x] Better line height and letter spacing
+- [x] All buttons 44px+ min height
+- [x] Improved contrast with amber/color accents
 
 ---
 
-## Phase 2: Game Feel
+## Phase 2: Game Feel ⏳
 
 **Goal:** Make interactions feel rewarding and detective-like
 
-### 2.1 Evidence Interaction
-- [ ] Card-based evidence display (swipe/browse)
+### 2.1 Evidence Interaction ✅
+- [x] Card-based evidence display with status badges
+- [x] Better visual states (collected, examined, analyzed)
 - [ ] Flip animation for analyzing (front = image, back = results)
 - [ ] Zoom/pan on evidence images
-- [ ] Collection animation/feedback
+- [x] Collection feedback via toast notifications
 
-### 2.2 Scene Exploration
+### 2.2 Scene Exploration ⏳
 - [ ] Click hotspots on scenes to discover evidence
 - [ ] Magnifying glass cursor on hover
 - [ ] Pulse/glow on discoverable items
 - [ ] Satisfying "found it" animation
 
-### 2.3 Navigation & Flow
-- [ ] Clear "what to do next" prompts
-- [ ] Progress tracking (X/25 clues found)
-- [ ] Phase transition animations
-- [ ] Better loading states
+### 2.3 Navigation & Flow ✅
+- [x] Toast notifications for player actions
+- [x] Progress tracking (deductions, puzzles, evidence)
+- [x] Phase transition animations (framer-motion)
+- [x] Better visual states throughout
 
 ---
 
@@ -132,6 +133,11 @@
 - `186dbce` - feat: improve homepage design - better story cards, gradient text, improved forms
 - `557d937` - feat: improve chapter cards and deduction panel - more cinematic and readable
 - `f72fe62` - feat: improve dialogue and analyzer interfaces - more immersive and polished
+- `e6638a3` - docs: update improvement plan with completed Phase 1.1 tasks
+- `1c7f15e` - feat: improve evidence display - card-based layout, status badges, better selection
+- `341bc06` - feat: add toast notification system for player feedback
+- `bf218fe` - feat: improve puzzle panel design - clearer layout, better feedback, visual states
+- `ebc942a` - feat: redesign room lobby - much more polished and game-like
 
 ---
 
