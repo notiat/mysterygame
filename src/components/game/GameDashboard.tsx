@@ -136,24 +136,27 @@ export default function GameDashboard({ content }: GameDashboardProps) {
           alt={currentScene?.title ?? 'Scene'}
           priority
         />
-        <Image src="/assets/terminal-velocity/ui/overlays/grain-overlay.svg" alt="" fill className="pointer-events-none object-cover opacity-20" />
-        <Image src="/assets/terminal-velocity/ui/overlays/vignette-overlay.svg" alt="" fill className="pointer-events-none object-cover opacity-70" />
+        <Image src="/assets/terminal-velocity/ui/overlays/vignette-overlay.svg" alt="" fill className="pointer-events-none object-cover opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
       </div>
 
-      <header className="relative z-20 flex items-start justify-between p-3 md:p-5">
+      <header className="relative z-20 flex items-start justify-between p-4 md:p-6 bg-gradient-to-b from-black/80 to-transparent">
         <div>
-          <p className="text-[10px] uppercase tracking-[0.38em]" style={{ color: neoNoirTheme.colors.textMuted }}>
-            Neo Noir Detective Case
+          <p className="text-xs uppercase tracking-[0.3em] text-amber-400 font-semibold mb-1">
+            FBI Detective Case
           </p>
-          <h1 className="text-xl font-bold md:text-2xl">{content.story.name}</h1>
-          <p className="text-xs text-slate-300">
-            {phaseLabel} - {session.progress.currentLocation}
+          <h1 className="text-2xl font-bold md:text-3xl text-white drop-shadow-lg">{content.story.name}</h1>
+          <p className="text-sm text-slate-200 mt-1 font-medium">
+            {phaseLabel} • {session.progress.currentLocation}
           </p>
         </div>
-        <div className="flex items-center gap-2 text-xs">
-          <span className="rounded bg-black/70 px-2 py-1">Stage: {roomStage}</span>
-          <span className="rounded bg-black/70 px-2 py-1">Battery: {session.progress.analyzerCharges}</span>
+        <div className="flex items-center gap-2 text-sm">
+          <span className="rounded-lg bg-black/80 backdrop-blur px-3 py-2 font-semibold border border-slate-700">
+            Stage: <span className="text-amber-400">{roomStage}</span>
+          </span>
+          <span className="rounded-lg bg-black/80 backdrop-blur px-3 py-2 font-semibold border border-slate-700">
+            ⚡ {session.progress.analyzerCharges}
+          </span>
           <select
             aria-label="Difficulty mode"
             className="rounded border border-slate-700 bg-black/80 px-2 py-1"
@@ -184,7 +187,7 @@ export default function GameDashboard({ content }: GameDashboardProps) {
 
       <motion.div
         {...interactionMotion.panelEnter}
-        className="fixed bottom-4 left-1/2 z-30 flex max-w-[calc(100vw-1.5rem)] -translate-x-1/2 flex-wrap justify-center gap-2 rounded-2xl border border-slate-700 bg-black/80 px-3 py-2 backdrop-blur"
+        className="fixed bottom-5 left-1/2 z-30 flex max-w-[calc(100vw-2rem)] -translate-x-1/2 flex-wrap justify-center gap-3 rounded-2xl border-2 border-slate-600 bg-black/90 px-4 py-3 backdrop-blur-lg shadow-2xl"
       >
         {toolButtons.map(([key, label, icon]) => (
           <button
@@ -192,21 +195,25 @@ export default function GameDashboard({ content }: GameDashboardProps) {
             onClick={() => setWindowOpen((prev) => ({ ...prev, [key]: !prev[key as keyof typeof prev] }))}
             aria-label={`${windowOpen[key as keyof typeof windowOpen] ? 'Close' : 'Open'} ${label} panel`}
             aria-expanded={windowOpen[key as keyof typeof windowOpen]}
-            className="inline-flex items-center gap-2 rounded-full border border-slate-600 px-3 py-1 text-xs transition hover:border-white hover:text-white"
+            className={`inline-flex items-center gap-2 rounded-xl border-2 px-4 py-2.5 text-sm font-bold transition-all min-h-[44px] ${
+              windowOpen[key as keyof typeof windowOpen]
+                ? 'border-amber-500 bg-amber-500/20 text-amber-300'
+                : 'border-slate-600 hover:border-slate-400 hover:bg-slate-800 text-slate-300 hover:text-white'
+            }`}
           >
-            <Image src={icon} alt="" width={14} height={14} className="opacity-90" />
+            <Image src={icon} alt="" width={16} height={16} className="opacity-90" />
             {label}
           </button>
         ))}
       </motion.div>
 
       <div
-        className={`absolute z-20 max-w-xs rounded-lg border border-slate-700 bg-black/80 p-3 text-xs ${orientation === 'portrait' ? 'bottom-24 left-3 right-3 max-w-none' : 'bottom-20 left-3 md:left-6'}`}
+        className={`absolute z-20 max-w-sm rounded-xl border-2 border-slate-700 bg-black/85 backdrop-blur p-4 text-sm ${orientation === 'portrait' ? 'bottom-28 left-4 right-4 max-w-none' : 'bottom-24 left-4 md:left-6'}`}
       >
-        <p className="mb-1 uppercase tracking-wider text-slate-400">Team Activity</p>
-        <div className="max-h-24 space-y-1 overflow-auto text-slate-200">
+        <p className="mb-2 uppercase tracking-wider text-amber-400 font-bold text-xs">📡 Team Activity</p>
+        <div className="max-h-32 space-y-2 overflow-auto text-slate-200">
           {activityFeed.slice(-6).map((entry, idx) => (
-            <p key={`${entry}-${idx}`} className="animate-pulse-once">
+            <p key={`${entry}-${idx}`} className="animate-pulse-once leading-relaxed">
               {entry}
             </p>
           ))}

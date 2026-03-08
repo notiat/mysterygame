@@ -33,6 +33,25 @@ body {
   animation: pulseOnce 380ms ease-in-out;
 }
 
+/* Custom Scrollbar */
+.styled-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.styled-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 4px;
+}
+
+.styled-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.7);
+  border-radius: 4px;
+}
+
+.styled-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.9);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 1ms !important;

@@ -23,58 +23,59 @@ export default function EvidenceCard({
   onAnalyze
 }: EvidenceCardProps) {
   return (
-    <article className="rounded-lg border border-slate-700 bg-slate-900/80 p-4 shadow-md">
-      <div className="relative mb-3 h-32 w-full overflow-hidden rounded border border-slate-700">
+    <article className="rounded-lg border border-slate-700 bg-slate-900/90 p-5 shadow-lg hover:border-slate-600 transition-all">
+      <div className="relative mb-4 h-40 w-full overflow-hidden rounded-lg border border-slate-600 shadow-md">
         <Image
           src={item.image ?? '/assets/terminal-velocity/evidence/whiskey-glass.svg'}
           alt={item.name}
           fill
           sizes="(max-width: 768px) 100vw, 400px"
-          className="object-cover grayscale"
+          className="object-cover"
         />
       </div>
-      <div className="mb-2 flex items-center justify-between">
-        <h3 className="text-base font-semibold text-slate-100">{item.name}</h3>
-        <span className="rounded bg-slate-800 px-2 py-1 text-xs uppercase tracking-wide text-slate-300">
+      <div className="mb-3 flex items-start justify-between gap-3">
+        <h3 className="text-lg font-bold text-slate-50">{item.name}</h3>
+        <span className="rounded-md bg-slate-800 px-3 py-1 text-xs uppercase tracking-wider text-amber-400 font-semibold whitespace-nowrap">
           {item.location}
         </span>
       </div>
-      <p className="text-sm text-slate-300">{item.description}</p>
+      <p className="text-base text-slate-300 leading-relaxed">{item.description}</p>
 
       {isExamined ? (
-        <div className="mt-3 rounded border border-slate-700 bg-slate-950 p-2 text-xs text-sky-300">
-          Visual: {item.visualClue}
+        <div className="mt-4 rounded-lg border border-sky-500/50 bg-sky-950/40 p-3 text-sm text-sky-200">
+          <p className="font-semibold text-sky-300 mb-1">🔍 Visual Clue</p>
+          <p>{item.visualClue}</p>
         </div>
       ) : null}
 
       {isAnalyzed ? (
-        <div className="mt-3 rounded border border-emerald-600/40 bg-emerald-950/30 p-2 text-xs text-emerald-200">
-          <p className="font-semibold">Analyzer Result ({item.analysisData.confidence}% confidence)</p>
-          <p className="mt-1">{item.analysisData.result}</p>
+        <div className="mt-4 rounded-lg border border-emerald-500/50 bg-emerald-950/40 p-3 text-sm text-emerald-200">
+          <p className="font-bold text-emerald-300 mb-1">⚗️ Analysis Complete ({item.analysisData.confidence}% confidence)</p>
+          <p className="leading-relaxed">{item.analysisData.result}</p>
         </div>
       ) : null}
 
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-5 flex flex-wrap gap-2">
         <button
           onClick={onCollect}
           disabled={isCollected}
-          className="rounded bg-blue-600 px-3 py-1 text-xs font-semibold text-white disabled:cursor-not-allowed disabled:bg-slate-700"
+          className="rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-bold text-white disabled:cursor-not-allowed disabled:bg-slate-700 disabled:text-slate-400 hover:bg-blue-500 transition-colors min-h-[44px]"
         >
-          {isCollected ? 'Collected' : 'Collect'}
+          {isCollected ? '✓ Collected' : '📋 Collect'}
         </button>
         <button
           onClick={onExamine}
           disabled={!isCollected}
-          className="rounded bg-violet-600 px-3 py-1 text-xs font-semibold text-white disabled:cursor-not-allowed disabled:bg-slate-700"
+          className="rounded-lg bg-violet-600 px-4 py-2.5 text-sm font-bold text-white disabled:cursor-not-allowed disabled:bg-slate-700 disabled:text-slate-400 hover:bg-violet-500 transition-colors min-h-[44px]"
         >
-          Examine
+          🔍 Examine
         </button>
         <button
           onClick={onAnalyze}
           disabled={!isCollected}
-          className="rounded bg-emerald-600 px-3 py-1 text-xs font-semibold text-white disabled:cursor-not-allowed disabled:bg-slate-700"
+          className="rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-bold text-white disabled:cursor-not-allowed disabled:bg-slate-700 disabled:text-slate-400 hover:bg-emerald-500 transition-colors min-h-[44px]"
         >
-          Analyze
+          ⚗️ Analyze
         </button>
       </div>
     </article>
