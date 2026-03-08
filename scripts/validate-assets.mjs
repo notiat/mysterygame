@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import manifest from '../src/stories/terminal-velocity/assets/manifest.json' assert { type: 'json' };
+import manifest from '../src/stories/terminal-velocity/assets/manifest.json' with { type: 'json' };
 
 const root = process.cwd();
 const errors = [];
