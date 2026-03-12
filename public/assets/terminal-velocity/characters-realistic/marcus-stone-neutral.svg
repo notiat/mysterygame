@@ -1,0 +1,132 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="skinTone" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a98a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#c49a7a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b48a6a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="suitJacket" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a252f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="dramaticLight" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+    
+    <filter id="portraitShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="6" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.6"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Dark interrogation room background -->
+  <rect width="800" height="1000" fill="url(#bgGrad)"/>
+  
+  <!-- Dramatic lighting -->
+  <ellipse cx="400" cy="250" rx="350" ry="400" fill="url(#dramaticLight)"/>
+  
+  <!-- Figure (shoulders and torso) -->
+  <g filter="url(#portraitShadow)">
+    <!-- Suit jacket -->
+    <ellipse cx="400" cy="850" rx="320" ry="200" fill="url(#suitJacket)"/>
+    <rect x="80" y="700" width="640" height="300" fill="url(#suitJacket)"/>
+    
+    <!-- White shirt/collar -->
+    <path d="M 350 750 L 380 820 L 420 820 L 450 750 Z" fill="#f0f0f0"/>
+    <ellipse cx="400" cy="750" rx="50" ry="15" fill="#f0f0f0"/>
+    
+    <!-- Tie -->
+    <rect x="385" y="760" width="30" height="120" fill="#1a252f"/>
+    <polygon points="400,750 385,760 415,760" fill="#2c3e50"/>
+    
+    <!-- Neck -->
+    <ellipse cx="400" cy="740" rx="45" ry="60" fill="url(#skinTone)"/>
+    
+    <!-- Head/Face -->
+    <ellipse cx="400" cy="450" rx="160" ry="200" fill="url(#skinTone)"/>
+    
+    <!-- Ears -->
+    <ellipse cx="250" cy="450" rx="25" ry="35" fill="#c49a7a"/>
+    <ellipse cx="550" cy="450" rx="25" ry="35" fill="#c49a7a"/>
+    
+    <!-- Hair (dark, slightly messy) -->
+    <ellipse cx="400" cy="280" rx="170" ry="100" fill="#2c2c2c"/>
+    <ellipse cx="350" cy="320" rx="90" ry="70" fill="#2c2c2c"/>
+    <ellipse cx="450" cy="320" rx="90" ry="70" fill="#2c2c2c"/>
+    <ellipse cx="400" cy="350" rx="140" ry="60" fill="#2c2c2c"/>
+    
+    <!-- Forehead highlight -->
+    <ellipse cx="400" cy="380" rx="80" ry="30" fill="#ffffff" opacity="0.1"/>
+    
+    <!-- Eyebrows (furrowed, intense) -->
+    <path d="M 310 410 Q 330 400 350 405" fill="none" stroke="#1a1a1a" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 450 405 Q 470 400 490 410" fill="none" stroke="#1a1a1a" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Eyes (intense, calculating) -->
+    <ellipse cx="330" cy="445" rx="30" ry="20" fill="#ffffff"/>
+    <ellipse cx="470" cy="445" rx="30" ry="20" fill="#ffffff"/>
+    <circle cx="328" cy="445" r="15" fill="#3a4a5a"/>
+    <circle cx="472" cy="445" r="15" fill="#3a4a5a"/>
+    <circle cx="325" cy="443" r="8" fill="#000000"/>
+    <circle cx="475" cy="443" r="8" fill="#000000"/>
+    <!-- Highlights in eyes -->
+    <circle cx="322" cy="440" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="478" cy="440" r="3" fill="#ffffff" opacity="0.8"/>
+    
+    <!-- Under-eye shadows (tired, stressed) -->
+    <ellipse cx="330" cy="465" rx="35" ry="8" fill="#000000" opacity="0.15"/>
+    <ellipse cx="470" cy="465" rx="35" ry="8" fill="#000000" opacity="0.15"/>
+    
+    <!-- Nose -->
+    <ellipse cx="400" cy="490" rx="18" ry="35" fill="#b48a6a"/>
+    <ellipse cx="390" cy="510" rx="6" ry="8" fill="#9a7a5a" opacity="0.5"/>
+    <ellipse cx="410" cy="510" rx="6" ry="8" fill="#9a7a5a" opacity="0.5"/>
+    
+    <!-- Mouth (stern, tight-lipped) -->
+    <ellipse cx="400" cy="560" rx="45" ry="15" fill="#8a5a4a"/>
+    <line x1="355" y1="560" x2="445" y2="560" stroke="#6a3a2a" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Facial definition (cheekbones, jaw) -->
+    <path d="M 260 480 Q 280 520 300 560" fill="none" stroke="#000000" opacity="0.08" stroke-width="3"/>
+    <path d="M 540 480 Q 520 520 500 560" fill="none" stroke="#000000" opacity="0.08" stroke-width="3"/>
+    
+    <!-- Stubble shadow -->
+    <ellipse cx="400" cy="580" rx="100" ry="50" fill="#1a1a1a" opacity="0.15"/>
+    
+    <!-- Jaw line -->
+    <ellipse cx="400" cy="650" rx="130" ry="60" fill="url(#skinTone)"/>
+    <path d="M 270 620 Q 400 680 530 620" fill="url(#skinTone)"/>
+  </g>
+  
+  <!-- Name plate -->
+  <rect x="50" y="850" width="700" height="120" rx="8" fill="#0a0a0a" stroke="#2c3e50" stroke-width="4" opacity="0.95"/>
+  <text x="400" y="895" fill="#e8e8e8" font-family="Arial" font-size="36" font-weight="bold" text-anchor="middle">MARCUS STONE</text>
+  <text x="400" y="935" fill="#95a5a6" font-family="Arial" font-size="22" text-anchor="middle">Chief Flight Attendant</text>
+  <text x="400" y="960" fill="#7f8c8d" font-family="'Courier New'" font-size="16" text-anchor="middle">15 Years Experience | Security Clearance: Level 3</text>
+  
+  <!-- Status indicator -->
+  <circle cx="720" cy="80" r="35" fill="#e74c3c" opacity="0.8"/>
+  <text x="720" y="90" fill="#fff" font-family="Arial" font-size="28" font-weight="bold" text-anchor="middle">!</text>
+  
+  <!-- Interview tag -->
+  <rect x="50" y="50" width="250" height="80" rx="6" fill="#e74c3c" opacity="0.9"/>
+  <text x="175" y="80" fill="#fff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">SUSPECT</text>
+  <text x="175" y="110" fill="#fff" font-family="'Courier New'" font-size="20" font-weight="bold" text-anchor="middle">INTERVIEW #3</text>
+  
+</svg>

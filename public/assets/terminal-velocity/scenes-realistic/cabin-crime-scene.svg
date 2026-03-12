@@ -1,0 +1,162 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cabinWall" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a2332;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2a3442;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a2332;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3540;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1f28;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="seatLeather" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b7355;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#6b5a45;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4b3a25;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="emergencyLight" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ff0000;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ff0000;stop-opacity:0" />
+    </linearGradient>
+    
+    <radialGradient id="spotLight">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+    
+    <filter id="dramaticShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="20"/>
+      <feOffset dx="0" dy="10" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.7"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Dark cabin background -->
+  <rect width="1920" height="1080" fill="#0a0d12"/>
+  
+  <!-- Cabin walls with paneling -->
+  <rect x="0" y="0" width="1920" height="700" fill="url(#cabinWall)"/>
+  
+  <!-- Overhead compartments -->
+  <rect x="0" y="0" width="1920" height="120" fill="#1a1f28" stroke="#2a3442" stroke-width="3"/>
+  <line x1="400" y1="0" x2="400" y2="120" stroke="#2a3442" stroke-width="2"/>
+  <line x1="800" y1="0" x2="800" y2="120" stroke="#2a3442" stroke-width="2"/>
+  <line x1="1200" y1="0" x2="1200" y2="120" stroke="#2a3442" stroke-width="2"/>
+  <line x1="1600" y1="0" x2="1600" y2="120" stroke="#2a3442" stroke-width="2"/>
+  
+  <!-- Emergency lighting (red glow) -->
+  <ellipse cx="200" cy="80" rx="150" ry="120" fill="url(#emergencyLight)" opacity="0.4"/>
+  <ellipse cx="960" cy="80" rx="200" ry="150" fill="url(#emergencyLight)" opacity="0.5"/>
+  <ellipse cx="1700" cy="80" rx="150" ry="120" fill="url(#emergencyLight)" opacity="0.4"/>
+  
+  <!-- Emergency light fixtures -->
+  <rect x="180" y="60" width="40" height="15" rx="3" fill="#ff0000" opacity="0.9"/>
+  <rect x="940" y="60" width="40" height="15" rx="3" fill="#ff0000" opacity="0.9"/>
+  <rect x="1680" y="60" width="40" height="15" rx="3" fill="#ff0000" opacity="0.9"/>
+  
+  <!-- Floor -->
+  <rect x="0" y="700" width="1920" height="380" fill="url(#floorGrad)"/>
+  
+  <!-- Floor panels -->
+  <line x1="0" y1="900" x2="1920" y2="900" stroke="#3a4552" stroke-width="2" opacity="0.5"/>
+  <line x1="960" y1="700" x2="960" y2="1080" stroke="#3a4552" stroke-width="3" opacity="0.6"/>
+  
+  <!-- Left row of seats -->
+  <g filter="url(#dramaticShadow)">
+    <!-- Seat 1A (empty) -->
+    <rect x="120" y="250" width="280" height="350" rx="20" fill="url(#seatLeather)" stroke="#3a3a3a" stroke-width="3"/>
+    <rect x="140" y="270" width="240" height="200" rx="15" fill="#6b5a45"/>
+    <rect x="140" y="480" width="240" height="100" rx="15" fill="#5b4a35"/>
+    
+    <!-- Seat 1B (victim's seat - blood stains) -->
+    <rect x="450" y="250" width="280" height="350" rx="20" fill="url(#seatLeather)" stroke="#3a3a3a" stroke-width="3"/>
+    <rect x="470" y="270" width="240" height="200" rx="15" fill="#6b5a45"/>
+    <rect x="470" y="480" width="240" height="100" rx="15" fill="#5b4a35"/>
+    
+    <!-- Blood spatter on seat -->
+    <ellipse cx="590" cy="380" rx="50" ry="60" fill="#4a0000" opacity="0.6"/>
+    <ellipse cx="610" cy="420" rx="35" ry="45" fill="#3a0000" opacity="0.7"/>
+    <ellipse cx="560" cy="350" rx="20" ry="25" fill="#5a0000" opacity="0.5"/>
+    
+    <!-- Victim outline (chalk/marker) -->
+    <path d="M 590 350 L 600 320 L 580 320 L 590 350 Z" fill="none" stroke="#ffff00" stroke-width="4" stroke-dasharray="10,5"/>
+    <ellipse cx="590" cy="310" rx="30" ry="35" fill="none" stroke="#ffff00" stroke-width="4" stroke-dasharray="10,5"/>
+  </g>
+  
+  <!-- Right row of seats -->
+  <g filter="url(#dramaticShadow)">
+    <!-- Seat 2A -->
+    <rect x="1200" y="250" width="280" height="350" rx="20" fill="url(#seatLeather)" stroke="#3a3a3a" stroke-width="3"/>
+    <rect x="1220" y="270" width="240" height="200" rx="15" fill="#6b5a45"/>
+    <rect x="1220" y="480" width="240" height="100" rx="15" fill="#5b4a35"/>
+    
+    <!-- Seat 2B -->
+    <rect x="1530" y="250" width="280" height="350" rx="20" fill="url(#seatLeather)" stroke="#3a3a3a" stroke-width="3"/>
+    <rect x="1550" y="270" width="240" height="200" rx="15" fill="#6b5a45"/>
+    <rect x="1550" y="480" width="240" height="100" rx="15" fill="#5b4a35"/>
+  </g>
+  
+  <!-- Aisle -->
+  <rect x="780" y="250" width="360" height="750" fill="#1a1f28" opacity="0.8"/>
+  
+  <!-- Evidence markers on floor -->
+  <g>
+    <!-- Marker 1 - EpiPen location -->
+    <circle cx="900" cy="750" r="60" fill="#ffff00" opacity="0.3"/>
+    <circle cx="900" cy="750" r="50" fill="none" stroke="#ffff00" stroke-width="4"/>
+    <text x="900" y="765" fill="#ffff00" font-family="Arial" font-size="40" font-weight="bold" text-anchor="middle">1</text>
+    
+    <!-- Marker 2 - Glass location -->
+    <circle cx="650" cy="620" r="60" fill="#ffff00" opacity="0.3"/>
+    <circle cx="650" cy="620" r="50" fill="none" stroke="#ffff00" stroke-width="4"/>
+    <text x="650" y="635" fill="#ffff00" font-family="Arial" font-size="40" font-weight="bold" text-anchor="middle">2</text>
+    
+    <!-- Marker 3 -->
+    <circle cx="1050" cy="680" r="60" fill="#ffff00" opacity="0.3"/>
+    <circle cx="1050" cy="680" r="50" fill="none" stroke="#ffff00" stroke-width="4"/>
+    <text x="1050" y="695" fill="#ffff00" font-family="Arial" font-size="40" font-weight="bold" text-anchor="middle">3</text>
+  </g>
+  
+  <!-- Forensic spotlight -->
+  <ellipse cx="960" cy="400" rx="500" ry="400" fill="url(#spotLight)"/>
+  
+  <!-- Window views (dark sky outside) -->
+  <g opacity="0.6">
+    <rect x="80" y="150" width="120" height="80" rx="8" fill="#0a1520" stroke="#2a3442" stroke-width="2"/>
+    <rect x="420" y="150" width="120" height="80" rx="8" fill="#0a1520" stroke="#2a3442" stroke-width="2"/>
+    <rect x="1380" y="150" width="120" height="80" rx="8" fill="#0a1520" stroke="#2a3442" stroke-width="2"/>
+    <rect x="1720" y="150" width="120" height="80" rx="8" fill="#0a1520" stroke="#2a3442" stroke-width="2"/>
+  </g>
+  
+  <!-- Crime scene tape -->
+  <rect x="0" y="0" width="1920" height="50" fill="#ffff00" opacity="0.3"/>
+  <text x="960" y="33" fill="#000" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">⚠ CRIME SCENE - DO NOT CROSS ⚠ CRIME SCENE - DO NOT CROSS ⚠</text>
+  
+  <rect x="0" y="1030" width="1920" height="50" fill="#ffff00" opacity="0.3"/>
+  <text x="960" y="1063" fill="#000" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">⚠ FEDERAL INVESTIGATION - RESTRICTED AREA ⚠</text>
+  
+  <!-- Case information overlay -->
+  <rect x="50" y="850" width="400" height="180" rx="8" fill="#0a0a0a" stroke="#ff0000" stroke-width="4" opacity="0.95"/>
+  <text x="250" y="890" fill="#ff0000" font-family="'Courier New'" font-size="20" font-weight="bold" text-anchor="middle">ACTIVE CRIME SCENE</text>
+  <line x1="70" y1="905" x2="430" y2="905" stroke="#ff0000" stroke-width="2"/>
+  <text x="70" y="935" fill="#e8e8e8" font-family="'Courier New'" font-size="16">Case: TGV-2026-47</text>
+  <text x="70" y="965" fill="#e8e8e8" font-family="'Courier New'" font-size="16">Victim: A. Steele</text>
+  <text x="70" y="995" fill="#e8e8e8" font-family="'Courier New'" font-size="16">Location: Cabin 1st Class</text>
+  <text x="70" y="1020" fill="#ff6b6b" font-family="'Courier New'" font-size="14" font-weight="bold">Status: HOMICIDE</text>
+  
+  <!-- Photo ID tag -->
+  <rect x="1470" y="850" width="400" height="120" rx="8" fill="#0a0a0a" stroke="#4a90e2" stroke-width="3" opacity="0.95"/>
+  <text x="1670" y="890" fill="#4a90e2" font-family="'Courier New'" font-size="18" text-anchor="middle">FORENSIC PHOTOGRAPHY</text>
+  <text x="1670" y="925" fill="#e8e8e8" font-family="'Courier New'" font-size="16" text-anchor="middle">ID: CRIME-SCENE-047B</text>
+  <text x="1670" y="955" fill="#888" font-family="'Courier New'" font-size="14" text-anchor="middle">Terminal Velocity Investigation</text>
+  
+</svg>

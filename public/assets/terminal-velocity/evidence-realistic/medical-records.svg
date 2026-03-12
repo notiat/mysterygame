@@ -1,0 +1,129 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="deskBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2419;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1410;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="paper" x1="0%" y1="0%" x2="5%" y2="100%">
+      <stop offset="0%" style="stop-color:#fffef8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8f6f0;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="paperShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="2" dy="8" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <pattern id="paperTexture" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="4" fill="#f8f6f0"/>
+      <circle cx="1" cy="1" r="0.3" fill="#e8e6e0" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Desk surface -->
+  <rect width="1024" height="768" fill="url(#deskBg)"/>
+  
+  <!-- Wood grain texture -->
+  <g opacity="0.1">
+    <line x1="0" y1="100" x2="1024" y2="120" stroke="#8b7355" stroke-width="2"/>
+    <line x1="0" y1="250" x2="1024" y2="265" stroke="#8b7355" stroke-width="1.5"/>
+    <line x1="0" y1="450" x2="1024" y2="440" stroke="#8b7355" stroke-width="2"/>
+    <line x1="0" y1="600" x2="1024" y2="615" stroke="#8b7355" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Evidence tag -->
+  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#e74c3c" stroke-width="3" opacity="0.95"/>
+  <text x="160" y="80" fill="#e74c3c" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">CONFIDENTIAL</text>
+  <text x="160" y="115" fill="#e74c3c" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">D-04</text>
+  
+  <!-- Main medical file folder -->
+  <g filter="url(#paperShadow)">
+    <!-- Folder back -->
+    <rect x="120" y="150" width="720" height="550" rx="6" fill="#d4a373" stroke="#a67c52" stroke-width="3"/>
+    
+    <!-- Folder tab -->
+    <rect x="150" y="120" width="250" height="40" rx="4" fill="#c4936b"/>
+    <text x="275" y="146" fill="#fff" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">MEDICAL RECORDS</text>
+    
+    <!-- Main documents stack -->
+    <rect x="160" y="190" width="680" height="490" rx="4" fill="url(#paper)" stroke="#ccc" stroke-width="2"/>
+    <rect x="155" y="185" width="680" height="490" rx="4" fill="url(#paper)" stroke="#ccc" stroke-width="2"/>
+    <rect x="150" y="180" width="680" height="490" rx="4" fill="url(#paper)" stroke="#ccc" stroke-width="2"/>
+    
+    <!-- Header -->
+    <rect x="170" y="200" width="640" height="80" fill="#2c3e50"/>
+    <text x="490" y="230" fill="#ecf0f1" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle">CONFIDENTIAL MEDICAL RECORD</text>
+    <text x="490" y="260" fill="#bdc3c7" font-family="Arial" font-size="14" text-anchor="middle">Aviation Medical Division - Federal Transport Safety Board</text>
+    
+    <!-- Patient info section -->
+    <text x="190" y="320" fill="#2c3e50" font-family="Arial" font-size="16" font-weight="bold">PATIENT INFORMATION</text>
+    <line x1="190" y1="325" x2="790" y2="325" stroke="#ccc" stroke-width="1"/>
+    
+    <text x="190" y="355" fill="#333" font-family="'Courier New'" font-size="14">Name: STEELE, Alexander James</text>
+    <text x="190" y="380" fill="#333" font-family="'Courier New'" font-size="14">DOB: 1978-04-15</text>
+    <text x="190" y="405" fill="#333" font-family="'Courier New'" font-size="14">License: ATP-3847262</text>
+    <text x="500" y="355" fill="#333" font-family="'Courier New'" font-size="14">Status: ACTIVE</text>
+    <text x="500" y="380" fill="#333" font-family="'Courier New'" font-size="14">Class: First Class Medical</text>
+    <text x="500" y="405" fill="#333" font-family="'Courier New'" font-size="14">Exp: 2026-08-31</text>
+    
+    <!-- Critical conditions section -->
+    <rect x="170" y="430" width="640" height="200" fill="#fff5f5" stroke="#e74c3c" stroke-width="3"/>
+    <text x="190" y="460" fill="#c0392b" font-family="Arial" font-size="16" font-weight="bold">⚠ CRITICAL MEDICAL CONDITIONS</text>
+    <line x1="190" y1="465" x2="790" y2="465" stroke="#e74c3c" stroke-width="2"/>
+    
+    <text x="190" y="495" fill="#e74c3c" font-family="Arial" font-size="15" font-weight="bold">SEVERE ALLERGY - PEANUTS/TREE NUTS</text>
+    <text x="190" y="520" fill="#333" font-family="'Courier New'" font-size="13">Classification: Life-threatening (Anaphylaxis)</text>
+    <text x="190" y="540" fill="#333" font-family="'Courier New'" font-size="13">First Incident: 2014-06-22</text>
+    <text x="190" y="560" fill="#333" font-family="'Courier New'" font-size="13">Last Reaction: 2024-11-03 (hospitalized 4 days)</text>
+    
+    <rect x="190" y="575" width="600" height="40" fill="#ffe6e6" stroke="#e74c3c" stroke-width="2"/>
+    <text x="490" y="598" fill="#c0392b" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">MUST CARRY EPINEPHRINE AUTO-INJECTOR AT ALL TIMES</text>
+    
+    <!-- Handwritten note annotation -->
+    <g transform="rotate(-8 700 580)">
+      <rect x="600" y="480" width="200" height="120" rx="3" fill="#ffeb3b" opacity="0.95" stroke="#f9a825" stroke-width="2"/>
+      <text x="615" y="510" fill="#d32f2f" font-family="'Comic Sans MS', cursive" font-size="16" font-weight="bold">Critical info!</text>
+      <text x="615" y="535" fill="#333" font-family="'Comic Sans MS', cursive" font-size="13">Knows about his</text>
+      <text x="615" y="555" fill="#333" font-family="'Comic Sans MS', cursive" font-size="13">allergy - always</text>
+      <text x="615" y1="575" fill="#333" font-family="'Comic Sans MS', cursive" font-size="13">carries EpiPen</text>
+    </g>
+  </g>
+  
+  <!-- Coffee cup stain -->
+  <ellipse cx="280" cy="580" rx="45" ry="40" fill="#8b6f47" opacity="0.2" transform="rotate(15 280 580)"/>
+  <ellipse cx="285" cy="582" rx="35" ry="32" fill="#6b5437" opacity="0.15" transform="rotate(15 285 582)"/>
+  
+  <!-- Stamps and markings -->
+  <g opacity="0.6">
+    <!-- CONFIDENTIAL stamp -->
+    <rect x="680" y="280" width="140" height="50" rx="3" fill="none" stroke="#e74c3c" stroke-width="4" transform="rotate(12 750 305)"/>
+    <text x="750" y="312" fill="#e74c3c" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" transform="rotate(12 750 312)">CONFIDENTIAL</text>
+  </g>
+  
+  <!-- Paperclip -->
+  <path d="M 750 170 Q 760 160, 770 170 L 770 240 Q 770 255, 760 255 Q 750 255, 750 240 L 750 180 Q 750 175, 755 175 Q 760 175, 760 180 L 760 230" 
+        fill="none" stroke="#a0a0a0" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Evidence markers -->
+  <circle cx="400" cy="550" r="25" fill="none" stroke="#ff00ff" stroke-width="3" stroke-dasharray="5,5"/>
+  <text x="400" y="558" fill="#ff00ff" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">1</text>
+  
+  <line x1="425" y1="540" x2="520" y2="470" stroke="#ff00ff" stroke-width="2"/>
+  <rect x="520" y="440" width="180" height="35" rx="3" fill="#0a0a0a" stroke="#ff00ff" stroke-width="2" opacity="0.9"/>
+  <text x="610" y="463" fill="#ff00ff" font-family="Arial" font-size="13" font-weight="bold" text-anchor="middle">Known weakness</text>
+  
+  <!-- Case file reference -->
+  <rect x="50" y="620" width="200" height="90" rx="4" fill="#0a0a0a" stroke="#4a90e2" stroke-width="2" opacity="0.95"/>
+  <text x="150" y="650" fill="#4a90e2" font-family="'Courier New'" font-size="12" text-anchor="middle">CASE FILE</text>
+  <text x="150" y="675" fill="#e8e8e8" font-family="'Courier New'" font-size="18" font-weight="bold" text-anchor="middle">TGV-2026-47</text>
+  <text x="150" y="695" fill="#888" font-family="'Courier New'" font-size="11" text-anchor="middle">Terminal Velocity</text>
+  
+</svg>

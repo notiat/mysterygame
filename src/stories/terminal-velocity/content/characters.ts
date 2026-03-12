@@ -34,7 +34,7 @@ export const terminalVelocityCharacters: Character[] = [
     age: 42,
     bio: 'Former military contractor with debt issues and a short fuse.',
     truth: 'Negligent and distracted on phone, but not the killer.',
-    portrait: '/assets/terminal-velocity/characters/marcus-stone-neutral.svg',
+    portrait: '/assets/terminal-velocity/characters-realistic/marcus-stone-neutral.svg',
     isGuilty: false
   },
   {

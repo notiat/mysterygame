@@ -1,0 +1,122 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tableBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1419;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06080b;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="caseInterior" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f1a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="metalShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b8b8b8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e8e8e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8b8b8;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="deepShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+      <feOffset dx="0" dy="8" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.6"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <radialGradient id="lightBeam" cx="50%" cy="40%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="1024" height="768" fill="url(#tableBg)"/>
+  
+  <!-- Light beam -->
+  <ellipse cx="512" cy="300" rx="500" ry="400" fill="url(#lightBeam)"/>
+  
+  <!-- Evidence marker -->
+  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#ff3333" stroke-width="3" opacity="0.95"/>
+  <text x="160" y="80" fill="#ff3333" font-family="'Courier New', monospace" font-size="16" font-weight="bold" text-anchor="middle">⚠ CLASSIFIED ⚠</text>
+  <text x="160" y="110" fill="#ff3333" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">B-12</text>
+  
+  <!-- Main briefcase -->
+  <g filter="url(#deepShadow)">
+    <!-- Case exterior -->
+    <rect x="150" y="180" width="700" height="420" rx="15" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="4"/>
+    
+    <!-- Case interior (velvet lining) -->
+    <rect x="170" y="200" width="660" height="380" rx="10" fill="url(#caseInterior)"/>
+    
+    <!-- Foam cutouts for items -->
+    <rect x="200" y="240" width="280" height="120" rx="8" fill="#0a0a14" stroke="#1a1a2e" stroke-width="2"/>
+    <rect x="500" y="240" width="300" height="120" rx="8" fill="#0a0a14" stroke="#1a1a2e" stroke-width="2"/>
+    <rect x="200" y="380" width="600" height="180" rx="8" fill="#0a0a14" stroke="#1a1a2e" stroke-width="2"/>
+    
+    <!-- Syringe in top left -->
+    <g>
+      <rect x="220" y="270" width="240" height="20" rx="10" fill="url(#metalShine)" opacity="0.9"/>
+      <rect x="450" y="265" width="30" height="30" rx="3" fill="#d4d4d4"/>
+      <circle cx="465" cy="280" r="8" fill="#888"/>
+      <rect x="210" y="276" width="15" height="8" rx="2" fill="#c0c0c0"/>
+      <line x1="225" y1="280" x2="215" y2="280" stroke="#ff0000" stroke-width="2"/>
+      <!-- Liquid inside -->
+      <rect x="230" y="275" width="200" height="10" rx="5" fill="#4a90e2" opacity="0.6"/>
+    </g>
+    
+    <!-- Vial in top right -->
+    <g>
+      <rect x="530" y="260" width="60" height="90" rx="8" fill="#e8e8e8" opacity="0.85"/>
+      <rect x="540" y="270" width="40" height="70" rx="4" fill="#87ceeb" opacity="0.7"/>
+      <circle cx="560" cy="260" r="18" fill="#d4d4d4"/>
+      <text x="560" y="325" fill="#333" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle">EPINEPH</text>
+    </g>
+    
+    <!-- Gloves in top right -->
+    <ellipse cx="680" cy="300" rx="80" ry="40" fill="#6b9bd1" opacity="0.7"/>
+    <ellipse cx="720" cy="300" rx="70" ry="35" fill="#6b9bd1" opacity="0.6"/>
+    
+    <!-- Documents/papers in bottom -->
+    <rect x="220" y="400" width="560" height="140" rx="4" fill="#f4f4f4"/>
+    <!-- Text on documents -->
+    <text x="240" y="430" fill="#333" font-family="'Courier New'" font-size="14" font-weight="bold">CONFIDENTIAL MEDICAL RECORDS</text>
+    <line x1="240" y1="440" x2="760" y2="440" stroke="#ccc" stroke-width="1"/>
+    <text x="240" y="465" fill="#666" font-family="'Courier New'" font-size="11">Subject: Alexander Steele</text>
+    <text x="240" y="485" fill="#666" font-family="'Courier New'" font-size="11">Condition: Severe Allergy - Peanuts</text>
+    <text x="240" y="505" fill="#666" font-family="'Courier New'" font-size="11">Prescribed: EpiPen 0.3mg</text>
+    <text x="240" y="525" fill="#ff0000" font-family="'Courier New'" font-size="11" font-weight="bold">⚠ FATAL IF UNTREATED</text>
+    
+    <!-- Sticky note with handwriting -->
+    <rect x="620" y="420" width="140" height="100" rx="2" fill="#ffeb3b" opacity="0.9"/>
+    <text x="630" y="445" fill="#333" font-family="'Comic Sans MS', cursive" font-size="13" font-style="italic">Practice run</text>
+    <text x="630" y="465" fill="#333" font-family="'Comic Sans MS', cursive" font-size="13" font-style="italic">successful.</text>
+    <text x="630" y="490" fill="#ff0000" font-family="'Comic Sans MS', cursive" font-size="13" font-style="italic">Ready for</text>
+    <text x="630" y="510" fill="#ff0000" font-family="'Comic Sans MS', cursive" font-size="13" font-style="italic">real thing.</text>
+  </g>
+  
+  <!-- Case clasps -->
+  <rect x="320" y="175" width="40" height="15" rx="3" fill="#888" stroke="#666" stroke-width="1"/>
+  <rect x="640" y="175" width="40" height="15" rx="3" fill="#888" stroke="#666" stroke-width="1"/>
+  
+  <!-- Warning tape -->
+  <rect x="0" y="700" width="1024" height="35" fill="#ff0000" opacity="0.3"/>
+  <text x="512" y="723" fill="#fff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">⚠ EVIDENCE - HOMICIDE INVESTIGATION ⚠</text>
+  
+  <!-- Fingerprint overlay -->
+  <g opacity="0.3">
+    <ellipse cx="380" cy="500" rx="40" ry="50" fill="none" stroke="#00ff00" stroke-width="1.5"/>
+    <ellipse cx="380" cy="500" rx="32" ry="42" fill="none" stroke="#00ff00" stroke-width="1"/>
+    <ellipse cx="380" cy="500" rx="24" ry="34" fill="none" stroke="#00ff00" stroke-width="1"/>
+  </g>
+  
+  <!-- Photo number marker -->
+  <rect x="850" y="50" width="140" height="80" rx="4" fill="#000" stroke="#00ff00" stroke-width="2"/>
+  <text x="920" y="75" fill="#00ff00" font-family="'Courier New'" font-size="14" text-anchor="middle">PHOTO ID:</text>
+  <text x="920" y="105" fill="#00ff00" font-family="'Courier New'" font-size="22" font-weight="bold" text-anchor="middle">2026-47B</text>
+  
+</svg>

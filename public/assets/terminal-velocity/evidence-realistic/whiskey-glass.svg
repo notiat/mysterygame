@@ -1,0 +1,141 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tableSurface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#12151a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#08090c;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="glassBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.15" />
+      <stop offset="40%" style="stop-color:#ffffff;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.1" />
+    </linearGradient>
+    
+    <linearGradient id="whiskey" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a574;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#8b6f47;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <linearGradient id="glassShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+    
+    <radialGradient id="spotlight" cx="50%" cy="35%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    </radialGradient>
+    
+    <filter id="glassShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="15"/>
+      <feOffset dx="0" dy="10" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.5"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1024" height="768" fill="url(#tableSurface)"/>
+  
+  <!-- Spotlight -->
+  <ellipse cx="512" cy="300" rx="480" ry="380" fill="url(#spotlight)"/>
+  
+  <!-- Evidence tag -->
+  <rect x="50" y="50" width="200" height="85" rx="4" fill="#0a0a0a" stroke="#4a90e2" stroke-width="2" opacity="0.95"/>
+  <text x="150" y="80" fill="#4a90e2" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">EVIDENCE</text>
+  <text x="150" y="115" fill="#4a90e2" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">C-03</text>
+  
+  <!-- Glass with shadow -->
+  <g filter="url(#glassShadow)">
+    <!-- Glass base -->
+    <ellipse cx="512" cy="580" rx="90" ry="15" fill="#1a1a1a" opacity="0.6"/>
+    
+    <!-- Glass body -->
+    <path d="M 422 580 L 440 300 L 584 300 L 602 580 Z" fill="url(#glassBody)" stroke="#a8c7dc" stroke-width="3" opacity="0.7"/>
+    
+    <!-- Whiskey liquid -->
+    <path d="M 430 560 L 442 450 L 582 450 L 594 560 Z" fill="url(#whiskey)"/>
+    
+    <!-- Whiskey surface (meniscus) -->
+    <ellipse cx="512" cy="450" rx="70" ry="8" fill="#d4a574" opacity="0.5"/>
+    
+    <!-- Glass rim -->
+    <ellipse cx="512" cy="300" rx="81" ry="12" fill="none" stroke="#d0e8f0" stroke-width="4" opacity="0.8"/>
+    <ellipse cx="512" cy="300" rx="81" ry="12" fill="#ffffff" opacity="0.1"/>
+    
+    <!-- Shine on glass -->
+    <ellipse cx="470" cy="380" rx="25" ry="120" fill="url(#glassShine)" opacity="0.8"/>
+    
+    <!-- Ice cube -->
+    <g>
+      <rect x="490" y="500" width="50" height="45" rx="4" fill="#e8f4f8" opacity="0.7" stroke="#b8d4e0" stroke-width="1.5"/>
+      <rect x="495" y="505" width="20" height="20" rx="2" fill="#ffffff" opacity="0.5"/>
+    </g>
+    
+    <!-- Condensation drops -->
+    <ellipse cx="445" cy="420" rx="4" ry="6" fill="#c8d8e8" opacity="0.6"/>
+    <ellipse cx="455" cy="480" rx="3" ry="5" fill="#c8d8e8" opacity="0.6"/>
+    <ellipse cx="580" cy="400" rx="3" ry="5" fill="#c8d8e8" opacity="0.7"/>
+    <ellipse cx="570" cy="520" rx="4" ry="6" fill="#c8d8e8" opacity="0.5"/>
+  </g>
+  
+  <!-- Fingerprints on glass (visible under forensic light) -->
+  <g opacity="0.4">
+    <!-- Thumb print -->
+    <ellipse cx="460" cy="380" rx="35" ry="45" fill="none" stroke="#00ff00" stroke-width="1.5" transform="rotate(-15 460 380)"/>
+    <ellipse cx="460" cy="380" rx="28" ry="38" fill="none" stroke="#00ff00" stroke-width="1" transform="rotate(-15 460 380)"/>
+    <ellipse cx="460" cy="380" rx="21" ry="31" fill="none" stroke="#00ff00" stroke-width="0.8" transform="rotate(-15 460 380)"/>
+    <ellipse cx="460" cy="380" rx="14" ry="24" fill="none" stroke="#00ff00" stroke-width="0.6" transform="rotate(-15 460 380)"/>
+    
+    <!-- Finger smudge -->
+    <ellipse cx="550" cy="450" rx="20" ry="35" fill="none" stroke="#00ff00" stroke-width="1.2" transform="rotate(25 550 450)"/>
+    <ellipse cx="550" cy="450" rx="15" ry="28" fill="none" stroke="#00ff00" stroke-width="0.8" transform="rotate(25 550 450)"/>
+  </g>
+  
+  <!-- Residue marker -->
+  <circle cx="500" cy="480" r="8" fill="none" stroke="#ff00ff" stroke-width="2" stroke-dasharray="2,2"/>
+  <line x1="508" y1="473" x2="550" y2="430" stroke="#ff00ff" stroke-width="1.5"/>
+  <text x="560" y="428" fill="#ff00ff" font-family="Arial" font-size="14" font-weight="bold">Trace</text>
+  <text x="560" y="445" fill="#ff00ff" font-family="Arial" font-size="14" font-weight="bold">Compound</text>
+  
+  <!-- Measurement markers -->
+  <g opacity="0.7">
+    <line x1="350" y1="300" x2="350" y2="580" stroke="#ffd700" stroke-width="2"/>
+    <line x1="345" y1="300" x2="355" y2="300" stroke="#ffd700" stroke-width="2"/>
+    <line x1="345" y1="580" x2="355" y2="580" stroke="#ffd700" stroke-width="2"/>
+    <text x="335" y="445" fill="#ffd700" font-family="Arial" font-size="14" text-anchor="end">11.5cm</text>
+  </g>
+  
+  <!-- Lab analysis note -->
+  <rect x="700" y="150" width="270" height="200" rx="6" fill="#1a1f2e" stroke="#4a90e2" stroke-width="2" opacity="0.95"/>
+  <text x="835" y="185" fill="#4a90e2" font-family="'Courier New'" font-size="16" font-weight="bold" text-anchor="middle">LAB ANALYSIS</text>
+  <line x1="720" y1="200" x2="950" y2="200" stroke="#4a90e2" stroke-width="1"/>
+  
+  <text x="720" y="225" fill="#e8e8e8" font-family="'Courier New'" font-size="12">Sample: Liquid residue</text>
+  <text x="720" y="245" fill="#e8e8e8" font-family="'Courier New'" font-size="12">Type: Whiskey + Unknown</text>
+  <text x="720" y="265" fill="#e8e8e8" font-family="'Courier New'" font-size="12">Prints: 2 unique</text>
+  
+  <text x="720" y="295" fill="#ff6b6b" font-family="'Courier New'" font-size="13" font-weight="bold">⚠ TOXIN DETECTED</text>
+  <text x="720" y="315" fill="#ff6b6b" font-family="'Courier New'" font-size="11">Compound: Synthetic</text>
+  <text x="720" y="332" fill="#ff6b6b" font-family="'Courier New'" font-size="11">Concentration: Lethal</text>
+  
+  <!-- Crime scene tape -->
+  <rect x="0" y="0" width="1024" height="35" fill="#ffd700" opacity="0.3"/>
+  <text x="512" y="23" fill="#000" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">⚠ CRIME SCENE - DO NOT DISTURB ⚠</text>
+  
+  <!-- Case reference -->
+  <rect x="800" y="600" width="180" height="70" rx="4" fill="#000" stroke="#4a90e2" stroke-width="2"/>
+  <text x="890" y="625" fill="#4a90e2" font-family="'Courier New'" font-size="13" text-anchor="middle">Case #47-TGV</text>
+  <text x="890" y="645" fill="#e8e8e8" font-family="'Courier New'" font-size="11" text-anchor="middle">Terminal Velocity</text>
+  <text x="890" y="663" fill="#888" font-family="'Courier New'" font-size="10" text-anchor="middle">Victim: A. Steele</text>
+  
+</svg>
