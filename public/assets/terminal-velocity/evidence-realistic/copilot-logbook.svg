@@ -1,0 +1,101 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cockpitBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="leatherBound" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a3a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a1a0a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="bookShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+      <feOffset dx="0" dy="8" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.6"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1024" height="768" fill="url(#cockpitBg)"/>
+  
+  <!-- Evidence tag -->
+  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#4a90e2" stroke-width="3" opacity="0.95"/>
+  <text x="160" y="80" fill="#4a90e2" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">WITNESS RECORD</text>
+  <text x="160" y="115" fill="#4a90e2" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">W-02</text>
+  
+  <!-- Open logbook -->
+  <g filter="url(#bookShadow)">
+    <!-- Book cover/binding (left side visible) -->
+    <rect x="150" y="180" width="40" height="450" rx="4" fill="url(#leatherBound)"/>
+    
+    <!-- Left page -->
+    <rect x="190" y="180" width="310" height="450" rx="0" fill="#f8f6f0" stroke="#d4d0c8" stroke-width="2"/>
+    
+    <!-- Right page (main focus) -->
+    <rect x="500" y="180" width="350" height="450" rx="0" fill="#f8f6f0" stroke="#d4d0c8" stroke-width="2"/>
+    
+    <!-- Spiral binding (center) -->
+    <g opacity="0.4">
+      <circle cx="510" cy="210" r="8" fill="none" stroke="#666" stroke-width="2"/>
+      <circle cx="510" cy="250" r="8" fill="none" stroke="#666" stroke-width="2"/>
+      <circle cx="510" cy="290" r="8" fill="none" stroke="#666" stroke-width="2"/>
+      <circle cx="510" cy="330" r="8" fill="none" stroke="#666" stroke-width="2"/>
+      <circle cx="510" cy="370" r="8" fill="none" stroke="#666" stroke-width="2"/>
+      <circle cx="510" cy="410" r="8" fill="none" stroke="#666" stroke-width="2"/>
+      <circle cx="510" cy="450" r="8" fill="none" stroke="#666" stroke-width="2"/>
+      <circle cx="510" cy="490" r="8" fill="none" stroke="#666" stroke-width="2"/>
+      <circle cx="510" cy="530" r="8" fill="none" stroke="#666" stroke-width="2"/>
+      <circle cx="510" cy="570" r="8" fill="none" stroke="#666" stroke-width="2"/>
+      <circle cx="510" cy="610" r="8" fill="none" stroke="#666" stroke-width="2"/>
+    </g>
+    
+    <!-- Right page content (Rebecca Park's notes) -->
+    <text x="530" y="210" fill="#333" font-family="'Georgia', serif" font-size="16" font-weight="bold">Flight Log - November 12, 2025</text>
+    <line x1="530" y1="215" x2="820" y2="215" stroke="#ccc" stroke-width="1"/>
+    
+    <text x="530" y="240" fill="#1a1a4a" font-family="'Segoe Script', cursive" font-size="13">Co-Pilot: Rebecca Park</text>
+    <text x="530" y="265" fill="#1a1a4a" font-family="'Segoe Script', cursive" font-size="13">Route: Anchorage → Tokyo</text>
+    <text x="530" y="290" fill="#1a1a4a" font-family="'Segoe Script', cursive" font-size="13">Aircraft: N7747A (Private)</text>
+    
+    <line x1="530" y1="305" x2="820" y2="305" stroke="#ccc" stroke-width="1" stroke-dasharray="2,2"/>
+    
+    <text x="530" y="330" fill="#1a1a4a" font-family="'Segoe Script', cursive" font-size="13">18:15 UTC - Cruise altitude stable</text>
+    <text x="530" y="355" fill="#1a1a4a" font-family="'Segoe Script', cursive" font-size="13">18:30 UTC - Passenger video call active</text>
+    
+    <!-- THE KEY ENTRY - circled -->
+    <ellipse cx="675" cy="390" rx="140" ry="30" fill="none" stroke="#ff0000" stroke-width="3"/>
+    <text x="530" y="385" fill="#d32f2f" font-family="'Segoe Script', cursive" font-size="13" font-weight="bold">18:42 UTC - Chloe served Vane at bar</text>
+    <text x="550" y="405" fill="#d32f2f" font-family="'Segoe Script', cursive" font-size="11">(whiskey request during call)</text>
+    
+    <text x="530" y="435" fill="#1a1a4a" font-family="'Segoe Script', cursive" font-size="13">18:58 UTC - Medical emergency alert</text>
+    <text x="530" y="460" fill="#1a1a4a" font-family="'Segoe Script', cursive" font-size="13">19:02 UTC - Passenger unresponsive</text>
+    <text x="530" y="485" fill="#1a1a4a" font-family="'Segoe Script', cursive" font-size="13">19:15 UTC - Emergency descent initiated</text>
+    
+    <line x1="530" y1="500" x2="820" y2="500" stroke="#ccc" stroke-width="1" stroke-dasharray="2,2"/>
+    
+    <text x="530" y="525" fill="#666" font-family="'Segoe Script', cursive" font-size="11">Note: Video call had brief freeze</text>
+    <text x="530" y="545" fill="#666" font-family="'Segoe Script', cursive" font-size="11">around 18:42. Screen glitched ~3 sec.</text>
+    <text x="530" y="565" fill="#666" font-family="'Segoe Script', cursive" font-size="11">Chloe was moving near galley area</text>
+    <text x="530" y="585" fill="#666" font-family="'Segoe Script', cursive" font-size="11">when I glanced back.</text>
+    
+    <text x="530" y="615" fill="#333" font-family="'Segoe Script', cursive" font-size="12" font-style="italic">- R. Park</text>
+  </g>
+  
+  <!-- Forensic annotation arrows -->
+  <line x1="850" y1="390" x2="920" y2="340" stroke="#ff00ff" stroke-width="3"/>
+  <circle cx="930" cy="330" r="35" fill="none" stroke="#ff00ff" stroke-width="4"/>
+  <text x="930" y="340" fill="#ff00ff" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle">!</text>
+  
+  <!-- Analysis box -->
+  <rect x="50" y="640" width="500" height="100" rx="6" fill="#0a0a0a" stroke="#4a90e2" stroke-width="2" opacity="0.95"/>
+  <text x="300" y="670" fill="#4a90e2" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">INDEPENDENT WITNESS ACCOUNT</text>
+  <line x1="70" y1="680" x2="530" y2="680" stroke="#4a90e2" stroke-width="1"/>
+  <text x="70" y="705" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Witness: Co-Pilot Rebecca Park (credible, no motive)</text>
+  <text x="70" y="725" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="11" font-weight="bold">Confirms: Chloe served drink at 18:42 UTC (critical timing)</text>
+  
+</svg>

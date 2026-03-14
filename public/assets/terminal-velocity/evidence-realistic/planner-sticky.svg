@@ -1,0 +1,96 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="deskSurface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+    </linearGradient>
+    <filter id="paperShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="2" dy="6" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1024" height="768" fill="url(#deskSurface)"/>
+  
+  <!-- Evidence tag -->
+  <rect x="50" y="50" width="200" height="85" rx="4" fill="#0a0a0a" stroke="#ffd700" stroke-width="3" opacity="0.95"/>
+  <text x="150" y="80" fill="#ffd700" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">EVIDENCE</text>
+  <text x="150" y="115" fill="#ffd700" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">F-11</text>
+  
+  <!-- Planner (leather bound) -->
+  <g filter="url(#paperShadow)">
+    <rect x="200" y="200" width="600" height="450" rx="8" fill="#3a2a1a" stroke="#2a1a0a" stroke-width="3"/>
+    <rect x="210" y="210" width="580" height="430" rx="6" fill="#f4f0e8"/>
+    
+    <!-- Planner pages with grid -->
+    <g opacity="0.3">
+      <line x1="220" y1="250" x2="780" y2="250" stroke="#ccc" stroke-width="1"/>
+      <line x1="220" y1="290" x2="780" y2="290" stroke="#ccc" stroke-width="1"/>
+      <line x1="220" y1="330" x2="780" y2="330" stroke="#ccc" stroke-width="1"/>
+      <line x1="220" y1="370" x2="780" y2="370" stroke="#ccc" stroke-width="1"/>
+      <line x1="220" y1="410" x2="780" y2="410" stroke="#ccc" stroke-width="1"/>
+      <line x1="220" y1="450" x2="780" y2="450" stroke="#ccc" stroke-width="1"/>
+      <line x1="220" y1="490" x2="780" y2="490" stroke="#ccc" stroke-width="1"/>
+      <line x1="220" y1="530" x2="780" y2="530" stroke="#ccc" stroke-width="1"/>
+      <line x1="220" y1="570" x2="780" y2="570" stroke="#ccc" stroke-width="1"/>
+    </g>
+    
+    <!-- Planner header -->
+    <text x="500" y="235" fill="#333" font-family="'Georgia', serif" font-size="20" font-weight="bold" text-anchor="middle">November 2025</text>
+    
+    <!-- Handwritten notes (Chloe's handwriting) -->
+    <text x="240" y="270" fill="#1a1a4a" font-family="'Comic Sans MS', cursive" font-size="14">Nov 1 - Review Tokyo flight schedule</text>
+    <text x="240" y="310" fill="#1a1a4a" font-family="'Comic Sans MS', cursive" font-size="14">Nov 3 - Finalize equipment checklist</text>
+    <text x="240" y="350" fill="#1a1a4a" font-family="'Comic Sans MS', cursive" font-size="14">Nov 5 - Last practice run (Trial 8)</text>
+    <text x="240" y="390" fill="#1a1a4a" font-family="'Comic Sans MS', cursive" font-size="14">Nov 7 - Confirm flight manifest</text>
+    <text x="240" y="430" fill="#1a1a4a" font-family="'Comic Sans MS', cursive" font-size="14">Nov 10 - Pack carry-on carefully</text>
+    <text x="240" y="470" fill="#d32f2f" font-family="'Comic Sans MS', cursive" font-size="14" font-weight="bold">Nov 12 - FLIGHT DAY - Stay calm</text>
+    
+    <!-- Additional notes -->
+    <text x="240" y="520" fill="#666" font-family="'Comic Sans MS', cursive" font-size="12">Remember: video call at 18:42 UTC</text>
+    <text x="240" y="545" fill="#666" font-family="'Comic Sans MS', cursive" font-size="12">Window = 3-4 minutes max</text>
+    <text x="240" y="570" fill="#666" font-family="'Comic Sans MS', cursive" font-size="12">Water splash technique - clean up after</text>
+  </g>
+  
+  <!-- THE STICKY NOTE (star of the show) -->
+  <g transform="rotate(-12 650 420)" filter="url(#paperShadow)">
+    <rect x="550" y="320" width="200" height="200" rx="3" fill="#ffeb3b" stroke="#f9a825" stroke-width="2"/>
+    
+    <!-- Adhesive strip at top -->
+    <rect x="550" y="320" width="200" height="20" rx="3" fill="#f9a825" opacity="0.3"/>
+    
+    <!-- Handwritten password -->
+    <text x="650" y="380" fill="#333" font-family="'Comic Sans MS', cursive" font-size="18" text-anchor="middle">Password for</text>
+    <text x="650" y="410" fill="#333" font-family="'Comic Sans MS', cursive" font-size="18" text-anchor="middle">encrypted log:</text>
+    
+    <text x="650" y="460" fill="#d32f2f" font-family="'Comic Sans MS', cursive" font-size="32" font-weight="bold" text-anchor="middle">Gym2024!</text>
+    
+    <text x="650" y="495" fill="#666" font-family="'Comic Sans MS', cursive" font-size="12" text-anchor="middle">(don't forget!)</text>
+  </g>
+  
+  <!-- Evidence marker pointing at sticky note -->
+  <line x1="750" y1="420" x2="850" y2="350" stroke="#ff00ff" stroke-width="3"/>
+  <circle cx="860" cy="340" r="30" fill="none" stroke="#ff00ff" stroke-width="4"/>
+  <text x="860" y="350" fill="#ff00ff" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle">!</text>
+  
+  <!-- Forensic analysis box -->
+  <rect x="50" y="600" width="450" height="120" rx="6" fill="#0a0a0a" stroke="#ffd700" stroke-width="2" opacity="0.95"/>
+  <text x="275" y="630" fill="#ffd700" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">FORENSIC ANALYSIS</text>
+  <line x1="70" y1="640" x2="480" y2="640" stroke="#ffd700" stroke-width="1"/>
+  <text x="70" y="665" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Handwriting: Matches Chloe Evans samples</text>
+  <text x="70" y="685" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Password: Unlocks practice-log.xlsx</text>
+  <text x="70" y="705" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="11" font-weight="bold">Significance: Direct link to premeditation evidence</text>
+  
+  <!-- Case reference -->
+  <rect x="800" y="50" width="180" height="70" rx="4" fill="#000" stroke="#ffd700" stroke-width="2"/>
+  <text x="890" y="75" fill="#ffd700" font-family="'Courier New'" font-size="13" text-anchor="middle">CASE FILE</text>
+  <text x="890" y="100" fill="#e8e8e8" font-family="'Courier New'" font-size="18" font-weight="bold" text-anchor="middle">TGV-2026-47</text>
+  
+</svg>

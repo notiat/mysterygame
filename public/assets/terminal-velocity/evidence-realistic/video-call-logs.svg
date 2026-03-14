@@ -1,0 +1,72 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="terminalBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    <filter id="terminalGlow">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+  
+  <rect width="1024" height="768" fill="url(#terminalBg)"/>
+  
+  <!-- Evidence tag -->
+  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#00ff00" stroke-width="3" opacity="0.95"/>
+  <text x="160" y="80" fill="#00ff00" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">NETWORK LOGS</text>
+  <text x="160" y="115" fill="#00ff00" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">E-06</text>
+  
+  <!-- Terminal window -->
+  <rect x="100" y="180" width="824" height="500" rx="8" fill="#0a0a0a" stroke="#00ff00" stroke-width="2"/>
+  
+  <!-- Terminal header -->
+  <rect x="100" y="180" width="824" height="35" rx="8" fill="#1a1a1a"/>
+  <circle cx="120" cy="197" r="6" fill="#ff5f56"/>
+  <circle cx="140" cy="197" r="6" fill="#ffbd2e"/>
+  <circle cx="160" cy="197" r="6" fill="#27c93f"/>
+  <text x="462" y="203" fill="#00ff00" font-family="'Courier New', monospace" font-size="12" text-anchor="middle">tokyo-call-logs.pcap</text>
+  
+  <!-- Terminal content -->
+  <g filter="url(#terminalGlow)">
+    <text x="120" y="240" fill="#00ff00" font-family="'Courier New', monospace" font-size="11" font-weight="bold">$ tcpdump -r tokyo-call-2026-03-01.pcap | grep -A5 "18:42"</text>
+    
+    <text x="120" y="265" fill="#4a9eff" font-family="'Courier New', monospace" font-size="10">18:42:03.127 IP 172.31.45.88.8080 > 52.14.233.10.443: Flags [P.], seq 12450:13500</text>
+    <text x="120" y="280" fill="#4a9eff" font-family="'Courier New', monospace" font-size="10">18:42:03.231 IP 52.14.233.10.443 > 172.31.45.88.8080: Flags [.], ack 13500</text>
+    
+    <text x="120" y="305" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="10" font-weight="bold">18:42:08.445 IP 172.31.45.88.8080 > 52.14.233.10.443: Flags [P.], seq 13500:13520</text>
+    <text x="120" y="320" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="10" font-weight="bold">18:42:11.678 [PACKET LOSS - NO RESPONSE]</text>
+    
+    <text x="120" y="345" fill="#ffff00" font-family="'Courier New', monospace" font-size="10" font-weight="bold">18:42:11.890 [CONNECTION FREEZE - 3.2 SECONDS]</text>
+    
+    <text x="120" y="370" fill="#4a9eff" font-family="'Courier New', monospace" font-size="10">18:42:15.012 IP 52.14.233.10.443 > 172.31.45.88.8080: Flags [P.], seq ack</text>
+    <text x="120" y="385" fill="#4a9eff" font-family="'Courier New', monospace" font-size="10">18:42:15.345 IP 172.31.45.88.8080 > 52.14.233.10.443: Flags [.], ack</text>
+    
+    <text x="120" y="410" fill="#00ff00" font-family="'Courier New', monospace" font-size="10">[VIDEO STREAM RESUMED]</text>
+    
+    <text x="120" y="440" fill="#4a9eff" font-family="'Courier New', monospace" font-size="10">18:42:16.123 IP 172.31.45.88.8080 > 52.14.233.10.443: Flags [P.], seq 13520:15600</text>
+    <text x="120" y="455" fill="#4a9eff" font-family="'Courier New', monospace" font-size="10">18:42:17.445 IP 52.14.233.10.443 > 172.31.45.88.8080: Flags [.], ack 15600</text>
+    
+    <text x="120" y="485" fill="#00ff00" font-family="'Courier New', monospace" font-size="11" font-weight="bold">$ grep "freeze" call-analysis.log</text>
+    <text x="120" y="505" fill="#ffff00" font-family="'Courier New', monospace" font-size="10">ANOMALY: 3.2s video freeze at 18:42:08 UTC</text>
+    <text x="120" y="520" fill="#ffff00" font-family="'Courier New', monospace" font-size="10">CAMERA: Remained connected, stream intact</text>
+    <text x="120" y="535" fill="#ffff00" font-family="'Courier New', monospace" font-size="10">AUDIO: No interruption detected</text>
+    <text x="120" y="550" fill="#ffff00" font-family="'Courier New', monospace" font-size="10">FRAMING: Hands off-camera during freeze window</text>
+    
+    <text x="120" y="575" fill="#00ff00" font-family="'Courier New', monospace" font-size="11" font-weight="bold">$ cat witness-statement.txt</text>
+    <text x="120" y="595" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="10">Co-pilot Rebecca Park: "Screen froze for a few seconds."</text>
+    <text x="120" y="610" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="10">"Chloe was near the bar during that moment."</text>
+    
+    <text x="120" y="640" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="11" font-weight="bold">ANALYSIS: Freeze window = opportunity for covert action</text>
+    
+    <text x="120" y="665" fill="#00ff00" font-family="'Courier New', monospace" font-size="10">$_</text>
+  </g>
+  
+  <!-- Annotation box -->
+  <rect x="650" y="250" width="250" height="120" rx="6" fill="#1a1a2a" stroke="#ff00ff" stroke-width="2" opacity="0.95"/>
+  <text x="775" y="280" fill="#ff00ff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">CRITICAL TIMING</text>
+  <text x="775" y="305" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11" text-anchor="middle">18:42:08 - Freeze starts</text>
+  <text x="775" y="325" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11" text-anchor="middle">18:42:11 - Hands off-cam</text>
+  <text x="775" y="345" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11" text-anchor="middle">18:42:15 - Resume</text>
+  <text x="775" y="365" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">3.2s window</text>
+  
+</svg>
