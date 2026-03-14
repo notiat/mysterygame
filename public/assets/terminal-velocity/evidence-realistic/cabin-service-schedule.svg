@@ -1,0 +1,89 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+    </linearGradient>
+    <filter id="clipboardShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="2" dy="8"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1024" height="768" fill="url(#bg)"/>
+  
+  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#4a90e2" stroke-width="3" opacity="0.95"/>
+  <text x="160" y="80" fill="#4a90e2" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">CREW RECORD</text>
+  <text x="160" y="115" fill="#4a90e2" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">S-01</text>
+  
+  <g filter="url(#clipboardShadow)">
+    <rect x="250" y="150" width="520" height="550" rx="8" fill="#3a3a3a" stroke="#2a2a2a" stroke-width="3"/>
+    <rect x="320" y="120" width="80" height="50" rx="6" fill="#4a4a4a"/>
+    <rect x="260" y="170" width="500" height="510" rx="6" fill="#f4f0e8"/>
+    
+    <text x="510" y="210" fill="#333" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">CABIN SERVICE LOG</text>
+    <text x="510" y="235" fill="#666" font-family="Arial" font-size="13" text-anchor="middle">Flight: ANC-TYO | Date: Nov 12, 2025</text>
+    
+    <rect x="280" y="250" width="460" height="1" fill="#ccc"/>
+    
+    <rect x="280" y="270" width="120" height="30" fill="#e8e8e8" stroke="#ccc" stroke-width="1"/>
+    <rect x="400" y="270" width="150" height="30" fill="#e8e8e8" stroke="#ccc" stroke-width="1"/>
+    <rect x="550" y="270" width="190" height="30" fill="#e8e8e8" stroke="#ccc" stroke-width="1"/>
+    
+    <text x="340" y="290" fill="#333" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">Time (UTC)</text>
+    <text x="475" y="290" fill="#333" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">Request</text>
+    <text x="645" y="290" fill="#333" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">Served By</text>
+    
+    <rect x="280" y="300" width="120" height="25" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+    <rect x="400" y="300" width="150" height="25" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+    <rect x="550" y="300" width="190" height="25" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+    <text x="340" y="317" fill="#333" font-family="Arial" font-size="10" text-anchor="middle">17:45</text>
+    <text x="475" y="317" fill="#333" font-family="Arial" font-size="10" text-anchor="middle">Coffee (black)</text>
+    <text x="645" y="317" fill="#333" font-family="Arial" font-size="10" text-anchor="middle">Julian R.</text>
+    
+    <rect x="280" y="325" width="120" height="25" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+    <rect x="400" y="325" width="150" height="25" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+    <rect x="550" y="325" width="190" height="25" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+    <text x="340" y="342" fill="#333" font-family="Arial" font-size="10" text-anchor="middle">18:10</text>
+    <text x="475" y="342" fill="#333" font-family="Arial" font-size="10" text-anchor="middle">Meal service</text>
+    <text x="645" y="342" fill="#333" font-family="Arial" font-size="10" text-anchor="middle">Julian R. + Chloe E.</text>
+    
+    <rect x="280" y="350" width="120" height="25" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+    <rect x="400" y="350" width="150" height="25" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+    <rect x="550" y="350" width="190" height="25" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+    <text x="340" y="367" fill="#333" font-family="Arial" font-size="10" text-anchor="middle">18:30</text>
+    <text x="475" y="367" fill="#333" font-family="Arial" font-size="10" text-anchor="middle">Water refill</text>
+    <text x="645" y="367" fill="#333" font-family="Arial" font-size="10" text-anchor="middle">Julian R.</text>
+    
+    <rect x="280" y="375" width="120" height="25" fill="#fff5f5" stroke="#ff0000" stroke-width="2"/>
+    <rect x="400" y="375" width="150" height="25" fill="#fff5f5" stroke="#ff0000" stroke-width="2"/>
+    <rect x="550" y="375" width="190" height="25" fill="#fff5f5" stroke="#ff0000" stroke-width="2"/>
+    <text x="340" y="392" fill="#d32f2f" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle">18:43</text>
+    <text x="475" y="392" fill="#d32f2f" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle">Whiskey (extra req)</text>
+    <text x="645" y="392" fill="#d32f2f" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle">Chloe E.</text>
+    
+    <rect x="280" y="400" width="120" height="25" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+    <rect x="400" y="400" width="150" height="25" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+    <rect x="550" y="400" width="190" height="25" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+    <text x="340" y="417" fill="#333" font-family="Arial" font-size="10" text-anchor="middle">19:00</text>
+    <text x="475" y="417" fill="#333" font-family="Arial" font-size="10" text-anchor="middle">Emergency call</text>
+    <text x="645" y="417" fill="#333" font-family="Arial" font-size="10" text-anchor="middle">All crew</text>
+    
+    <rect x="280" y="440" width="460" height="80" fill="#fffef8" stroke="#ccc" stroke-width="1"/>
+    <text x="290" y="460" fill="#333" font-family="'Segoe Script', cursive" font-size="11">Notes:</text>
+    <text x="290" y="480" fill="#666" font-family="'Segoe Script', cursive" font-size="10">Passenger Steele requested extra whiskey during</text>
+    <text x="290" y="495" fill="#666" font-family="'Segoe Script', cursive" font-size="10">video call. Chloe served @ bar area. ~3 min later</text>
+    <text x="290" y="510" fill="#666" font-family="'Segoe Script', cursive" font-size="10">passenger showed distress symptoms.</text>
+    
+    <text x="510" y="650" fill="#666" font-family="'Segoe Script', cursive" font-size="11" text-anchor="middle">Crew Lead: Julian Ricci</text>
+  </g>
+  
+  <circle cx="470" cy="387" r="60" fill="none" stroke="#ff00ff" stroke-width="4" stroke-dasharray="10,5"/>
+  
+  <rect x="50" y="630" width="550" height="90" rx="6" fill="#0a0a0a" stroke="#4a90e2" stroke-width="2" opacity="0.95"/>
+  <text x="325" y="660" fill="#4a90e2" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">TIMELINE CORRELATION</text>
+  <text x="70" y="685" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="11" font-weight="bold">18:43 UTC: Whiskey service logged (aligns with all other evidence)</text>
+  <text x="70" y="705" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Corroborates: Network logs, co-pilot statement, camera footage</text>
+  
+</svg>
