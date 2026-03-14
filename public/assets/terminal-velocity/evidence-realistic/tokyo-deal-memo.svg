@@ -1,0 +1,73 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="deskBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+    </linearGradient>
+    <filter id="docShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="2" dy="6"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1024" height="768" fill="url(#deskBg)"/>
+  
+  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#e74c3c" stroke-width="3" opacity="0.95"/>
+  <text x="160" y="80" fill="#e74c3c" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">MOTIVE</text>
+  <text x="160" y="115" fill="#e74c3c" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">M-07</text>
+  
+  <g filter="url(#docShadow)">
+    <rect x="180" y="150" width="660" height="550" rx="4" fill="#ffffff" stroke="#ccc" stroke-width="2"/>
+    
+    <!-- Confidential stamp -->
+    <g transform="rotate(-25 300 200)">
+      <rect x="220" y="170" width="160" height="60" rx="4" fill="none" stroke="#e74c3c" stroke-width="4"/>
+      <text x="300" y="210" fill="#e74c3c" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle">CONFIDENTIAL</text>
+    </g>
+    
+    <text x="510" y="200" fill="#333" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">INTERNAL MEMORANDUM</text>
+    <rect x="200" y="210" width="620" height="2" fill="#4a90e2"/>
+    
+    <text x="200" y="240" fill="#666" font-family="Arial" font-size="12">To: Board of Directors</text>
+    <text x="200" y="260" fill="#666" font-family="Arial" font-size="12">From: Strategic Planning Committee</text>
+    <text x="200" y="280" fill="#666" font-family="Arial" font-size="12">Date: October 28, 2025</text>
+    <text x="200" y="300" fill="#d32f2f" font-family="Arial" font-size="12" font-weight="bold">Re: Tokyo Deal - Post-Closure Risk Assessment</text>
+    
+    <rect x="200" y="315" width="620" height="1" fill="#ddd"/>
+    
+    <text x="200" y="345" fill="#333" font-family="Arial" font-size="13" font-weight="bold">EXECUTIVE SUMMARY</text>
+    
+    <text x="200" y="370" fill="#333" font-family="Arial" font-size="11">The Tokyo merger, scheduled to close November 15, presents significant</text>
+    <text x="200" y="388" fill="#333" font-family="Arial" font-size="11">post-deal operational risks that require immediate board attention.</text>
+    
+    <rect x="200" y="405" width="620" height="120" fill="#fff5f5" stroke="#e74c3c" stroke-width="2"/>
+    <text x="210" y="425" fill="#e74c3c" font-family="Arial" font-size="12" font-weight="bold">⚠ CRITICAL RISK: Leadership Continuity</text>
+    <text x="210" y="445" fill="#333" font-family="Arial" font-size="11">Current CEO Alexander Steele has expressed intent to step down</text>
+    <text x="210" y="463" fill="#333" font-family="Arial" font-size="11">post-merger. Board notes indicate <tspan font-weight="bold" fill="#d32f2f">pension liability exposure</tspan> could</text>
+    <text x="210" y="481" fill="#333" font-family="Arial" font-size="11">trigger <tspan font-weight="bold">catastrophic financial cascade</tspan> if succession is not managed</text>
+    <text x="210" y="499" fill="#333" font-family="Arial" font-size="11">with precision timing. Estimated exposure: <tspan font-weight="bold" fill="#d32f2f">$847M</tspan></text>
+    
+    <text x="200" y="545" fill="#333" font-family="Arial" font-size="13" font-weight="bold">MITIGATION SCENARIOS</text>
+    
+    <text x="200" y="570" fill="#333" font-family="Arial" font-size="11">1. Controlled succession: 24-month transition (low risk)</text>
+    <text x="200" y="588" fill="#333" font-family="Arial" font-size="11">2. Immediate departure: Pension trigger + investor panic (high risk)</text>
+    <text x="200" y="606" fill="#d32f2f" font-family="Arial" font-size="11" font-weight="bold">3. Abrupt removal prior to deal close: Pension avoidance (acceptable risk)</text>
+    
+    <text x="200" y="636" fill="#666" font-family="Arial" font-size="10">Note: Option 3 requires external consultation for implementation feasibility.</text>
+    <text x="200" y="653" fill="#666" font-family="Arial" font-size="10">Legal review pending. Board discussion scheduled Nov 5.</text>
+    
+    <text x="200" y="680" fill="#333" font-family="Arial" font-size="11" font-style="italic">Distribution: Board members only. Do not forward.</text>
+  </g>
+  
+  <!-- Highlighter marks -->
+  <rect x="380" y="461" width="280" height="16" fill="#ffff00" opacity="0.3"/>
+  <rect x="600" y="497" width="60" height="16" fill="#ffff00" opacity="0.3"/>
+  <rect x="200" y="604" width="520" height="16" fill="#ff00ff" opacity="0.2"/>
+  
+  <rect x="50" y="630" width="550" height="90" rx="6" fill="#0a0a0a" stroke="#e74c3c" stroke-width="2" opacity="0.95"/>
+  <text x="325" y="660" fill="#e74c3c" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">MOTIVE ANALYSIS</text>
+  <text x="70" y="685" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="11" font-weight="bold">Corporate motive: $847M pension liability avoidance</text>
+  <text x="70" y="705" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Suggests board-level incentive for "abrupt removal" of CEO</text>
+  
+</svg>

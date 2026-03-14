@@ -1,0 +1,69 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+    </linearGradient>
+    <filter id="paperShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="2" dy="6"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1024" height="768" fill="url(#bg)"/>
+  
+  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#4a90e2" stroke-width="3" opacity="0.95"/>
+  <text x="160" y="80" fill="#4a90e2" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">TRANSCRIPT</text>
+  <text x="160" y="115" fill="#4a90e2" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">T-04</text>
+  
+  <g filter="url(#paperShadow)">
+    <rect x="150" y="150" width="720" height="550" rx="4" fill="#f8f6f0" stroke="#ccc" stroke-width="2"/>
+    
+    <text x="510" y="190" fill="#333" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">AUDIO TRANSCRIPT</text>
+    <text x="510" y="215" fill="#666" font-family="Arial" font-size="12" text-anchor="middle">Tokyo Investor Call - November 12, 2025</text>
+    <text x="510" y="235" fill="#666" font-family="Arial" font-size="11" text-anchor="middle">Speech-to-Text Export | Tokyo Server</text>
+    
+    <rect x="170" y="250" width="680" height="1" fill="#ccc"/>
+    
+    <text x="180" y="275" fill="#666" font-family="'Courier New', monospace" font-size="10">[18:40:12 UTC]</text>
+    <text x="180" y="292" fill="#333" font-family="Arial" font-size="11"><tspan font-weight="bold">STEELE:</tspan> ...and that brings us to Q4 projections.</text>
+    
+    <text x="180" y="315" fill="#666" font-family="'Courier New', monospace" font-size="10">[18:41:35 UTC]</text>
+    <text x="180" y="332" fill="#333" font-family="Arial" font-size="11"><tspan font-weight="bold">INVESTOR_02:</tspan> What about the pension liability concern?</text>
+    
+    <text x="180" y="355" fill="#666" font-family="'Courier New', monospace" font-size="10">[18:41:58 UTC]</text>
+    <text x="180" y="372" fill="#333" font-family="Arial" font-size="11"><tspan font-weight="bold">STEELE:</tspan> We've addressed that in the bridge financing...</text>
+    
+    <!-- THE GAP -->
+    <rect x="170" y="390" width="680" height="60" fill="#fff5f5" stroke="#ff0000" stroke-width="2"/>
+    <text x="180" y="410" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="10" font-weight="bold">[18:42:08 UTC]</text>
+    <text x="510" y="430" fill="#d32f2f" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">[TRANSCRIPTION GAP - 3.2 SECONDS]</text>
+    
+    <text x="180" y="470" fill="#666" font-family="'Courier New', monospace" font-size="10">[18:42:11 UTC]</text>
+    <text x="180" y="487" fill="#333" font-family="Arial" font-size="11"><tspan font-weight="bold">STEELE:</tspan> ...as I was saying, the timeline looks solid.</text>
+    
+    <text x="180" y="510" fill="#666" font-family="'Courier New', monospace" font-size="10">[18:43:05 UTC]</text>
+    <text x="180" y="527" fill="#333" font-family="Arial" font-size="11"><tspan font-weight="bold">INVESTOR_01:</tspan> And post-close integration?</text>
+    
+    <text x="180" y="550" fill="#666" font-family="'Courier New', monospace" font-size="10">[18:44:22 UTC]</text>
+    <text x="180" y="567" fill="#333" font-family="Arial" font-size="11"><tspan font-weight="bold">STEELE:</tspan> We have a twelve-month roadmap...</text>
+    
+    <text x="180" y="590" fill="#666" font-family="'Courier New', monospace" font-size="10">[18:45:18 UTC]</text>
+    <text x="180" y="607" fill="#333" font-family="Arial" font-size="11"><tspan font-weight="bold">STEELE:</tspan> [voice slightly strained] Excuse me one moment...</text>
+    
+    <text x="180" y="630" fill="#666" font-family="'Courier New', monospace" font-size="10">[18:46:03 UTC - Call continues with increasing distress signals]</text>
+    
+    <rect x="170" y="650" width="680" height="1" fill="#ccc"/>
+    <text x="510" y="675" fill="#999" font-family="Arial" font-size="10" text-anchor="middle">End of excerpt. Full transcript available in case file.</text>
+  </g>
+  
+  <!-- Evidence marker on gap -->
+  <circle cx="510" cy="425" r="70" fill="none" stroke="#ff00ff" stroke-width="4" stroke-dasharray="10,5"/>
+  
+  <rect x="50" y="630" width="550" height="90" rx="6" fill="#0a0a0a" stroke="#4a90e2" stroke-width="2" opacity="0.95"/>
+  <text x="325" y="660" fill="#4a90e2" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">ANALYSIS</text>
+  <text x="70" y="685" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="11" font-weight="bold">18:42:08 - Transcription gap coincides with packet loss & freeze</text>
+  <text x="70" y="705" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Timing matches: Network logs, co-pilot statement, camera still</text>
+  
+</svg>

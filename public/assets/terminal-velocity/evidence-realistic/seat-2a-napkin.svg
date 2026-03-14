@@ -1,0 +1,60 @@
+<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
+    </linearGradient>
+    <filter id="napkinShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+      <feOffset dx="2" dy="6"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="1024" height="768" fill="url(#bg)"/>
+  
+  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#00ff00" stroke-width="3" opacity="0.95"/>
+  <text x="160" y="80" fill="#00ff00" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">TRACE EVIDENCE</text>
+  <text x="160" y="115" fill="#00ff00" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">T-09</text>
+  
+  <g filter="url(#napkinShadow)" transform="rotate(-8 512 400)">
+    <!-- White napkin (slightly crumpled) -->
+    <polygon points="300,250 720,280 700,550 280,520" fill="#f8f8f8" stroke="#d4d4d4" stroke-width="2"/>
+    
+    <!-- Embossed airline logo -->
+    <text x="500" y="310" fill="#e0e0e0" font-family="'Helvetica', sans-serif" font-size="18" font-weight="bold" text-anchor="middle" opacity="0.4">SKY ELITE</text>
+    
+    <!-- Oil stain -->
+    <ellipse cx="480" cy="400" rx="90" ry="70" fill="#d4a574" opacity="0.3" transform="rotate(15 480 400)"/>
+    <ellipse cx="490" cy="410" rx="60" ry="45" fill="#c49a64" opacity="0.4" transform="rotate(15 490 410)"/>
+    <ellipse cx="475" cy="395" rx="40" ry="30" fill="#b48a54" opacity="0.5" transform="rotate(15 475 395)"/>
+    
+    <!-- Smudge marks (finger transfer pattern) -->
+    <ellipse cx="420" cy="360" rx="25" ry="35" fill="#9a7a54" opacity="0.25" transform="rotate(-20 420 360)"/>
+    <ellipse cx="540" cy="440" rx="20" ry="30" fill="#9a7a54" opacity="0.2" transform="rotate(25 540 440)"/>
+    
+    <!-- Crinkle lines -->
+    <line x1="350" y1="350" x2="650" y2="370" stroke="#c8c8c8" stroke-width="1" opacity="0.5"/>
+    <line x1="360" y1="420" x2="640" y2="440" stroke="#c8c8c8" stroke-width="1" opacity="0.5"/>
+    <line x1="340" y1="480" x2="660" y2="500" stroke="#c8c8c8" stroke-width="1" opacity="0.5"/>
+  </g>
+  
+  <!-- Evidence marker pointing at stain -->
+  <circle cx="490" cy="405" r="110" fill="none" stroke="#ff00ff" stroke-width="4" stroke-dasharray="10,5"/>
+  
+  <!-- Lab analysis indicator -->
+  <line x1="600" y1="380" x2="720" y2="320" stroke="#00ff00" stroke-width="2"/>
+  <rect x="720" y="280" width="240" height="80" rx="4" fill="#0a0a0a" stroke="#00ff00" stroke-width="2"/>
+  <text x="840" y="305" fill="#00ff00" font-family="'Courier New', monospace" font-size="12" font-weight="bold" text-anchor="middle">TRACE ANALYSIS</text>
+  <text x="840" y="325" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">Sesame oil detected</text>
+  <text x="840" y="342" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">Transfer pattern</text>
+  <text x="840" y="358" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">consistent w/ glass</text>
+  
+  <rect x="50" y="600" width="600" height="120" rx="6" fill="#0a0a0a" stroke="#00ff00" stroke-width="2" opacity="0.95"/>
+  <text x="350" y="630" fill="#00ff00" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">FORENSIC ANALYSIS</text>
+  <text x="70" y="655" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Item: White napkin from victim's tray table (Seat 2A)</text>
+  <text x="70" y="675" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Analysis: Trace sesame oil detected after warming</text>
+  <text x="70" y="695" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Transfer pattern consistent with glass handling</text>
+  <text x="70" y="715" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="11">Significance: Secondary transfer evidence (not primary delivery)</text>
+  
+</svg>
