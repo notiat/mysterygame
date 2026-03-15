@@ -1,71 +1,147 @@
-<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
-    </linearGradient>
-    <filter id="docShadow">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
-      <feOffset dx="2" dy="6"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
+    <pattern id="paper" patternUnits="userSpaceOnUse" width="100" height="100">
+      <rect width="100" height="100" fill="#f8f8f0"/>
+      <circle cx="20" cy="30" r="0.3" fill="#e8e8e0" opacity="0.5"/>
+      <circle cx="60" cy="70" r="0.4" fill="#e8e8e0" opacity="0.5"/>
+    </pattern>
   </defs>
   
-  <rect width="1024" height="768" fill="url(#bg)"/>
+  <!-- Dark background -->
+  <rect width="800" height="600" fill="#0a0a0a"/>
   
-  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#ff6b35" stroke-width="3" opacity="0.95"/>
-  <text x="160" y="80" fill="#ff6b35" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">CIRCUMSTANTIAL</text>
-  <text x="160" y="115" fill="#ff6b35" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">C-02</text>
+  <!-- Evidence table -->
+  <rect x="0" y="0" width="800" height="600" fill="#1a1a1a" opacity="0.4"/>
   
-  <g filter="url(#docShadow)">
-    <rect x="180" y="150" width="660" height="550" rx="4" fill="#ffffff" stroke="#ccc" stroke-width="2"/>
+  <!-- Document stack (multiple pages visible) -->
+  <g filter="url(#shadow)">
+    <!-- Back pages (depth effect) -->
+    <rect x="138" y="73" width="500" height="450" fill="#e0e0d8" stroke="#999" stroke-width="1" opacity="0.6"/>
+    <rect x="136" y="71" width="500" height="450" fill="#e8e8e0" stroke="#999" stroke-width="1" opacity="0.7"/>
+    <rect x="134" y="69" width="500" height="450" fill="#f0f0e8" stroke="#999" stroke-width="1" opacity="0.8"/>
     
-    <rect x="180" y="150" width="660" height="50" fill="#e8e8e8"/>
-    <text x="510" y="185" fill="#333" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">BOARD MINUTES - DRAFT</text>
+    <!-- Main document (top page) -->
+    <rect x="130" y="65" width="500" height="450" fill="url(#paper)" stroke="#999" stroke-width="1"/>
     
-    <text x="200" y="230" fill="#666" font-family="Arial" font-size="12">Date: November 5, 2025</text>
-    <text x="200" y="250" fill="#666" font-family="Arial" font-size="12">Meeting: Emergency Board Session</text>
-    <text x="200" y="270" fill="#d32f2f" font-family="Arial" font-size="12" font-weight="bold">Classification: DRAFT - DO NOT DISTRIBUTE</text>
+    <!-- Letterhead -->
+    <rect x="130" y="65" width="500" height="55" fill="#1a2844" opacity="0.95"/>
+    <text x="380" y="95" font-family="Times New Roman, serif" font-size="22" font-weight="bold" fill="#d4af37" text-anchor="middle">VELOCITAS AVIATION INC.</text>
+    <text x="380" y="112" font-family="Arial, sans-serif" font-size="9" fill="#c0c0c0" text-anchor="middle">BOARD OF DIRECTORS MEETING MINUTES - CONFIDENTIAL</text>
     
-    <rect x="200" y="285" width="620" height="1" fill="#ccc"/>
+    <!-- Document title -->
+    <text x="160" y="150" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">Board Meeting Minutes</text>
+    <line x1="160" y1="155" x2="600" y2="155" stroke="#ccc" stroke-width="1"/>
     
-    <text x="200" y="310" fill="#333" font-family="Arial" font-size="13" font-weight="bold">ATTENDEES</text>
-    <text x="200" y="330" fill="#333" font-family="Arial" font-size="11">Board members (6), Legal counsel (2), Strategic planning committee (3)</text>
+    <!-- Meeting details -->
+    <text x="160" y="178" font-family="Courier New, monospace" font-size="10" fill="#333">DATE: February 28, 2026</text>
+    <text x="160" y="194" font-family="Courier New, monospace" font-size="10" fill="#333">TIME: 14:00-17:30 PST</text>
+    <text x="160" y="210" font-family="Courier New, monospace" font-size="10" fill="#333">LOCATION: Velocitas HQ, Conference Room A</text>
     
-    <rect x="200" y="345" width="620" height="1" fill="#ddd"/>
+    <line x1="160" y1="220" x2="600" y2="220" stroke="#ddd" stroke-width="1"/>
     
-    <text x="200" y="370" fill="#333" font-family="Arial" font-size="13" font-weight="bold">AGENDA ITEM 3: POST-MERGER LEADERSHIP CONTINUITY</text>
+    <!-- Attendees section -->
+    <text x="160" y="242" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1a1a1a">ATTENDEES:</text>
+    <text x="175" y="260" font-family="Arial, sans-serif" font-size="10" fill="#2a2a2a">• Victoria Blake (CEO, Chair)</text>
+    <text x="175" y="276" font-family="Arial, sans-serif" font-size="10" fill="#2a2a2a">• Dr. Elias Chen (CTO)</text>
+    <text x="175" y="292" font-family="Arial, sans-serif" font-size="10" fill="#2a2a2a">• Margaret Stevens (CFO)</text>
+    <text x="175" y="308" font-family="Arial, sans-serif" font-size="10" fill="#2a2a2a">• James Corrigan (Board Member, Venture Capital)</text>
+    <text x="175" y="324" font-family="Arial, sans-serif" font-size="10" fill="#2a2a2a">• Sarah Kim (Board Member, External Advisor)</text>
     
-    <text x="200" y="395" fill="#333" font-family="Arial" font-size="11">Discussion focused on CEO succession timing relative to Tokyo deal closure.</text>
-    <text x="200" y="413" fill="#333" font-family="Arial" font-size="11">Legal presented analysis of pension trigger scenarios.</text>
+    <line x1="160" y1="335" x2="600" y2="335" stroke="#ddd" stroke-width="1"/>
     
-    <rect x="200" y="430" width="620" height="100" fill="#fffef8" stroke="#f9a825" stroke-width="2"/>
-    <text x="210" y="450" fill="#d32f2f" font-family="Arial" font-size="12" font-weight="bold">KEY RESOLUTION (Redacted in final minutes):</text>
-    <text x="210" y="470" fill="#333" font-family="Arial" font-size="11">"Board acknowledges that abrupt leadership removal prior to deal</text>
-    <text x="210" y="488" fill="#333" font-family="Arial" font-size="11">close would avoid pension liability trigger. <tspan font-weight="bold" fill="#d32f2f">Emergency continuity</tspan></text>
-    <text x="210" y="506" fill="#333" font-family="Arial" font-size="11"><tspan font-weight="bold" fill="#d32f2f">plan</tspan> drafted for board approval. Implementation timeline: 1-2 weeks."</text>
+    <!-- Agenda items -->
+    <text x="160" y="355" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1a1a1a">KEY DISCUSSIONS:</text>
     
-    <text x="200" y="555" fill="#333" font-family="Arial" font-size="11">Motion carried: 5 in favor, 1 abstention</text>
+    <text x="175" y="375" font-family="Arial, sans-serif" font-size="10" fill="#2a2a2a">1. Q1 Financial Review (approved)</text>
+    <text x="175" y="393" font-family="Arial, sans-serif" font-size="10" fill="#2a2a2a">2. Prototype testing schedule (delayed 2 weeks)</text>
     
-    <rect x="200" y="570" width="620" height="1" fill="#ddd"/>
+    <!-- Critical item (highlighted) -->
+    <rect x="165" y="405" width="430" height="75" fill="#fff4e6" stroke="#ff8800" stroke-width="2"/>
+    <text x="180" y="425" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a" font-weight="bold">3. Yamamoto Industries Partnership Proposal</text>
     
-    <text x="200" y="595" fill="#333" font-family="Arial" font-size="13" font-weight="bold">AGENDA ITEM 4: EXTERNAL CONSULTATION</text>
-    <text x="200" y="615" fill="#333" font-family="Arial" font-size="11">Board authorized engagement of specialized external contractor for</text>
-    <text x="200" y="633" fill="#333" font-family="Arial" font-size="11">"operational transition services." Budget approved: $2.5M.</text>
+    <text x="190" y="445" font-family="Arial, sans-serif" font-size="9" fill="#2a2a2a">Dr. Chen presented terms: $50M investment for 35% equity.</text>
+    <text x="190" y="460" font-family="Arial, sans-serif" font-size="9" fill="#cc0000" font-weight="bold">CEO Blake expressed strong reservations. Vote delayed.</text>
+    <text x="190" y="475" font-family="Arial, sans-serif" font-size="9" fill="#2a2a2a">Corrigan pushed for acceptance; Blake insisted on review.</text>
     
-    <text x="200" y="665" fill="#999" font-family="Arial" font-size="10" font-style="italic">Note: Final published minutes omitted Item 3 resolution language at</text>
-    <text x="200" y="682" fill="#999" font-family="Arial" font-size="10" font-style="italic">counsel's recommendation. This draft preserved for internal record only.</text>
+    <!-- Motion/outcome -->
+    <rect x="165" y="490" width="430" height="35" fill="#ffe6e6" stroke="#cc0000" stroke-width="1"/>
+    <text x="180" y="509" font-family="Arial, sans-serif" font-size="9" fill="#cc0000" font-weight="bold">MOTION: Defer decision to special session (March 18).</text>
+    <text x="180" y="522" font-family="Arial, sans-serif" font-size="9" fill="#333">RESULT: Approved 3-2 (Blake, Kim, Stevens FOR; Chen, Corrigan AGAINST)</text>
   </g>
   
-  <!-- "DRAFT" watermark -->
-  <g opacity="0.15" transform="rotate(-25 512 400)">
-    <text x="512" y="420" fill="#ff0000" font-family="Arial" font-size="120" font-weight="bold" text-anchor="middle">DRAFT</text>
+  <!-- Handwritten note in margin (red pen) -->
+  <g>
+    <path d="M 600 410 Q 610 405 625 410 Q 640 415 650 420" 
+          fill="none" stroke="#cc0000" stroke-width="2" opacity="0.8"/>
+    <text x="610" y="440" font-family="Brush Script MT, cursive" font-size="14" fill="#cc0000" transform="rotate(-5 610 440)">They're pushing</text>
+    <text x="610" y="458" font-family="Brush Script MT, cursive" font-size="14" fill="#cc0000" transform="rotate(-5 610 458)">too hard...</text>
   </g>
   
-  <rect x="50" y="620" width="600" height="100" rx="6" fill="#0a0a0a" stroke="#ff6b35" stroke-width="2" opacity="0.95"/>
-  <text x="350" y="650" fill="#ff6b35" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">ASSESSMENT</text>
-  <text x="70" y="675" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Circumstantial: Board anticipated "abrupt removal" scenario</text>
-  <text x="70" y="695" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">$2.5M "external contractor" budget approved 7 days before incident</text>
-  <text x="70" y="715" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="11">Not definitive alone - requires corroboration with payment evidence</text>
+  <!-- Evidence markers -->
+  <g>
+    <!-- Yamamoto discussion marker -->
+    <rect x="170" y="410" width="420" height="70" fill="none" stroke="#ffcc00" stroke-width="2.5" stroke-dasharray="5,3"/>
+    <line x1="680" y1="445" x2="720" y2="420" stroke="#ffcc00" stroke-width="2"/>
+    <text x="725" y="426" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffcc00">A</text>
+    
+    <!-- Vote result marker -->
+    <rect x="170" y="505" width="420" height="25" fill="none" stroke="#ffcc00" stroke-width="2" stroke-dasharray="3,2"/>
+    <line x1="100" y1="517" x2="170" y2="517" stroke="#ffcc00" stroke-width="1.5"/>
+    <text x="65" y="523" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffcc00">B</text>
+  </g>
   
+  <!-- Evidence tag -->
+  <g>
+    <rect x="50" y="180" width="300" height="230" fill="#1a1a1a" stroke="#ffcc00" stroke-width="2" opacity="0.95"/>
+    <text x="65" y="205" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ffcc00">EVIDENCE #088</text>
+    <line x1="65" y1="210" x2="335" y2="210" stroke="#333" stroke-width="1"/>
+    
+    <text x="65" y="230" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Item: Board Minutes</text>
+    <text x="65" y="248" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Date: Feb 28, 2026</text>
+    <text x="65" y="266" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Source: Victoria's files</text>
+    
+    <line x1="65" y1="275" x2="335" y2="275" stroke="#444" stroke-width="1"/>
+    
+    <text x="65" y="295" font-family="Arial, sans-serif" font-size="11" fill="#ffcc00">Marker A:</text>
+    <text x="65" y="310" font-family="Arial, sans-serif" font-size="10" fill="#ff9999">CONFLICT DOCUMENTED</text>
+    <text x="65" y="325" font-family="Arial, sans-serif" font-size="9" fill="#999">Victoria vs. Dr. Chen</text>
+    <text x="65" y="338" font-family="Arial, sans-serif" font-size="9" fill="#999">Tokyo deal disagreement</text>
+    
+    <text x="65" y="358" font-family="Arial, sans-serif" font-size="11" fill="#ffcc00">Marker B:</text>
+    <text x="65" y="373" font-family="Arial, sans-serif" font-size="10" fill="#aaa">Vote: 3-2 split</text>
+    <text x="65" y="388" font-family="Arial, sans-serif" font-size="9" fill="#999">Victoria delayed decision</text>
+    <text x="65" y="401" font-family="Arial, sans-serif" font-size="9" fill="#999">until March 18 (after death)</text>
+  </g>
+  
+  <!-- Motive context -->
+  <g>
+    <rect x="50" y="430" width="300" height="85" fill="#1a1a1a" stroke="#ff6666" stroke-width="2" opacity="0.95"/>
+    <text x="65" y="453" font-family="Arial, sans-serif" font-size="10" fill="#ff9999" font-weight="bold">⚠ MOTIVE CONTEXT:</text>
+    <text x="65" y="470" font-family="Arial, sans-serif" font-size="9" fill="#ccc">Dr. Chen and investor Corrigan</text>
+    <text x="65" y="485" font-family="Arial, sans-serif" font-size="9" fill="#ccc">both opposed delay. Victoria's</text>
+    <text x="65" y="500" font-family="Arial, sans-serif" font-size="9" fill="#ccc">death on March 14 = deal</text>
+    <text x="65" y="515" font-family="Arial, sans-serif" font-size="9" fill="#ff9999">could proceed without her veto</text>
+  </g>
+  
+  <!-- Scale reference -->
+  <g>
+    <rect x="650" y="540" width="100" height="15" fill="#333"/>
+    <rect x="650" y="540" width="50" height="15" fill="#ffcc00"/>
+    <text x="655" y="552" font-family="Arial, sans-serif" font-size="10" fill="#000" font-weight="bold">0</text>
+    <text x="695" y="552" font-family="Arial, sans-serif" font-size="10" fill="#ccc">5 cm</text>
+  </g>
+  
+  <!-- Photo metadata -->
+  <text x="350" y="585" font-family="Courier New, monospace" font-size="10" fill="#666">CSI-TV-2026-03-14_088_BOARD_MINUTES.JPG</text>
 </svg>
