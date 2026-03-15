@@ -33,7 +33,7 @@ export default function PuzzlePanel({ solvedPuzzles, onSolvePuzzle, onUnlockInte
             <p className="text-sm font-bold text-white">🔐 Puzzle 1: Training Log Password</p>
             {solvedPuzzles.includes('training-log-decrypt') && <span className="text-emerald-400 text-xl">✓</span>}
           </div>
-          <p className="text-xs text-slate-400 mb-3">Decrypt the password to access the victim's training logs.</p>
+          <p className="text-xs text-slate-400 mb-3">Decrypt the password to access the victim&apos;s training logs.</p>
           <div className="flex gap-2">
             <input
               aria-label="Training log password input"

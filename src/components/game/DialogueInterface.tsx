@@ -36,7 +36,7 @@ export default function DialogueInterface({
       <div className="rounded-xl border-2 border-slate-700 bg-slate-900/50 p-5 mb-5 min-h-[120px]">
         <p className="text-sm uppercase tracking-wider text-slate-500 mb-2">💬 Statement</p>
         <p className="text-base text-slate-100 leading-relaxed italic">
-          "{node?.text ?? 'No dialogue loaded for this character.'}"
+          &ldquo;{node?.text ?? 'No dialogue loaded for this character.'}&rdquo;
         </p>
       </div>
 
