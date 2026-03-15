@@ -1,73 +1,135 @@
-<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
   <defs>
-    <linearGradient id="deskBg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
-    </linearGradient>
-    <filter id="docShadow">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
-      <feOffset dx="2" dy="6"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
+    <pattern id="paper" patternUnits="userSpaceOnUse" width="100" height="100">
+      <rect width="100" height="100" fill="#f8f8f0"/>
+      <circle cx="20" cy="30" r="0.3" fill="#e8e8e0" opacity="0.5"/>
+      <circle cx="60" cy="70" r="0.4" fill="#e8e8e0" opacity="0.5"/>
+      <circle cx="85" cy="45" r="0.3" fill="#e8e8e0" opacity="0.5"/>
+    </pattern>
   </defs>
   
-  <rect width="1024" height="768" fill="url(#deskBg)"/>
+  <!-- Dark background -->
+  <rect width="800" height="600" fill="#0a0a0a"/>
   
-  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#e74c3c" stroke-width="3" opacity="0.95"/>
-  <text x="160" y="80" fill="#e74c3c" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">MOTIVE</text>
-  <text x="160" y="115" fill="#e74c3c" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">M-07</text>
+  <!-- Evidence table -->
+  <rect x="0" y="0" width="800" height="600" fill="#1a1a1a" opacity="0.4"/>
   
-  <g filter="url(#docShadow)">
-    <rect x="180" y="150" width="660" height="550" rx="4" fill="#ffffff" stroke="#ccc" stroke-width="2"/>
+  <!-- Document paper -->
+  <g filter="url(#shadow)">
+    <rect x="150" y="80" width="500" height="450" fill="url(#paper)" stroke="#999" stroke-width="1"/>
     
-    <!-- Confidential stamp -->
-    <g transform="rotate(-25 300 200)">
-      <rect x="220" y="170" width="160" height="60" rx="4" fill="none" stroke="#e74c3c" stroke-width="4"/>
-      <text x="300" y="210" fill="#e74c3c" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle">CONFIDENTIAL</text>
+    <!-- Letterhead -->
+    <rect x="150" y="80" width="500" height="60" fill="#1a2844" opacity="0.95"/>
+    <text x="400" y="110" font-family="Times New Roman, serif" font-size="24" font-weight="bold" fill="#d4af37" text-anchor="middle">VELOCITAS AVIATION</text>
+    <text x="400" y="130" font-family="Arial, sans-serif" font-size="10" fill="#c0c0c0" text-anchor="middle">CONFIDENTIAL MEMORANDUM</text>
+    
+    <!-- Document title -->
+    <text x="180" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">RE: Tokyo Partnership Agreement</text>
+    <line x1="180" y1="175" x2="620" y2="175" stroke="#ccc" stroke-width="1"/>
+    
+    <!-- Document details -->
+    <text x="180" y="200" font-family="Courier New, monospace" font-size="10" fill="#333">DATE: March 12, 2026</text>
+    <text x="180" y="218" font-family="Courier New, monospace" font-size="10" fill="#333">FROM: Dr. Elias Chen, CTO</text>
+    <text x="180" y="236" font-family="Courier New, monospace" font-size="10" fill="#333">TO: Victoria Blake, CEO</text>
+    <text x="180" y="254" font-family="Courier New, monospace" font-size="10" fill="#333">SUBJECT: Yamamoto Industries - Final Terms</text>
+    
+    <line x1="180" y1="265" x2="620" y2="265" stroke="#ddd" stroke-width="1"/>
+    
+    <!-- Body text -->
+    <text x="180" y="290" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">Victoria,</text>
+    
+    <text x="180" y="313" font-family="Arial, sans-serif" font-size="10" fill="#2a2a2a">Per our discussion, Yamamoto Industries has agreed to</text>
+    <text x="180" y="330" font-family="Arial, sans-serif" font-size="10" fill="#2a2a2a">the following terms for strategic partnership:</text>
+    
+    <!-- Key terms (highlighted) -->
+    <rect x="190" y="345" width="410" height="95" fill="#fff9e6" stroke="#d4af37" stroke-width="1"/>
+    <text x="205" y="365" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a" font-weight="bold">• Initial investment: $50M USD</text>
+    <text x="205" y="383" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a" font-weight="bold">• Equity stake: 35% of Velocitas Aviation</text>
+    <text x="205" y="401" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a" font-weight="bold">• Board seats: 2 (Yamamoto nominees)</text>
+    <text x="205" y="419" font-family="Arial, sans-serif" font-size="10" fill="#1a1a1a" font-weight="bold">• Technology transfer: Prototype specs + IP</text>
+    
+    <!-- Critical paragraph -->
+    <text x="180" y="460" font-family="Arial, sans-serif" font-size="10" fill="#2a2a2a">The deal closes Monday, March 17th. Yamamoto requires</text>
+    <text x="180" y="477" font-family="Arial, sans-serif" font-size="10" fill="#cc0000" font-weight="bold">your signature by end of business Friday (March 14th)</text>
+    <text x="180" y="494" font-family="Arial, sans-serif" font-size="10" fill="#2a2a2a">or the offer expires. They have a backup option in Seoul.</text>
+    
+    <!-- Signature area -->
+    <text x="180" y="520" font-family="Arial, sans-serif" font-size="9" fill="#555">— Dr. Elias Chen</text>
+    
+    <!-- Handwritten note (red pen) -->
+    <g>
+      <path d="M 420 345 Q 430 340 445 345 Q 460 350 470 355 Q 475 360 472 368" 
+            fill="none" stroke="#cc0000" stroke-width="2.5" opacity="0.8"/>
+      <text x="485" y="365" font-family="Brush Script MT, cursive" font-size="18" fill="#cc0000" font-weight="bold">NO!</text>
+      
+      <path d="M 200 419 L 590 419" stroke="#cc0000" stroke-width="2" opacity="0.7"/>
+      <path d="M 200 419 L 590 401" stroke="#cc0000" stroke-width="2" opacity="0.7"/>
     </g>
-    
-    <text x="510" y="200" fill="#333" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">INTERNAL MEMORANDUM</text>
-    <rect x="200" y="210" width="620" height="2" fill="#4a90e2"/>
-    
-    <text x="200" y="240" fill="#666" font-family="Arial" font-size="12">To: Board of Directors</text>
-    <text x="200" y="260" fill="#666" font-family="Arial" font-size="12">From: Strategic Planning Committee</text>
-    <text x="200" y="280" fill="#666" font-family="Arial" font-size="12">Date: October 28, 2025</text>
-    <text x="200" y="300" fill="#d32f2f" font-family="Arial" font-size="12" font-weight="bold">Re: Tokyo Deal - Post-Closure Risk Assessment</text>
-    
-    <rect x="200" y="315" width="620" height="1" fill="#ddd"/>
-    
-    <text x="200" y="345" fill="#333" font-family="Arial" font-size="13" font-weight="bold">EXECUTIVE SUMMARY</text>
-    
-    <text x="200" y="370" fill="#333" font-family="Arial" font-size="11">The Tokyo merger, scheduled to close November 15, presents significant</text>
-    <text x="200" y="388" fill="#333" font-family="Arial" font-size="11">post-deal operational risks that require immediate board attention.</text>
-    
-    <rect x="200" y="405" width="620" height="120" fill="#fff5f5" stroke="#e74c3c" stroke-width="2"/>
-    <text x="210" y="425" fill="#e74c3c" font-family="Arial" font-size="12" font-weight="bold">⚠ CRITICAL RISK: Leadership Continuity</text>
-    <text x="210" y="445" fill="#333" font-family="Arial" font-size="11">Current CEO Alexander Steele has expressed intent to step down</text>
-    <text x="210" y="463" fill="#333" font-family="Arial" font-size="11">post-merger. Board notes indicate <tspan font-weight="bold" fill="#d32f2f">pension liability exposure</tspan> could</text>
-    <text x="210" y="481" fill="#333" font-family="Arial" font-size="11">trigger <tspan font-weight="bold">catastrophic financial cascade</tspan> if succession is not managed</text>
-    <text x="210" y="499" fill="#333" font-family="Arial" font-size="11">with precision timing. Estimated exposure: <tspan font-weight="bold" fill="#d32f2f">$847M</tspan></text>
-    
-    <text x="200" y="545" fill="#333" font-family="Arial" font-size="13" font-weight="bold">MITIGATION SCENARIOS</text>
-    
-    <text x="200" y="570" fill="#333" font-family="Arial" font-size="11">1. Controlled succession: 24-month transition (low risk)</text>
-    <text x="200" y="588" fill="#333" font-family="Arial" font-size="11">2. Immediate departure: Pension trigger + investor panic (high risk)</text>
-    <text x="200" y="606" fill="#d32f2f" font-family="Arial" font-size="11" font-weight="bold">3. Abrupt removal prior to deal close: Pension avoidance (acceptable risk)</text>
-    
-    <text x="200" y="636" fill="#666" font-family="Arial" font-size="10">Note: Option 3 requires external consultation for implementation feasibility.</text>
-    <text x="200" y="653" fill="#666" font-family="Arial" font-size="10">Legal review pending. Board discussion scheduled Nov 5.</text>
-    
-    <text x="200" y="680" fill="#333" font-family="Arial" font-size="11" font-style="italic">Distribution: Board members only. Do not forward.</text>
   </g>
   
-  <!-- Highlighter marks -->
-  <rect x="380" y="461" width="280" height="16" fill="#ffff00" opacity="0.3"/>
-  <rect x="600" y="497" width="60" height="16" fill="#ffff00" opacity="0.3"/>
-  <rect x="200" y="604" width="520" height="16" fill="#ff00ff" opacity="0.2"/>
+  <!-- Evidence markers -->
+  <g>
+    <!-- Deadline marker -->
+    <rect x="175" y="470" width="430" height="30" fill="none" stroke="#ffcc00" stroke-width="2" stroke-dasharray="5,3"/>
+    <line x1="680" y1="485" x2="720" y2="485" stroke="#ffcc00" stroke-width="1.5"/>
+    <text x="725" y="491" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffcc00">A</text>
+    
+    <!-- Handwritten rejection marker -->
+    <circle cx="505" cy="360" r="30" fill="none" stroke="#ffcc00" stroke-width="2" stroke-dasharray="5,3"/>
+    <line x1="525" y1="345" x2="560" y2="320" stroke="#ffcc00" stroke-width="1.5"/>
+    <text x="565" y="325" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffcc00">B</text>
+  </g>
   
-  <rect x="50" y="630" width="550" height="90" rx="6" fill="#0a0a0a" stroke="#e74c3c" stroke-width="2" opacity="0.95"/>
-  <text x="325" y="660" fill="#e74c3c" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">MOTIVE ANALYSIS</text>
-  <text x="70" y="685" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="11" font-weight="bold">Corporate motive: $847M pension liability avoidance</text>
-  <text x="70" y="705" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Suggests board-level incentive for "abrupt removal" of CEO</text>
+  <!-- Evidence tag -->
+  <g>
+    <rect x="50" y="150" width="280" height="210" fill="#1a1a1a" stroke="#ffcc00" stroke-width="2" opacity="0.95"/>
+    <text x="65" y="175" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ffcc00">EVIDENCE #091</text>
+    <line x1="65" y1="180" x2="315" y2="180" stroke="#333" stroke-width="1"/>
+    
+    <text x="65" y="200" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Item: Business Memo</text>
+    <text x="65" y="218" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Source: V. Blake's briefcase</text>
+    <text x="65" y="236" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Date: March 12, 2026</text>
+    
+    <line x1="65" y1="245" x2="315" y2="245" stroke="#444" stroke-width="1"/>
+    
+    <text x="65" y="265" font-family="Arial, sans-serif" font-size="11" fill="#ffcc00">Marker A:</text>
+    <text x="65" y="280" font-family="Arial, sans-serif" font-size="10" fill="#ff9999">URGENT DEADLINE</text>
+    <text x="65" y="295" font-family="Arial, sans-serif" font-size="9" fill="#999">Signature required by</text>
+    <text x="65" y="308" font-family="Arial, sans-serif" font-size="9" fill="#999">March 14 (day of death)</text>
+    
+    <text x="65" y="328" font-family="Arial, sans-serif" font-size="11" fill="#ffcc00">Marker B:</text>
+    <text x="65" y="343" font-family="Arial, sans-serif" font-size="10" fill="#aaa">Handwritten "NO!"</text>
+    <text x="65" y="356" font-family="Arial, sans-serif" font-size="9" fill="#999">Victoria rejected deal</text>
+  </g>
   
+  <!-- Motive note -->
+  <g>
+    <rect x="50" y="380" width="280" height="80" fill="#1a1a1a" stroke="#ff6666" stroke-width="2" opacity="0.9"/>
+    <text x="65" y="403" font-family="Arial, sans-serif" font-size="10" fill="#ff9999" font-weight="bold">⚠ MOTIVE:</text>
+    <text x="65" y="420" font-family="Arial, sans-serif" font-size="9" fill="#ccc">Dr. Chen stood to gain</text>
+    <text x="65" y="435" font-family="Arial, sans-serif" font-size="9" fill="#ccc">significant bonus if deal closed</text>
+    <text x="65" y="450" font-family="Arial, sans-serif" font-size="9" fill="#ccc">Victoria's death = board chaos</text>
+  </g>
+  
+  <!-- Scale reference -->
+  <g>
+    <rect x="650" y="540" width="100" height="15" fill="#333"/>
+    <rect x="650" y="540" width="50" height="15" fill="#ffcc00"/>
+    <text x="655" y="552" font-family="Arial, sans-serif" font-size="10" fill="#000" font-weight="bold">0</text>
+    <text x="695" y="552" font-family="Arial, sans-serif" font-size="10" fill="#ccc">5 cm</text>
+  </g>
+  
+  <!-- Photo metadata -->
+  <text x="350" y="580" font-family="Courier New, monospace" font-size="10" fill="#666">CSI-TV-2026-03-14_091_TOKYO_MEMO.JPG</text>
 </svg>

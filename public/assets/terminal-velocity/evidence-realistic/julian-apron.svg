@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="fabric" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="4" fill="#1a1a1a"/>
+      <path d="M0,0 L4,4 M4,0 L0,4" stroke="#252525" stroke-width="0.3" opacity="0.3"/>
+    </pattern>
+    <pattern id="stain" patternUnits="userSpaceOnUse" width="8" height="8">
+      <circle cx="2" cy="2" r="1.5" fill="#3d1a1a" opacity="0.4"/>
+      <circle cx="6" cy="6" r="1" fill="#3d1a1a" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="800" height="600" fill="#0a0a0a"/>
+  
+  <!-- Evidence table surface -->
+  <rect x="50" y="50" width="700" height="500" fill="#1a1a1a" opacity="0.5"/>
+  
+  <!-- Chef's apron - white with stains -->
+  <g filter="url(#shadow)">
+    <!-- Main apron body -->
+    <path d="M 300 120 
+             L 280 140 L 270 180 L 265 240 L 260 320 L 258 400 L 256 480
+             L 260 500 L 280 510 L 350 515 L 420 515 L 490 515 L 520 510 L 540 500
+             L 544 480 L 542 400 L 540 320 L 535 240 L 530 180 L 520 140 L 500 120
+             L 480 110 L 320 110 Z" 
+          fill="#e8e8e8" stroke="#999" stroke-width="2"/>
+    
+    <!-- Fabric texture -->
+    <path d="M 300 120 L 280 140 L 270 180 L 265 240 L 260 320 L 258 400 L 256 480
+             L 260 500 L 280 510 L 350 515 L 420 515 L 490 515 L 520 510 L 540 500
+             L 544 480 L 542 400 L 540 320 L 535 240 L 530 180 L 520 140 L 500 120
+             L 480 110 L 320 110 Z" 
+          fill="url(#fabric)" opacity="0.15"/>
+    
+    <!-- Neck strap -->
+    <rect x="370" y="95" width="60" height="20" rx="3" fill="#e8e8e8" stroke="#999" stroke-width="1.5"/>
+    
+    <!-- Waist ties -->
+    <path d="M 265 280 L 180 300 L 160 310" fill="none" stroke="#e8e8e8" stroke-width="8" opacity="0.9"/>
+    <path d="M 535 280 L 620 300 L 640 310" fill="none" stroke="#e8e8e8" stroke-width="8" opacity="0.9"/>
+    
+    <!-- Bloodstain - upper chest area -->
+    <ellipse cx="380" cy="220" rx="45" ry="35" fill="#4d1a1a" opacity="0.7"/>
+    <ellipse cx="390" cy="215" rx="35" ry="28" fill="#3d0d0d" opacity="0.6"/>
+    <ellipse cx="385" cy="225" rx="30" ry="20" fill="#2d0505" opacity="0.5"/>
+    
+    <!-- Splatter drops -->
+    <circle cx="420" cy="200" r="6" fill="#4d1a1a" opacity="0.6"/>
+    <circle cx="435" cy="210" r="4" fill="#4d1a1a" opacity="0.5"/>
+    <circle cx="410" cy="245" r="5" fill="#3d0d0d" opacity="0.6"/>
+    <circle cx="360" cy="250" r="7" fill="#4d1a1a" opacity="0.65"/>
+    <ellipse cx="350" cy="195" rx="8" ry="12" fill="#4d1a1a" opacity="0.55" transform="rotate(-25 350 195)"/>
+    
+    <!-- Food stains - lower apron -->
+    <ellipse cx="320" cy="380" rx="25" ry="20" fill="url(#stain)" opacity="0.6"/>
+    <ellipse cx="450" cy="420" rx="30" ry="22" fill="url(#stain)" opacity="0.5"/>
+    <circle cx="370" cy="450" r="15" fill="#4a3d2a" opacity="0.4"/>
+    
+    <!-- Pocket outline -->
+    <rect x="340" y="340" width="120" height="100" rx="5" fill="none" stroke="#aaa" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Wrinkles and folds -->
+    <path d="M 280 250 Q 320 255 360 250" fill="none" stroke="#bbb" stroke-width="1" opacity="0.4"/>
+    <path d="M 440 250 Q 480 255 520 250" fill="none" stroke="#bbb" stroke-width="1" opacity="0.4"/>
+    <path d="M 270 350 Q 310 345 350 350" fill="none" stroke="#bbb" stroke-width="1" opacity="0.3"/>
+    <path d="M 450 380 Q 490 375 530 380" fill="none" stroke="#bbb" stroke-width="1" opacity="0.3"/>
+  </g>
+  
+  <!-- Evidence markers -->
+  <g>
+    <!-- Bloodstain marker -->
+    <circle cx="440" cy="220" r="30" fill="none" stroke="#ffcc00" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="475" y="228" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffcc00">A</text>
+  </g>
+  
+  <!-- Evidence tag -->
+  <g>
+    <rect x="580" y="120" width="180" height="140" fill="#1a1a1a" stroke="#ffcc00" stroke-width="2"/>
+    <text x="595" y="145" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ffcc00">EVIDENCE #071</text>
+    <line x1="595" y1="150" x2="745" y2="150" stroke="#333" stroke-width="1"/>
+    
+    <text x="595" y="175" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Item: Chef's Apron</text>
+    <text x="595" y="195" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Owner: Julian Reyes</text>
+    <text x="595" y="215" font-family="Arial, sans-serif" font-size="12" fill="#ff6666">Blood: Type AB+</text>
+    <text x="595" y="235" font-family="Arial, sans-serif" font-size="11" fill="#999">Matches victim</text>
+  </g>
+  
+  <!-- Scale reference -->
+  <g>
+    <rect x="100" y="530" width="100" height="15" fill="#333"/>
+    <rect x="100" y="530" width="50" height="15" fill="#ffcc00"/>
+    <text x="105" y="542" font-family="Arial, sans-serif" font-size="10" fill="#000" font-weight="bold">0</text>
+    <text x="145" y="542" font-family="Arial, sans-serif" font-size="10" fill="#ccc">10 cm</text>
+  </g>
+  
+  <!-- Photo metadata -->
+  <text x="600" y="580" font-family="Courier New, monospace" font-size="10" fill="#666">CSI-TV-2026-03-14_071_APRON.JPG</text>
+</svg>

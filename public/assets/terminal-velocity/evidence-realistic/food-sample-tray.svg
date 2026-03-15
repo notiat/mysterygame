@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="petri">
+      <stop offset="0%" style="stop-color:#f0f0f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d0d0d0;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="800" height="600" fill="#0a0a0a"/>
+  
+  <!-- Lab table surface -->
+  <rect x="0" y="0" width="800" height="600" fill="#1a1a1a" opacity="0.4"/>
+  
+  <!-- Stainless steel evidence tray -->
+  <g filter="url(#shadow)">
+    <rect x="120" y="100" width="560" height="400" rx="8" fill="#b8bcc0" stroke="#888" stroke-width="3"/>
+    <rect x="125" y="105" width="550" height="390" rx="6" fill="#c8ccd0" opacity="0.8"/>
+    
+    <!-- Tray compartment dividers -->
+    <line x1="320" y1="110" x2="320" y2="490" stroke="#999" stroke-width="2"/>
+    <line x1="520" y1="110" x2="520" y2="490" stroke="#999" stroke-width="2"/>
+    <line x1="130" y1="300" x2="680" y2="300" stroke="#999" stroke-width="2"/>
+  </g>
+  
+  <!-- Food samples in petri dishes/containers -->
+  
+  <!-- Sample 1: Caviar (top left) -->
+  <g>
+    <circle cx="220" cy="205" r="70" fill="url(#petri)" stroke="#666" stroke-width="2"/>
+    <circle cx="220" cy="205" r="65" fill="#1a1a1a" opacity="0.3"/>
+    <!-- Caviar eggs -->
+    <g opacity="0.8">
+      <circle cx="210" cy="195" r="3" fill="#0a0a0a"/>
+      <circle cx="218" cy="198" r="3" fill="#0a0a0a"/>
+      <circle cx="225" cy="193" r="3" fill="#0a0a0a"/>
+      <circle cx="215" cy="205" r="3" fill="#0a0a0a"/>
+      <circle cx="230" cy="205" r="3" fill="#0a0a0a"/>
+      <circle cx="220" cy="215" r="3" fill="#0a0a0a"/>
+      <circle cx="212" cy="212" r="3" fill="#0a0a0a"/>
+      <circle cx="228" cy="212" r="3" fill="#0a0a0a"/>
+    </g>
+    <text x="170" y="290" font-family="Courier New, monospace" font-size="11" fill="#ffcc00" font-weight="bold">A1</text>
+    <text x="155" y="305" font-family="Arial, sans-serif" font-size="10" fill="#ccc">Caviar</text>
+  </g>
+  
+  <!-- Sample 2: Shellfish (top middle) -->
+  <g>
+    <circle cx="420" cy="205" r="70" fill="url(#petri)" stroke="#666" stroke-width="2"/>
+    <circle cx="420" cy="205" r="65" fill="#d4a574" opacity="0.5"/>
+    <!-- Shrimp piece -->
+    <ellipse cx="415" cy="200" rx="25" ry="15" fill="#ff9980" opacity="0.7" transform="rotate(-20 415 200)"/>
+    <ellipse cx="425" cy="210" rx="20" ry="12" fill="#ff9980" opacity="0.7" transform="rotate(15 425 210)"/>
+    <text x="370" y="290" font-family="Courier New, monospace" font-size="11" fill="#ffcc00" font-weight="bold">A2</text>
+    <text x="350" y="305" font-family="Arial, sans-serif" font-size="10" fill="#ccc">Shellfish</text>
+  </g>
+  
+  <!-- Sample 3: Nuts (top right) -->
+  <g>
+    <circle cx="600" cy="205" r="70" fill="url(#petri)" stroke="#666" stroke-width="2"/>
+    <circle cx="600" cy="205" r="65" fill="#8b6f47" opacity="0.3"/>
+    <!-- Nut pieces -->
+    <ellipse cx="595" cy="195" rx="12" ry="8" fill="#a0826d" opacity="0.8" transform="rotate(-30 595 195)"/>
+    <ellipse cx="610" cy="200" rx="10" ry="7" fill="#a0826d" opacity="0.8" transform="rotate(20 610 200)"/>
+    <ellipse cx="600" cy="215" rx="11" ry="8" fill="#a0826d" opacity="0.8" transform="rotate(-15 600 215)"/>
+    <text x="570" y="290" font-family="Courier New, monospace" font-size="11" fill="#ffcc00" font-weight="bold">A3</text>
+    <text x="560" y="305" font-family="Arial, sans-serif" font-size="10" fill="#ccc">Almonds</text>
+  </g>
+  
+  <!-- Sample 4: Wine (bottom left) -->
+  <g>
+    <circle cx="220" cy="395" r="70" fill="url(#petri)" stroke="#666" stroke-width="2"/>
+    <circle cx="220" cy="395" r="60" fill="#4d1a33" opacity="0.5"/>
+    <!-- Wine residue -->
+    <circle cx="220" cy="395" r="45" fill="#661a3d" opacity="0.4"/>
+    <text x="170" y="480" font-family="Courier New, monospace" font-size="11" fill="#ffcc00" font-weight="bold">B1</text>
+    <text x="165" y="495" font-family="Arial, sans-serif" font-size="10" fill="#ccc">Wine</text>
+  </g>
+  
+  <!-- Sample 5: Sauce (bottom middle) -->
+  <g>
+    <circle cx="420" cy="395" r="70" fill="url(#petri)" stroke="#666" stroke-width="2"/>
+    <circle cx="420" cy="395" r="60" fill="#8b4513" opacity="0.4"/>
+    <!-- Sauce smear -->
+    <ellipse cx="420" cy="395" rx="50" ry="35" fill="#6d3410" opacity="0.5"/>
+    <text x="370" y="480" font-family="Courier New, monospace" font-size="11" fill="#ffcc00" font-weight="bold">B2</text>
+    <text x="360" y="495" font-family="Arial, sans-serif" font-size="10" fill="#ccc">Demi-glace</text>
+  </g>
+  
+  <!-- Sample 6: Dessert (bottom right) - MARKED -->
+  <g>
+    <circle cx="600" cy="395" r="70" fill="url(#petri)" stroke="#666" stroke-width="2"/>
+    <circle cx="600" cy="395" r="60" fill="#f5deb3" opacity="0.4"/>
+    <!-- Cream/mousse -->
+    <ellipse cx="600" cy="395" rx="45" ry="40" fill="#fff8dc" opacity="0.6"/>
+    <circle cx="595" cy="390" r="15" fill="#fffacd" opacity="0.5"/>
+    
+    <!-- EVIDENCE MARKER - ALLERGY CONCERN -->
+    <circle cx="600" cy="395" r="75" fill="none" stroke="#ff0000" stroke-width="3" stroke-dasharray="5,3"/>
+    <text x="550" y="480" font-family="Courier New, monospace" font-size="11" fill="#ff0000" font-weight="bold">B3 ⚠</text>
+    <text x="540" y="495" font-family="Arial, sans-serif" font-size="10" fill="#ff6666">Panna cotta</text>
+  </g>
+  
+  <!-- Evidence tag overlay -->
+  <g>
+    <rect x="50" y="50" width="220" height="160" fill="#1a1a1a" stroke="#ffcc00" stroke-width="2" opacity="0.95"/>
+    <text x="65" y="75" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ffcc00">EVIDENCE #082</text>
+    <line x1="65" y1="80" x2="255" y2="80" stroke="#333" stroke-width="1"/>
+    
+    <text x="65" y="100" font-family="Arial, sans-serif" font-size="11" fill="#ccc">Meal Service Samples</text>
+    <text x="65" y="118" font-family="Arial, sans-serif" font-size="11" fill="#ccc">Flight TV-337</text>
+    <text x="65" y="136" font-family="Arial, sans-serif" font-size="11" fill="#ccc">Passenger: V. Blake</text>
+    <text x="65" y="154" font-family="Arial, sans-serif" font-size="10" fill="#ff6666">Sample B3: FLAGGED</text>
+    <text x="65" y="170" font-family="Arial, sans-serif" font-size="10" fill="#999">Dairy content detected</text>
+    <text x="65" y="185" font-family="Arial, sans-serif" font-size="9" fill="#888">Cross-contamination risk</text>
+  </g>
+  
+  <!-- Scale reference -->
+  <g>
+    <rect x="650" y="530" width="100" height="15" fill="#333"/>
+    <rect x="650" y="530" width="50" height="15" fill="#ffcc00"/>
+    <text x="655" y="542" font-family="Arial, sans-serif" font-size="10" fill="#000" font-weight="bold">0</text>
+    <text x="695" y="542" font-family="Arial, sans-serif" font-size="10" fill="#ccc">5 cm</text>
+  </g>
+  
+  <!-- Photo metadata -->
+  <text x="50" y="580" font-family="Courier New, monospace" font-size="10" fill="#666">CSI-TV-2026-03-14_082_FOOD_SAMPLES.JPG</text>
+</svg>
