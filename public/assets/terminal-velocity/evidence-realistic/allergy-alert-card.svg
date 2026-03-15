@@ -1,57 +1,137 @@
-<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
   <defs>
-    <linearGradient id="deskBg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
-    </linearGradient>
-    <filter id="cardShadow">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
-      <feOffset dx="0" dy="6"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
+    <linearGradient id="card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5f5f5;stop-opacity:1" />
+    </linearGradient>
   </defs>
   
-  <rect width="1024" height="768" fill="url(#deskBg)"/>
+  <!-- Dark background -->
+  <rect width="800" height="600" fill="#0a0a0a"/>
   
-  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#e74c3c" stroke-width="3" opacity="0.95"/>
-  <text x="160" y="80" fill="#e74c3c" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">MEDICAL</text>
-  <text x="160" y="115" fill="#e74c3c" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">M-01</text>
+  <!-- Evidence table -->
+  <rect x="0" y="350" width="800" height="250" fill="#1a1a1a" opacity="0.5"/>
   
-  <g filter="url(#cardShadow)">
-    <rect x="300" y="250" width="420" height="280" rx="12" fill="#ffffff" stroke="#ccc" stroke-width="2"/>
+  <!-- Medical alert card (wallet-sized) -->
+  <g filter="url(#shadow)">
+    <!-- Card body -->
+    <rect x="220" y="170" width="360" height="230" rx="8" fill="url(#card)" stroke="#ccc" stroke-width="2"/>
     
-    <rect x="300" y="250" width="420" height="60" rx="12" fill="#e74c3c"/>
-    <text x="510" y="290" fill="#ffffff" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">⚠ MEDICAL ALERT ⚠</text>
+    <!-- Red alert header -->
+    <rect x="220" y="170" width="360" height="65" rx="8" fill="#cc0000" opacity="0.95"/>
+    <rect x="220" y="220" width="360" height="15" fill="#aa0000"/>
     
-    <text x="320" y="340" fill="#333" font-family="Arial" font-size="14" font-weight="bold">Patient Name:</text>
-    <text x="320" y="365" fill="#000" font-family="Arial" font-size="18" font-weight="bold">ALEXANDER JAMES STEELE</text>
+    <!-- Medical symbol -->
+    <g>
+      <circle cx="270" cy="202" r="22" fill="#fff" opacity="0.9"/>
+      <rect x="268" y="185" width="4" height="34" fill="#cc0000"/>
+      <rect x="253" y="200" width="34" height="4" fill="#cc0000"/>
+    </g>
     
-    <rect x="320" y="380" width="380" height="1" fill="#ddd"/>
+    <!-- Alert text -->
+    <text x="310" y="197" font-family="Arial Black, sans-serif" font-size="22" font-weight="bold" fill="#fff">MEDICAL ALERT</text>
+    <text x="310" y="220" font-family="Arial, sans-serif" font-size="13" fill="#fff">SEVERE ALLERGIES</text>
     
-    <text x="320" y="405" fill="#e74c3c" font-family="Arial" font-size="16" font-weight="bold">⚠ SEVERE ALLERGY</text>
-    <text x="320" y="430" fill="#333" font-family="Arial" font-size="14">Allergen: PEANUTS / TREE NUTS / SESAME</text>
-    <text x="320" y="455" fill="#333" font-family="Arial" font-size="14">Reaction: ANAPHYLAXIS (Life-threatening)</text>
+    <!-- Patient info section -->
+    <rect x="235" y="250" width="330" height="135" fill="#fff9f0" opacity="0.9"/>
     
-    <rect x="320" y="470" width="380" height="1" fill="#ddd"/>
+    <text x="250" y="272" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1a1a1a">PATIENT:</text>
+    <text x="250" y="290" font-family="Arial, sans-serif" font-size="14" fill="#333">Victoria Blake</text>
     
-    <text x="320" y="495" fill="#333" font-family="Arial" font-size="13" font-weight="bold">Emergency Treatment:</text>
-    <text x="320" y="515" fill="#000" font-family="Arial" font-size="12">1. Administer EpiPen immediately</text>
-    <text x="320" y="535" fill="#000" font-family="Arial" font-size="12">2. Call 911</text>
-    <text x="320" y="555" fill="#000" font-family="Arial" font-size="12">3. Second dose if no improvement in 5-10 min</text>
+    <line x1="250" y1="300" x2="550" y2="300" stroke="#ddd" stroke-width="1"/>
     
-    <rect x="550" y="490" width="140" height="60" fill="#fff5f5" stroke="#e74c3c" stroke-width="2" rx="4"/>
-    <text x="620" y="515" fill="#e74c3c" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">CARRIES</text>
-    <text x="620" y="535" fill="#e74c3c" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">EPIPEN</text>
-    <text x="620" y="550" fill="#e74c3c" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">AT ALL TIMES</text>
+    <text x="250" y="320" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#cc0000">⚠ ALLERGIES:</text>
+    
+    <!-- Allergy list -->
+    <g>
+      <circle cx="260" cy="338" r="3" fill="#cc0000"/>
+      <text x="270" y="342" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a" font-weight="bold">DAIRY (severe)</text>
+      
+      <circle cx="260" cy="358" r="3" fill="#cc0000"/>
+      <text x="270" y="362" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">Shellfish</text>
+      
+      <circle cx="380" cy="338" r="3" fill="#cc0000"/>
+      <text x="390" y="342" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">Tree nuts</text>
+      
+      <circle cx="380" cy="358" r="3" fill="#cc0000"/>
+      <text x="390" y="362" font-family="Arial, sans-serif" font-size="11" fill="#1a1a1a">Soy</text>
+    </g>
+    
+    <!-- Emergency instruction -->
+    <rect x="235" y="390" width="330" height="50" fill="#ffebcd" stroke="#ff8800" stroke-width="1"/>
+    <text x="250" y="410" font-family="Arial, sans-serif" font-size="9" fill="#333" font-weight="bold">IN CASE OF EXPOSURE:</text>
+    <text x="250" y="425" font-family="Arial, sans-serif" font-size="9" fill="#333">Administer EpiPen immediately. Call 911.</text>
+    
+    <!-- Folding crease -->
+    <line x1="400" y1="175" x2="400" y2="395" stroke="#ccc" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+    
+    <!-- Wear marks -->
+    <path d="M 225 380 Q 230 385 235 380" fill="none" stroke="#d0d0d0" stroke-width="1" opacity="0.5"/>
+    <path d="M 570 250 Q 575 255 580 250" fill="none" stroke="#d0d0d0" stroke-width="1" opacity="0.5"/>
   </g>
   
-  <circle cx="680" cy="380" r="50" fill="none" stroke="#ff00ff" stroke-width="4" stroke-dasharray="10,5"/>
+  <!-- Evidence markers -->
+  <g>
+    <!-- Dairy allergy marker (highlighted) -->
+    <rect x="265" y="330" width="125" height="20" fill="none" stroke="#ffcc00" stroke-width="2.5" stroke-dasharray="5,3"/>
+    <line x1="390" y1="340" x2="430" y2="320" stroke="#ffcc00" stroke-width="2"/>
+    <text x="435" y="326" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffcc00">A</text>
+    
+    <!-- Emergency instruction marker -->
+    <rect x="245" y="420" width="305" height="15" fill="none" stroke="#ffcc00" stroke-width="2" stroke-dasharray="3,2"/>
+    <line x1="600" y1="427" x2="640" y2="440" stroke="#ffcc00" stroke-width="1.5"/>
+    <text x="645" y="446" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffcc00">B</text>
+  </g>
   
-  <rect x="50" y="600" width="550" height="120" rx="6" fill="#0a0a0a" stroke="#e74c3c" stroke-width="2" opacity="0.95"/>
-  <text x="325" y="630" fill="#e74c3c" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">SIGNIFICANCE</text>
-  <text x="70" y="655" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Victim's known allergy: Sesame (anaphylaxis risk)</text>
-  <text x="70" y="675" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Always carries EpiPen - makes "accidental" exposure unlikely</text>
-  <text x="70" y="695" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="11" font-weight="bold">Killer would have known about this vulnerability</text>
-  <text x="70" y="715" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Card stress-folded: likely handled during emergency</text>
+  <!-- Evidence tag -->
+  <g>
+    <rect x="50" y="180" width="280" height="180" fill="#1a1a1a" stroke="#ffcc00" stroke-width="2" opacity="0.95"/>
+    <text x="65" y="205" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ffcc00">EVIDENCE #031</text>
+    <line x1="65" y1="210" x2="315" y2="210" stroke="#333" stroke-width="1"/>
+    
+    <text x="65" y="230" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Item: Medical Alert Card</text>
+    <text x="65" y="248" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Owner: Victoria Blake</text>
+    <text x="65" y="266" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Location: Wallet</text>
+    
+    <line x1="65" y1="275" x2="315" y2="275" stroke="#444" stroke-width="1"/>
+    
+    <text x="65" y="295" font-family="Arial, sans-serif" font-size="11" fill="#ffcc00">Marker A:</text>
+    <text x="65" y="310" font-family="Arial, sans-serif" font-size="10" fill="#ff9999">DAIRY ALLERGY (severe)</text>
+    <text x="65" y="325" font-family="Arial, sans-serif" font-size="9" fill="#999">Life-threatening reaction</text>
+    
+    <text x="65" y="345" font-family="Arial, sans-serif" font-size="11" fill="#ffcc00">Marker B:</text>
+    <text x="65" y="360" font-family="Arial, sans-serif" font-size="10" fill="#aaa">EpiPen required</text>
+  </g>
   
+  <!-- Cross-reference note -->
+  <g>
+    <rect x="620" y="220" width="150" height="95" fill="#1a1a1a" stroke="#ff6666" stroke-width="2" opacity="0.9"/>
+    <text x="635" y="243" font-family="Arial, sans-serif" font-size="9" fill="#ff9999" font-weight="bold">⚠ SEE ALSO:</text>
+    <text x="635" y="260" font-family="Arial, sans-serif" font-size="8" fill="#ccc">Evidence #054</text>
+    <text x="635" y="274" font-family="Arial, sans-serif" font-size="8" fill="#ccc">(Empty EpiPen box)</text>
+    <text x="635" y="292" font-family="Arial, sans-serif" font-size="8" fill="#ccc">Evidence #082</text>
+    <text x="635" y="306" font-family="Arial, sans-serif" font-size="8" fill="#ccc">(Food samples)</text>
+  </g>
+  
+  <!-- Scale reference -->
+  <g>
+    <rect x="100" y="470" width="100" height="15" fill="#333"/>
+    <rect x="100" y="470" width="50" height="15" fill="#ffcc00"/>
+    <text x="105" y="482" font-family="Arial, sans-serif" font-size="10" fill="#000" font-weight="bold">0</text>
+    <text x="145" y="482" font-family="Arial, sans-serif" font-size="10" fill="#ccc">3 cm</text>
+  </g>
+  
+  <!-- Photo metadata -->
+  <text x="480" y="580" font-family="Courier New, monospace" font-size="10" fill="#666">CSI-TV-2026-03-14_031_MEDICAL_CARD.JPG</text>
 </svg>

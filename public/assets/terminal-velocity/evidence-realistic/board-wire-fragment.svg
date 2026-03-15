@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="2" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="pcb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d4d3d;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0a3d2d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d4d3d;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="copper" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#d4a574;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8936b;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="800" height="600" fill="#0a0a0a"/>
+  
+  <!-- Evidence table -->
+  <rect x="0" y="400" width="800" height="200" fill="#1a1a1a" opacity="0.5"/>
+  
+  <!-- Macro photography setup - shallow depth of field effect -->
+  <ellipse cx="400" cy="300" rx="300" ry="200" fill="#0a0a0a" opacity="0.6"/>
+  
+  <!-- Circuit board fragment - damaged PCB -->
+  <g filter="url(#shadow)">
+    <!-- Main PCB body (green) -->
+    <path d="M 280 220 L 350 215 L 420 220 L 490 230 L 540 250 L 560 280
+             L 565 320 L 555 360 L 530 390 L 490 410 L 440 420 L 380 418
+             L 320 410 L 270 390 L 245 360 L 235 320 L 240 280 L 260 250 Z"
+          fill="url(#pcb)" stroke="#0a2d1d" stroke-width="2"/>
+    
+    <!-- Copper traces (circuit paths) -->
+    <path d="M 290 260 L 320 265 L 350 268 L 380 270 L 410 268 L 440 265 L 470 260"
+          fill="none" stroke="url(#copper)" stroke-width="3" opacity="0.9"/>
+    <path d="M 300 290 L 330 295 L 360 297 L 390 297 L 420 295 L 450 290"
+          fill="none" stroke="url(#copper)" stroke-width="3" opacity="0.9"/>
+    <path d="M 310 320 L 340 322 L 370 323 L 400 323 L 430 322 L 460 320"
+          fill="none" stroke="url(#copper)" stroke-width="3" opacity="0.9"/>
+    
+    <!-- Vertical traces -->
+    <path d="M 350 240 L 355 270 L 358 300 L 360 330 L 362 360 L 365 390"
+          fill="none" stroke="url(#copper)" stroke-width="2.5" opacity="0.8"/>
+    <path d="M 420 240 L 425 270 L 428 300 L 430 330 L 432 360 L 435 390"
+          fill="none" stroke="url(#copper)" stroke-width="2.5" opacity="0.8"/>
+    
+    <!-- Solder pads -->
+    <circle cx="320" cy="260" r="5" fill="#d4a574" opacity="0.9"/>
+    <circle cx="380" cy="270" r="5" fill="#d4a574" opacity="0.9"/>
+    <circle cx="440" cy="265" r="5" fill="#d4a574" opacity="0.9"/>
+    <circle cx="360" cy="300" r="5" fill="#d4a574" opacity="0.9"/>
+    <circle cx="430" cy="295" r="5" fill="#d4a574" opacity="0.9"/>
+    
+    <!-- Resistors -->
+    <rect x="368" y="285" width="24" height="8" rx="2" fill="#3d3d3d" stroke="#666" stroke-width="1"/>
+    <rect x="372" y="287" width="4" height="4" fill="#cc6600"/>
+    <rect x="380" y="287" width="4" height="4" fill="#cc0000"/>
+    
+    <!-- Small capacitor -->
+    <rect x="408" y="318" width="14" height="10" rx="1" fill="#1a1a1a" stroke="#666" stroke-width="1"/>
+    <text x="410" y="326" font-family="Courier New, monospace" font-size="6" fill="#ccc">104</text>
+    
+    <!-- CRITICAL: Severed wire connection -->
+    <g>
+      <!-- Wire leading to the break -->
+      <path d="M 450 340 L 470 338 L 490 335"
+            fill="none" stroke="#cc3333" stroke-width="4" opacity="0.95"/>
+      
+      <!-- Broken end (frayed) -->
+      <path d="M 490 335 L 492 333" fill="none" stroke="#cc3333" stroke-width="1.5"/>
+      <path d="M 490 335 L 493 336" fill="none" stroke="#cc3333" stroke-width="1.5"/>
+      <path d="M 490 335 L 492 337" fill="none" stroke="#cc3333" stroke-width="1.5"/>
+      
+      <!-- Missing section indicator -->
+      <circle cx="505" cy="332" r="3" fill="#ff6666" opacity="0.5"/>
+      <circle cx="510" cy="331" r="2" fill="#ff6666" opacity="0.4"/>
+      
+      <!-- Wire continues (would connect) -->
+      <path d="M 520 328 L 535 326 L 550 325"
+            fill="none" stroke="#cc3333" stroke-width="4" opacity="0.4" stroke-dasharray="3,2"/>
+    </g>
+    
+    <!-- Burn marks around the break -->
+    <ellipse cx="495" cy="335" rx="18" ry="12" fill="#1a0a0a" opacity="0.6"/>
+    <ellipse cx="500" cy="333" rx="12" ry="8" fill="#2a1a0a" opacity="0.5"/>
+    
+    <!-- PCB damage/crack -->
+    <path d="M 480 330 Q 495 325 510 330"
+          fill="none" stroke="#0a1a0a" stroke-width="2" opacity="0.8"/>
+    
+    <!-- Identification marking -->
+    <text x="300" y="375" font-family="Courier New, monospace" font-size="9" fill="#ccc" opacity="0.7">VA-FCS-2024</text>
+    <text x="300" y="388" font-family="Courier New, monospace" font-size="8" fill="#999" opacity="0.6">REV 3.2</text>
+  </g>
+  
+  <!-- Evidence markers -->
+  <g>
+    <!-- Break point marker -->
+    <circle cx="495" cy="333" r="35" fill="none" stroke="#ffcc00" stroke-width="2.5" stroke-dasharray="5,3"/>
+    <line x1="525" y1="315" x2="570" y2="280" stroke="#ffcc00" stroke-width="2"/>
+    <text x="575" y="285" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffcc00">A</text>
+    
+    <!-- Board ID marker -->
+    <rect x="295" y="368" width="95" height="28" fill="none" stroke="#ffcc00" stroke-width="2" stroke-dasharray="3,2"/>
+    <line x1="250" y1="382" x2="295" y2="382" stroke="#ffcc00" stroke-width="1.5"/>
+    <text x="215" y="388" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffcc00">B</text>
+  </g>
+  
+  <!-- Evidence tag -->
+  <g>
+    <rect x="80" y="80" width="300" height="200" fill="#1a1a1a" stroke="#ffcc00" stroke-width="2" opacity="0.95"/>
+    <text x="95" y="105" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ffcc00">EVIDENCE #103</text>
+    <line x1="95" y1="110" x2="365" y2="110" stroke="#333" stroke-width="1"/>
+    
+    <text x="95" y="130" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Item: Circuit Board Fragment</text>
+    <text x="95" y="148" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Source: Flight control system</text>
+    <text x="95" y="166" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Model: VA-FCS-2024 Rev 3.2</text>
+    
+    <line x1="95" y1="175" x2="365" y2="175" stroke="#444" stroke-width="1"/>
+    
+    <text x="95" y="195" font-family="Arial, sans-serif" font-size="11" fill="#ffcc00">Marker A:</text>
+    <text x="95" y="210" font-family="Arial, sans-serif" font-size="10" fill="#ff9999">SEVERED CONNECTION</text>
+    <text x="95" y="225" font-family="Arial, sans-serif" font-size="9" fill="#999">Red wire cut/broken</text>
+    <text x="95" y="238" font-family="Arial, sans-serif" font-size="9" fill="#999">Evidence of tampering</text>
+    
+    <text x="95" y="258" font-family="Arial, sans-serif" font-size="11" fill="#ffcc00">Marker B:</text>
+    <text x="95" y="273" font-family="Arial, sans-serif" font-size="10" fill="#aaa">Board ID confirmed</text>
+  </g>
+  
+  <!-- Sabotage note -->
+  <g>
+    <rect x="420" y="120" width="300" height="95" fill="#1a1a1a" stroke="#ff0000" stroke-width="2" opacity="0.95"/>
+    <text x="435" y="145" font-family="Arial, sans-serif" font-size="11" fill="#ff6666" font-weight="bold">⚠ CRITICAL FINDING:</text>
+    <text x="435" y="163" font-family="Arial, sans-serif" font-size="10" fill="#ccc">Connection was deliberately</text>
+    <text x="435" y="179" font-family="Arial, sans-serif" font-size="10" fill="#ccc">severed. Forensic analysis</text>
+    <text x="435" y="195" font-family="Arial, sans-serif" font-size="10" fill="#ccc">indicates wire was cut with</text>
+    <text x="435" y="211" font-family="Arial, sans-serif" font-size="10" fill="#ff9999">precision tool (wire cutters)</text>
+  </g>
+  
+  <!-- Magnification indicator -->
+  <g>
+    <circle cx="700" cy="500" r="40" fill="#1a1a1a" stroke="#ffcc00" stroke-width="2" opacity="0.9"/>
+    <text x="700" y="510" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffcc00" text-anchor="middle">20X</text>
+  </g>
+  
+  <!-- Photo metadata -->
+  <text x="80" y="580" font-family="Courier New, monospace" font-size="10" fill="#666">CSI-TV-2026-03-14_103_PCB_FRAGMENT_MACRO.JPG</text>
+</svg>

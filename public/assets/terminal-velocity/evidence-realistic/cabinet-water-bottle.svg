@@ -1,70 +1,152 @@
-<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="bottleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#e8f4f8;stop-opacity:0.8" />
-      <stop offset="100%" style="stop-color:#c8d8e8;stop-opacity:0.9" />
-    </linearGradient>
-    <radialGradient id="spotlight">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.2" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
-    </radialGradient>
     <filter id="shadow">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
-      <feOffset dx="0" dy="6"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="2" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
+    <linearGradient id="plastic" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e8f4f8;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#e8f4f8;stop-opacity:0.9" />
+    </linearGradient>
+    <linearGradient id="water" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#b8e6f5;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#88d4e8;stop-opacity:0.7" />
+    </linearGradient>
+    <radialGradient id="cap" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#6699cc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4477aa;stop-opacity:1" />
+    </radialGradient>
   </defs>
   
-  <rect width="1024" height="768" fill="url(#bg)"/>
-  <ellipse cx="512" cy="384" rx="450" ry="350" fill="url(#spotlight)"/>
+  <!-- Dark background -->
+  <rect width="800" height="600" fill="#0a0a0a"/>
   
-  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#4a90e2" stroke-width="3" opacity="0.95"/>
-  <text x="160" y="80" fill="#4a90e2" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">SUPPORTING</text>
-  <text x="160" y="115" fill="#4a90e2" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">S-08</text>
+  <!-- Evidence table -->
+  <rect x="0" y="450" width="800" height="150" fill="#1a1a1a" opacity="0.5"/>
   
+  <!-- Water bottle -->
   <g filter="url(#shadow)">
-    <!-- Small airline water bottle -->
-    <ellipse cx="512" cy="280" rx="45" ry="15" fill="url(#bottleGrad)"/>
-    <rect x="467" y="280" width="90" height="220" fill="url(#bottleGrad)" stroke="#b8d4e0" stroke-width="2"/>
-    <ellipse cx="512" cy="500" rx="45" ry="15" fill="#c8d8e8"/>
+    <!-- Cap -->
+    <ellipse cx="400" cy="125" rx="35" ry="12" fill="url(#cap)"/>
+    <rect x="365" y="120" width="70" height="25" fill="url(#cap)"/>
+    <ellipse cx="400" cy="145" rx="35" ry="12" fill="#5588bb"/>
     
-    <!-- Open cap -->
-    <rect x="487" y="255" width="50" height="30" rx="8" fill="#4a90e2"/>
-    <ellipse cx="512" cy="255" rx="25" ry="10" fill="#3a8ad2"/>
+    <!-- Neck -->
+    <path d="M 375 145 L 370 165 L 365 185 L 360 200" fill="url(#plastic)" opacity="0.7"/>
+    <path d="M 425 145 L 430 165 L 435 185 L 440 200" fill="url(#plastic)" opacity="0.7"/>
     
-    <!-- Water level (partially used) -->
-    <rect x="472" y="380" width="80" height="110" fill="#87ceeb" opacity="0.5"/>
-    <ellipse cx="512" cy="380" rx="40" ry="12" fill="#87ceeb" opacity="0.6"/>
+    <!-- Main bottle body -->
+    <ellipse cx="400" cy="200" rx="40" ry="15" fill="url(#plastic)"/>
+    <rect x="360" y="200" width="80" height="260" fill="url(#plastic)"/>
+    <ellipse cx="400" cy="460" rx="40" ry="15" fill="#d8e8f0"/>
     
-    <!-- Label -->
-    <rect x="480" y="340" width="64" height="50" fill="#ffffff" opacity="0.9"/>
-    <text x="512" y="360" fill="#333" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle">AQUA</text>
-    <text x="512" y="375" fill="#666" font-family="Arial" font-size="8" text-anchor="middle">PURE WATER</text>
-    <text x="512" y="387" fill="#666" font-family="Arial" font-size="7" text-anchor="middle">355mL</text>
+    <!-- Water inside (partial) -->
+    <ellipse cx="400" cy="280" rx="38" ry="14" fill="url(#water)"/>
+    <rect x="362" y="280" width="76" height="175" fill="url(#water)"/>
+    <ellipse cx="400" cy="455" rx="38" ry="14" fill="#88d4e8" opacity="0.8"/>
     
-    <!-- Fingerprints on bottle -->
-    <g opacity="0.3">
-      <ellipse cx="490" cy="420" rx="15" ry="20" fill="none" stroke="#00ff00" stroke-width="1"/>
-      <ellipse cx="490" cy="420" rx="12" ry="16" fill="none" stroke="#00ff00" stroke-width="0.8"/>
+    <!-- Bottle highlights (plastic shine) -->
+    <ellipse cx="375" cy="250" rx="8" ry="60" fill="#ffffff" opacity="0.6"/>
+    <ellipse cx="425" cy="320" rx="6" ry="50" fill="#ffffff" opacity="0.4"/>
+    
+    <!-- Label area -->
+    <rect x="370" y="310" width="60" height="80" rx="3" fill="#ffffff" opacity="0.85"/>
+    <text x="400" y="335" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4477aa" text-anchor="middle">PURE</text>
+    <text x="400" y="352" font-family="Arial, sans-serif" font-size="11" fill="#4477aa" text-anchor="middle">SPRING</text>
+    <text x="400" y="368" font-family="Arial, sans-serif" font-size="8" fill="#666" text-anchor="middle">500 mL</text>
+    
+    <!-- Barcode on label -->
+    <g opacity="0.6">
+      <rect x="378" y="373" width="1.5" height="12" fill="#000"/>
+      <rect x="381" y="373" width="1" height="12" fill="#000"/>
+      <rect x="384" y="373" width="2" height="12" fill="#000"/>
+      <rect x="388" y="373" width="1" height="12" fill="#000"/>
+      <rect x="391" y="373" width="1.5" height="12" fill="#000"/>
+      <rect x="394" y="373" width="1" height="12" fill="#000"/>
+      <rect x="397" y="373" width="2" height="12" fill="#000"/>
+      <rect x="401" y="373" width="1.5" height="12" fill="#000"/>
+      <rect x="404" y="373" width="1" height="12" fill="#000"/>
+      <rect x="407" y="373" width="1.5" height="12" fill="#000"/>
+      <rect x="410" y="373" width="2" height="12" fill="#000"/>
+      <rect x="414" y="373" width="1" height="12" fill="#000"/>
+      <rect x="417" y="373" width="1.5" height="12" fill="#000"/>
+      <rect x="420" y="373" width="1" height="12" fill="#000"/>
     </g>
+    
+    <!-- Fingerprints visible on bottle -->
+    <g opacity="0.25">
+      <ellipse cx="385" cy="240" rx="15" ry="20" fill="#333" transform="rotate(-15 385 240)"/>
+      <ellipse cx="415" cy="260" rx="12" ry="18" fill="#333" transform="rotate(20 415 260)"/>
+      <ellipse cx="390" cy="400" rx="14" ry="19" fill="#333" transform="rotate(-10 390 400)"/>
+    </g>
+    
+    <!-- Residue at bottom (suspicious) -->
+    <ellipse cx="400" cy="456" rx="25" ry="8" fill="#d4d4aa" opacity="0.5"/>
+    <ellipse cx="398" cy="457" rx="18" ry="6" fill="#c4c49a" opacity="0.6"/>
   </g>
   
-  <!-- Timeline indicator -->
-  <line x1="560" y1="300" x2="650" y2="240" stroke="#ffd700" stroke-width="2"/>
-  <rect x="650" y="200" width="180" height="50" rx="4" fill="#0a0a0a" stroke="#ffd700" stroke-width="2"/>
-  <text x="740" y="220" fill="#ffd700" font-family="'Courier New', monospace" font-size="11" text-anchor="middle">Cap opened:</text>
-  <text x="740" y="238" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11" text-anchor="middle">~18:40 UTC</text>
+  <!-- Evidence markers -->
+  <g>
+    <!-- Residue marker -->
+    <circle cx="400" cy="456" r="35" fill="none" stroke="#ffcc00" stroke-width="2.5" stroke-dasharray="5,3"/>
+    <line x1="435" y1="450" x2="480" y2="430" stroke="#ffcc00" stroke-width="2"/>
+    <text x="485" y="436" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffcc00">A</text>
+    
+    <!-- Fingerprint marker -->
+    <circle cx="390" cy="400" r="25" fill="none" stroke="#ffcc00" stroke-width="2" stroke-dasharray="3,2"/>
+    <line x1="365" y1="395" x2="320" y2="380" stroke="#ffcc00" stroke-width="1.5"/>
+    <text x="290" y="386" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffcc00">B</text>
+  </g>
   
-  <rect x="50" y="580" width="600" height="140" rx="6" fill="#0a0a0a" stroke="#4a90e2" stroke-width="2" opacity="0.95"/>
-  <text x="350" y="610" fill="#4a90e2" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">SUPPORTING EVIDENCE</text>
-  <text x="70" y="635" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Item: Mini water bottle (airline service size)</text>
-  <text x="70" y="655" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Location: Galley shelf near bar prep area</text>
-  <text x="70" y="675" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Cap opened: Shortly before 18:42 UTC (estimated)</text>
-  <text x="70" y="695" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="11" font-weight="bold">Significance: Supports "water splash" method from practice log</text>
-  <text x="70" y="715" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Corroborates Trial 3 note: "Add water splash - neat fails"</text>
+  <!-- Evidence tag -->
+  <g>
+    <rect x="480" y="160" width="280" height="220" fill="#1a1a1a" stroke="#ffcc00" stroke-width="2" opacity="0.95"/>
+    <text x="495" y="185" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ffcc00">EVIDENCE #095</text>
+    <line x1="495" y1="190" x2="745" y2="190" stroke="#333" stroke-width="1"/>
+    
+    <text x="495" y="210" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Item: Water Bottle</text>
+    <text x="495" y="228" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Brand: Pure Spring (500mL)</text>
+    <text x="495" y="246" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Location: Galley cabinet</text>
+    
+    <line x1="495" y1="255" x2="745" y2="255" stroke="#444" stroke-width="1"/>
+    
+    <text x="495" y="275" font-family="Arial, sans-serif" font-size="11" fill="#ffcc00">Marker A:</text>
+    <text x="495" y="290" font-family="Arial, sans-serif" font-size="10" fill="#ff9999">RESIDUE DETECTED</text>
+    <text x="495" y="305" font-family="Arial, sans-serif" font-size="9" fill="#999">Yellow-white precipitate</text>
+    <text x="495" y="318" font-family="Arial, sans-serif" font-size="9" fill="#999">Lab analysis pending</text>
+    
+    <text x="495" y="338" font-family="Arial, sans-serif" font-size="11" fill="#ffcc00">Marker B:</text>
+    <text x="495" y="353" font-family="Arial, sans-serif" font-size="10" fill="#aaa">Multiple fingerprints</text>
+    <text x="495" y="368" font-family="Arial, sans-serif" font-size="9" fill="#999">Partial prints recovered</text>
+  </g>
   
+  <!-- Lab result note -->
+  <g>
+    <rect x="80" y="280" width="240" height="110" fill="#1a1a1a" stroke="#ff6666" stroke-width="2" opacity="0.95"/>
+    <text x="95" y="303" font-family="Arial, sans-serif" font-size="10" fill="#ff9999" font-weight="bold">🔬 LAB RESULT:</text>
+    <text x="95" y="320" font-family="Arial, sans-serif" font-size="9" fill="#ccc">Residue contains traces of:</text>
+    <text x="95" y="337" font-family="Arial, sans-serif" font-size="9" fill="#ffcc00">• Hydroxypropyl</text>
+    <text x="95" y="352" font-family="Arial, sans-serif" font-size="9" fill="#ffcc00">  methylcellulose (HPMC)</text>
+    <text x="95" y="367" font-family="Arial, sans-serif" font-size="9" fill="#999">Capsule material consistent</text>
+    <text x="95" y="382" font-family="Arial, sans-serif" font-size="9" fill="#999">with dissolved medication</text>
+  </g>
+  
+  <!-- Scale reference -->
+  <g>
+    <rect x="650" y="520" width="100" height="15" fill="#333"/>
+    <rect x="650" y="520" width="50" height="15" fill="#ffcc00"/>
+    <text x="655" y="532" font-family="Arial, sans-serif" font-size="10" fill="#000" font-weight="bold">0</text>
+    <text x="695" y="532" font-family="Arial, sans-serif" font-size="10" fill="#ccc">5 cm</text>
+  </g>
+  
+  <!-- Photo metadata -->
+  <text x="80" y="580" font-family="Courier New, monospace" font-size="10" fill="#666">CSI-TV-2026-03-14_095_WATER_BOTTLE.JPG</text>
 </svg>

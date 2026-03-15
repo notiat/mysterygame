@@ -1,60 +1,151 @@
-<svg width="1024" height="768" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
-    </linearGradient>
-    <filter id="napkinShadow">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
-      <feOffset dx="2" dy="6"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
+    <pattern id="linen" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="4" fill="#f8f8f0"/>
+      <path d="M0,0 L4,4 M4,0 L0,4" stroke="#f0f0e8" stroke-width="0.3" opacity="0.5"/>
+    </pattern>
+    <pattern id="bloodstain" patternUnits="userSpaceOnUse" width="8" height="8">
+      <circle cx="2" cy="2" r="1" fill="#4d1a1a" opacity="0.6"/>
+      <circle cx="6" cy="6" r="1.5" fill="#3d0d0d" opacity="0.5"/>
+      <circle cx="4" cy="7" r="0.8" fill="#4d1a1a" opacity="0.4"/>
+    </pattern>
   </defs>
   
-  <rect width="1024" height="768" fill="url(#bg)"/>
+  <!-- Dark background -->
+  <rect width="800" height="600" fill="#0a0a0a"/>
   
-  <rect x="50" y="50" width="220" height="85" rx="4" fill="#0a0a0a" stroke="#00ff00" stroke-width="3" opacity="0.95"/>
-  <text x="160" y="80" fill="#00ff00" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">TRACE EVIDENCE</text>
-  <text x="160" y="115" fill="#00ff00" font-family="'Courier New', monospace" font-size="26" font-weight="bold" text-anchor="middle">T-09</text>
+  <!-- Evidence table -->
+  <rect x="0" y="0" width="800" height="600" fill="#1a1a1a" opacity="0.4"/>
   
-  <g filter="url(#napkinShadow)" transform="rotate(-8 512 400)">
-    <!-- White napkin (slightly crumpled) -->
-    <polygon points="300,250 720,280 700,550 280,520" fill="#f8f8f8" stroke="#d4d4d4" stroke-width="2"/>
+  <!-- Cloth napkin - crumpled/used -->
+  <g filter="url(#shadow)">
+    <!-- Main napkin body (irregular shape, crumpled) -->
+    <path d="M 200 180 
+             Q 250 170 310 175 Q 370 180 430 185 Q 490 190 550 185 Q 600 180 630 190
+             Q 650 200 655 230 Q 660 270 650 310 Q 645 350 635 390
+             Q 625 420 610 440 Q 590 455 560 460 Q 520 465 470 460
+             Q 420 455 370 450 Q 320 445 270 440 Q 220 435 190 420
+             Q 170 405 165 380 Q 160 350 165 320 Q 170 280 180 240
+             Q 190 200 200 180 Z"
+          fill="url(#linen)" stroke="#d0d0c0" stroke-width="2"/>
     
-    <!-- Embossed airline logo -->
-    <text x="500" y="310" fill="#e0e0e0" font-family="'Helvetica', sans-serif" font-size="18" font-weight="bold" text-anchor="middle" opacity="0.4">SKY ELITE</text>
+    <!-- Fabric texture overlay -->
+    <path d="M 200 180 Q 250 170 310 175 Q 370 180 430 185 Q 490 190 550 185 Q 600 180 630 190
+             Q 650 200 655 230 Q 660 270 650 310 Q 645 350 635 390
+             Q 625 420 610 440 Q 590 455 560 460 Q 520 465 470 460
+             Q 420 455 370 450 Q 320 445 270 440 Q 220 435 190 420
+             Q 170 405 165 380 Q 160 350 165 320 Q 170 280 180 240
+             Q 190 200 200 180 Z"
+          fill="#ffffff" opacity="0.3"/>
     
-    <!-- Oil stain -->
-    <ellipse cx="480" cy="400" rx="90" ry="70" fill="#d4a574" opacity="0.3" transform="rotate(15 480 400)"/>
-    <ellipse cx="490" cy="410" rx="60" ry="45" fill="#c49a64" opacity="0.4" transform="rotate(15 490 410)"/>
-    <ellipse cx="475" cy="395" rx="40" ry="30" fill="#b48a54" opacity="0.5" transform="rotate(15 475 395)"/>
+    <!-- Folds and creases -->
+    <path d="M 250 220 Q 300 230 350 225" fill="none" stroke="#e0e0d0" stroke-width="2" opacity="0.6"/>
+    <path d="M 280 280 Q 350 290 420 285" fill="none" stroke="#e0e0d0" stroke-width="2" opacity="0.6"/>
+    <path d="M 300 340 Q 380 350 460 345" fill="none" stroke="#e0e0d0" stroke-width="2" opacity="0.6"/>
+    <path d="M 320 400 Q 400 405 480 400" fill="none" stroke="#e0e0d0" stroke-width="2" opacity="0.6"/>
     
-    <!-- Smudge marks (finger transfer pattern) -->
-    <ellipse cx="420" cy="360" rx="25" ry="35" fill="#9a7a54" opacity="0.25" transform="rotate(-20 420 360)"/>
-    <ellipse cx="540" cy="440" rx="20" ry="30" fill="#9a7a54" opacity="0.2" transform="rotate(25 540 440)"/>
+    <!-- Diagonal fold lines -->
+    <path d="M 220 200 Q 350 300 480 400" fill="none" stroke="#d8d8c8" stroke-width="1.5" opacity="0.4"/>
+    <path d="M 350 180 Q 420 280 450 400" fill="none" stroke="#d8d8c8" stroke-width="1.5" opacity="0.4"/>
     
-    <!-- Crinkle lines -->
-    <line x1="350" y1="350" x2="650" y2="370" stroke="#c8c8c8" stroke-width="1" opacity="0.5"/>
-    <line x1="360" y1="420" x2="640" y2="440" stroke="#c8c8c8" stroke-width="1" opacity="0.5"/>
-    <line x1="340" y1="480" x2="660" y2="500" stroke="#c8c8c8" stroke-width="1" opacity="0.5"/>
+    <!-- Embroidered logo (Velocitas Aviation) -->
+    <g opacity="0.7">
+      <text x="480" y="250" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#4477aa" font-style="italic">VA</text>
+      <path d="M 470 255 Q 490 253 510 255" fill="none" stroke="#4477aa" stroke-width="1"/>
+    </g>
+    
+    <!-- Blood staining (major area) -->
+    <g>
+      <!-- Main stain cluster -->
+      <ellipse cx="350" cy="320" rx="60" ry="45" fill="#4d1a1a" opacity="0.7"/>
+      <ellipse cx="360" cy="315" rx="50" ry="38" fill="#3d0d0d" opacity="0.6"/>
+      <ellipse cx="345" cy="325" rx="45" ry="35" fill="#2d0505" opacity="0.5"/>
+      
+      <!-- Stain texture -->
+      <ellipse cx="350" cy="320" rx="55" ry="42" fill="url(#bloodstain)" opacity="0.6"/>
+      
+      <!-- Splatter drops -->
+      <circle cx="310" cy="280" r="8" fill="#4d1a1a" opacity="0.65"/>
+      <circle cx="395" cy="300" r="6" fill="#4d1a1a" opacity="0.6"/>
+      <circle cx="380" cy="350" r="7" fill="#3d0d0d" opacity="0.65"/>
+      <circle cx="320" cy="340" r="5" fill="#4d1a1a" opacity="0.55"/>
+      <ellipse cx="370" cy="280" rx="6" ry="10" fill="#4d1a1a" opacity="0.55" transform="rotate(-25 370 280)"/>
+      <ellipse cx="330" cy="360" rx="8" ry="12" fill="#4d1a1a" opacity="0.6" transform="rotate(35 330 360)"/>
+      
+      <!-- Smear mark (wiping motion) -->
+      <path d="M 380 320 Q 420 310 460 315"
+            fill="none" stroke="#4d1a1a" stroke-width="8" opacity="0.4" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Lipstick mark (corner) -->
+    <ellipse cx="560" cy="240" rx="20" ry="12" fill="#cc3366" opacity="0.5" transform="rotate(-45 560 240)"/>
+    <ellipse cx="565" cy="237" rx="15" ry="9" fill="#dd4477" opacity="0.4" transform="rotate(-45 565 237)"/>
   </g>
   
-  <!-- Evidence marker pointing at stain -->
-  <circle cx="490" cy="405" r="110" fill="none" stroke="#ff00ff" stroke-width="4" stroke-dasharray="10,5"/>
+  <!-- Evidence markers -->
+  <g>
+    <!-- Blood stain marker -->
+    <circle cx="350" cy="320" r="75" fill="none" stroke="#ffcc00" stroke-width="2.5" stroke-dasharray="5,3"/>
+    <line x1="425" y1="310" x2="470" y2="280" stroke="#ffcc00" stroke-width="2"/>
+    <text x="475" y="286" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffcc00">A</text>
+    
+    <!-- Lipstick mark marker -->
+    <circle cx="560" cy="240" r="28" fill="none" stroke="#ffcc00" stroke-width="2" stroke-dasharray="3,2"/>
+    <line x1="585" y1="230" x2="620" y2="210" stroke="#ffcc00" stroke-width="1.5"/>
+    <text x="625" y="216" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffcc00">B</text>
+  </g>
   
-  <!-- Lab analysis indicator -->
-  <line x1="600" y1="380" x2="720" y2="320" stroke="#00ff00" stroke-width="2"/>
-  <rect x="720" y="280" width="240" height="80" rx="4" fill="#0a0a0a" stroke="#00ff00" stroke-width="2"/>
-  <text x="840" y="305" fill="#00ff00" font-family="'Courier New', monospace" font-size="12" font-weight="bold" text-anchor="middle">TRACE ANALYSIS</text>
-  <text x="840" y="325" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">Sesame oil detected</text>
-  <text x="840" y="342" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">Transfer pattern</text>
-  <text x="840" y="358" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">consistent w/ glass</text>
+  <!-- Evidence tag -->
+  <g>
+    <rect x="50" y="80" width="300" height="220" fill="#1a1a1a" stroke="#ffcc00" stroke-width="2" opacity="0.95"/>
+    <text x="65" y="105" font-family="Courier New, monospace" font-size="14" font-weight="bold" fill="#ffcc00">EVIDENCE #019</text>
+    <line x1="65" y1="110" x2="335" y2="110" stroke="#333" stroke-width="1"/>
+    
+    <text x="65" y="130" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Item: Cloth Napkin</text>
+    <text x="65" y="148" font-family="Arial, sans-serif" font-size="12" fill="#ccc">Location: Seat 2A tray table</text>
+    <text x="65" y="166" font-family="Arial, sans-serif" font-size="12" fill="#ccc">(Victoria Blake's seat)</text>
+    
+    <line x1="65" y1="175" x2="335" y2="175" stroke="#444" stroke-width="1"/>
+    
+    <text x="65" y="195" font-family="Arial, sans-serif" font-size="11" fill="#ffcc00">Marker A:</text>
+    <text x="65" y="210" font-family="Arial, sans-serif" font-size="10" fill="#ff9999">BLOOD STAINS</text>
+    <text x="65" y="225" font-family="Arial, sans-serif" font-size="9" fill="#999">Type AB+ (matches victim)</text>
+    <text x="65" y="238" font-family="Arial, sans-serif" font-size="9" fill="#999">Smear indicates wiping</text>
+    
+    <text x="65" y="258" font-family="Arial, sans-serif" font-size="11" fill="#ffcc00">Marker B:</text>
+    <text x="65" y="273" font-family="Arial, sans-serif" font-size="10" fill="#aaa">Lipstick residue</text>
+    <text x="65" y="288" font-family="Arial, sans-serif" font-size="9" fill="#999">DNA analysis pending</text>
+  </g>
   
-  <rect x="50" y="600" width="600" height="120" rx="6" fill="#0a0a0a" stroke="#00ff00" stroke-width="2" opacity="0.95"/>
-  <text x="350" y="630" fill="#00ff00" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">FORENSIC ANALYSIS</text>
-  <text x="70" y="655" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Item: White napkin from victim's tray table (Seat 2A)</text>
-  <text x="70" y="675" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Analysis: Trace sesame oil detected after warming</text>
-  <text x="70" y="695" fill="#e8e8e8" font-family="'Courier New', monospace" font-size="11">Transfer pattern consistent with glass handling</text>
-  <text x="70" y="715" fill="#ff6b6b" font-family="'Courier New', monospace" font-size="11">Significance: Secondary transfer evidence (not primary delivery)</text>
+  <!-- Context note -->
+  <g>
+    <rect x="50" y="320" width="300" height="90" fill="#1a1a1a" stroke="#ff6666" stroke-width="2" opacity="0.95"/>
+    <text x="65" y="343" font-family="Arial, sans-serif" font-size="10" fill="#ff9999" font-weight="bold">⚠ NOTE:</text>
+    <text x="65" y="360" font-family="Arial, sans-serif" font-size="9" fill="#ccc">Napkin found crumpled on</text>
+    <text x="65" y="375" font-family="Arial, sans-serif" font-size="9" fill="#ccc">victim's tray. Blood suggests</text>
+    <text x="65" y="390" font-family="Arial, sans-serif" font-size="9" fill="#ccc">nose/mouth bleeding during</text>
+    <text x="65" y="405" font-family="Arial, sans-serif" font-size="9" fill="#ff9999">anaphylactic episode</text>
+  </g>
   
+  <!-- Scale reference -->
+  <g>
+    <rect x="650" y="520" width="100" height="15" fill="#333"/>
+    <rect x="650" y="520" width="50" height="15" fill="#ffcc00"/>
+    <text x="655" y="532" font-family="Arial, sans-serif" font-size="10" fill="#000" font-weight="bold">0</text>
+    <text x="695" y="532" font-family="Arial, sans-serif" font-size="10" fill="#ccc">10 cm</text>
+  </g>
+  
+  <!-- Photo metadata -->
+  <text x="430" y="580" font-family="Courier New, monospace" font-size="10" fill="#666">CSI-TV-2026-03-14_019_SEAT2A_NAPKIN.JPG</text>
 </svg>
