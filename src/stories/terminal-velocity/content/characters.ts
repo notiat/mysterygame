@@ -12,7 +12,7 @@ export const terminalVelocityCharacters: Character[] = [
     bio: 'Loyal, calm, and extremely cooperative. Served Vane directly throughout flight.',
     truth:
       'Professional corporate cleaner hired by board contacts. Planned capsule poisoning and EpiPen sabotage.',
-    portrait: '/assets/terminal-velocity/characters/chloe-evans-neutral.svg',
+    portrait: '/assets/terminal-velocity/characters-realistic/chloe-evans-neutral.svg',
     isGuilty: true
   },
   {
@@ -23,7 +23,7 @@ export const terminalVelocityCharacters: Character[] = [
     age: 29,
     bio: 'Charismatic, defensive under pressure, handles beverage service.',
     truth: 'Innocent. Ideological writing made him an easy scapegoat.',
-    portrait: '/assets/terminal-velocity/characters/julian-ricci-neutral.svg',
+    portrait: '/assets/terminal-velocity/characters-realistic/julian-ricci-neutral.svg',
     isGuilty: false
   },
   {
@@ -45,7 +45,7 @@ export const terminalVelocityCharacters: Character[] = [
     age: 36,
     bio: 'Methodical, observant, and timeline-focused witness.',
     truth: 'Critical witness who saw Chloe serve the drink at 18:42 UTC.',
-    portrait: '/assets/terminal-velocity/characters/rebecca-park-neutral.svg',
+    portrait: '/assets/terminal-velocity/characters-realistic/rebecca-park-neutral.svg',
     isGuilty: false
   }
 ];
