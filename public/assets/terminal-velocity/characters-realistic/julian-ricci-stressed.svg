@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <radialGradient id="spotlight" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="skinTone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a070;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c49060;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Interrogation room background -->
+  <rect width="400" height="500" fill="url(#spotlight)"/>
+  
+  <!-- Harsh overhead lighting -->
+  <rect x="150" y="0" width="100" height="300" fill="#3a3a3a" opacity="0.3"/>
+  
+  <!-- Subject: Julian Ricci - Stressed, defensive -->
+  
+  <!-- Neck/shoulders - tense posture -->
+  <path d="M 145 430 Q 165 410 200 400 Q 235 410 255 430 L 265 500 L 135 500 Z" 
+        fill="url(#skinTone)" opacity="0.9"/>
+  
+  <!-- Flight attendant uniform - slightly disheveled -->
+  <path d="M 135 460 L 145 430 Q 165 415 200 410 Q 235 415 255 430 L 265 460 L 275 500 L 125 500 Z"
+        fill="#1a2844" stroke="#2a3854" stroke-width="2"/>
+  
+  <!-- White shirt collar - loosened -->
+  <path d="M 168 422 L 178 412 L 200 407 L 222 412 L 232 422" 
+        fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1" opacity="0.95"/>
+  
+  <!-- Tie - loosened, askew -->
+  <path d="M 200 407 L 197 435 L 194 465 L 192 482 L 197 487 L 202 482 L 200 465 L 198 435 Z"
+        fill="#1a2844" stroke="#d4af37" stroke-width="1" transform="rotate(-8 200 445)"/>
+  
+  <!-- Head/face -->
+  <ellipse cx="200" cy="285" rx="72" ry="88" fill="url(#skinTone)"/>
+  
+  <!-- Hair - slightly mussed, stressed -->
+  <ellipse cx="200" cy="225" rx="73" ry="55" fill="#2a1a0a"/>
+  <ellipse cx="200" cy="235" rx="70" ry="50" fill="#3a2a1a"/>
+  <!-- Disheveled quiff -->
+  <path d="M 175 218 Q 200 205 225 220" fill="#3a2a1a"/>
+  <path d="M 190 210 L 192 220" stroke="#2a1a0a" stroke-width="2"/>
+  <path d="M 210 212 L 208 222" stroke="#2a1a0a" stroke-width="2"/>
+  
+  <!-- Facial features - stressed expression -->
+  <!-- Left eye - wider, worried -->
+  <ellipse cx="175" cy="276" rx="13" ry="10" fill="#2a1a0a"/>
+  <ellipse cx="177" cy="276" rx="5" ry="5" fill="#1a1a1a"/>
+  <ellipse cx="179" cy="275" rx="2" ry="2" fill="#ffffff" opacity="0.7"/>
+  <!-- Stress lines -->
+  <path d="M 162 268 Q 163 270 164 268" fill="none" stroke="#a47050" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Right eye - wider, worried -->
+  <ellipse cx="225" cy="276" rx="13" ry="10" fill="#2a1a0a"/>
+  <ellipse cx="227" cy="276" rx="5" ry="5" fill="#1a1a1a"/>
+  <ellipse cx="229" cy="275" rx="2" ry="2" fill="#ffffff" opacity="0.7"/>
+  <!-- Stress lines -->
+  <path d="M 236 268 Q 237 270 238 268" fill="none" stroke="#a47050" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Eyebrows - furrowed, stressed -->
+  <path d="M 160 265 Q 173 261 186 263" fill="none" stroke="#2a1a0a" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 214 263 Q 227 261 240 265" fill="none" stroke="#2a1a0a" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Furrow lines -->
+  <path d="M 195 258 L 197 268" stroke="#a47050" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 203 258 L 201 268" stroke="#a47050" stroke-width="1.5" opacity="0.4"/>
+  
+  <!-- Nose -->
+  <path d="M 200 280 L 197 300 L 200 303 L 203 300 Z" fill="#c49060" opacity="0.6"/>
+  <ellipse cx="193" cy="302" rx="3" ry="2" fill="#a47050" opacity="0.4"/>
+  <ellipse cx="207" cy="302" rx="3" ry="2" fill="#a47050" opacity="0.4"/>
+  
+  <!-- Mouth - tense, defensive -->
+  <path d="M 183 323 Q 200 321 217 323" fill="none" stroke="#8d5844" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 188 323 L 186 328" stroke="#8d5844" stroke-width="1" opacity="0.4"/>
+  <path d="M 212 323 L 214 328" stroke="#8d5844" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Stubble - more pronounced, stressed -->
+  <ellipse cx="200" cy="335" rx="45" ry="25" fill="#2a1a0a" opacity="0.18"/>
+  <ellipse cx="165" cy="310" rx="15" ry="20" fill="#2a1a0a" opacity="0.15" transform="rotate(-20 165 310)"/>
+  <ellipse cx="235" cy="310" rx="15" ry="20" fill="#2a1a0a" opacity="0.15" transform="rotate(20 235 310)"/>
+  
+  <!-- Sweat/stress on forehead -->
+  <ellipse cx="185" cy="250" rx="6" ry="4" fill="#ffffff" opacity="0.3"/>
+  <ellipse cx="215" cy="248" rx="5" ry="3" fill="#ffffff" opacity="0.3"/>
+  
+  <!-- Cheekbone definition -->
+  <ellipse cx="158" cy="295" rx="14" ry="26" fill="#b48060" opacity="0.25" transform="rotate(-15 158 295)"/>
+  <ellipse cx="242" cy="295" rx="14" ry="26" fill="#b48060" opacity="0.25" transform="rotate(15 242 295)"/>
+  
+  <!-- Shadow under chin -->
+  <ellipse cx="200" cy="365" rx="42" ry="16" fill="#000000" opacity="0.25"/>
+  
+  <!-- Name plate -->
+  <rect x="20" y="450" width="360" height="45" fill="#1a1a1a" stroke="#ff6666" stroke-width="2"/>
+  <text x="200" y="472" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    JULIAN RICCI
+  </text>
+  <text x="200" y="488" font-family="Arial, sans-serif" font-size="12" fill="#ff9999" text-anchor="middle">
+    FLIGHT ATTENDANT • UNDER PRESSURE
+  </text>
+</svg>

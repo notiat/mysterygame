@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <radialGradient id="spotlight" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="skinTone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8d6854;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7d5844;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Interrogation room background -->
+  <rect width="400" height="500" fill="url(#spotlight)"/>
+  
+  <!-- Strong directional lighting from right -->
+  <rect x="280" y="0" width="120" height="500" fill="#1a1a1a" opacity="0.8"/>
+  
+  <!-- Subject: Marcus Stone - Ex-military bodyguard, defensive posture -->
+  
+  <!-- Broad shoulders/neck - intimidating presence -->
+  <path d="M 130 440 Q 155 415 200 405 Q 245 415 270 440 L 285 500 L 115 500 Z" 
+        fill="url(#skinTone)" opacity="0.9"/>
+  
+  <!-- Black tactical shirt/uniform -->
+  <path d="M 115 470 L 130 440 Q 155 420 200 415 Q 245 420 270 440 L 285 470 L 300 500 L 100 500 Z"
+        fill="#0a0a0a" stroke="#1a1a1a" stroke-width="2"/>
+  
+  <!-- Head/face - square jaw, tense -->
+  <path d="M 145 370 Q 140 340 140 310 Q 140 260 155 230 Q 175 210 200 205 
+           Q 225 210 245 230 Q 260 260 260 310 Q 260 340 255 370 Q 240 390 200 395 Q 160 390 145 370 Z"
+        fill="url(#skinTone)"/>
+  
+  <!-- Buzz cut hair - military style -->
+  <ellipse cx="200" cy="220" rx="58" ry="45" fill="#1a1a1a"/>
+  <path d="M 150 230 Q 200 210 250 230" fill="#1a1a1a"/>
+  
+  <!-- Facial features - defensive, guarded expression -->
+  <!-- Left eye - narrowed, defensive -->
+  <ellipse cx="173" cy="280" rx="11" ry="7" fill="#2a1a0a"/>
+  <ellipse cx="175" cy="279" rx="4" ry="4" fill="#1a1a1a"/>
+  <ellipse cx="177" cy="278" rx="2" ry="2" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- Right eye - narrowed, defensive -->
+  <ellipse cx="227" cy="280" rx="11" ry="7" fill="#2a1a0a"/>
+  <ellipse cx="229" cy="279" rx="4" ry="4" fill="#1a1a1a"/>
+  <ellipse cx="231" cy="278" rx="2" ry="2" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- Eyebrows - heavy, furrowed, defensive -->
+  <path d="M 158 268 Q 173 265 188 267" fill="none" stroke="#1a1a0a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 212 267 Q 227 265 242 268" fill="none" stroke="#1a1a0a" stroke-width="4" stroke-linecap="round"/>
+  <!-- Furrow lines between brows -->
+  <path d="M 193 265 L 195 275" stroke="#6d4834" stroke-width="2" opacity="0.5"/>
+  <path d="M 205 265 L 203 275" stroke="#6d4834" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Nose - strong, prominent -->
+  <path d="M 200 285 L 196 310 L 200 315 L 204 310 Z" fill="#7d5844" opacity="0.7"/>
+  <ellipse cx="191" cy="313" rx="4" ry="3" fill="#6d4834" opacity="0.5"/>
+  <ellipse cx="209" cy="313" rx="4" ry="3" fill="#6d4834" opacity="0.5"/>
+  
+  <!-- Mouth - set jaw, defensive line -->
+  <path d="M 180 335 Q 200 333 220 335" fill="none" stroke="#6d4834" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Square jaw emphasis -->
+  <path d="M 150 350 L 155 365 L 162 375" fill="none" stroke="#6d4834" stroke-width="2" opacity="0.4"/>
+  <path d="M 250 350 L 245 365 L 238 375" fill="none" stroke="#6d4834" stroke-width="2" opacity="0.4"/>
+  
+  <!-- Stubble/beard shadow - several days growth -->
+  <ellipse cx="200" cy="345" rx="50" ry="28" fill="#1a1a1a" opacity="0.25"/>
+  <ellipse cx="160" cy="320" rx="18" ry="22" fill="#1a1a1a" opacity="0.2" transform="rotate(-20 160 320)"/>
+  <ellipse cx="240" cy="320" rx="18" ry="22" fill="#1a1a1a" opacity="0.2" transform="rotate(20 240 320)"/>
+  
+  <!-- Scar on left cheek (old wound) -->
+  <path d="M 158 305 Q 160 310 162 315" fill="none" stroke="#9d7864" stroke-width="1.5" opacity="0.6"/>
+  
+  <!-- Tension lines around eyes -->
+  <path d="M 165 285 Q 167 287 169 285" fill="none" stroke="#6d4834" stroke-width="1" opacity="0.4"/>
+  <path d="M 231 285 Q 233 287 235 285" fill="none" stroke="#6d4834" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Cheekbone definition -->
+  <ellipse cx="155" cy="300" rx="12" ry="24" fill="#6d4834" opacity="0.2" transform="rotate(-18 155 300)"/>
+  <ellipse cx="245" cy="300" rx="12" ry="24" fill="#6d4834" opacity="0.2" transform="rotate(18 245 300)"/>
+  
+  <!-- Shadow under chin - strong jaw -->
+  <ellipse cx="200" cy="380" rx="48" ry="18" fill="#000000" opacity="0.3"/>
+  
+  <!-- Name plate -->
+  <rect x="20" y="450" width="360" height="45" fill="#1a1a1a" stroke="#ff6666" stroke-width="2"/>
+  <text x="200" y="472" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    MARCUS STONE
+  </text>
+  <text x="200" y="488" font-family="Arial, sans-serif" font-size="12" fill="#ff9999" text-anchor="middle">
+    BODYGUARD • DEFENSIVE
+  </text>
+</svg>

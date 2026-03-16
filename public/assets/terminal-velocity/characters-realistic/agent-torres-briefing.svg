@@ -1,102 +1,106 @@
-<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="skinTone" x1="30%" y1="0%" x2="70%" y2="100%">
-      <stop offset="0%" style="stop-color:#d4a484;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#c49474;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#b48464;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="suit" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    <radialGradient id="spotlight" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
-    </linearGradient>
-    <radialGradient id="dramaticLight">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.25" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
     </radialGradient>
-    <filter id="shadow">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
-      <feOffset dx="0" dy="6"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+    <linearGradient id="skinTone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#b89878;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a88868;stop-opacity:1" />
+    </linearGradient>
   </defs>
   
-  <rect width="800" height="1000" fill="url(#bgGrad)"/>
-  <ellipse cx="400" cy="250" rx="350" ry="400" fill="url(#dramaticLight)"/>
+  <!-- Interrogation room background -->
+  <rect width="400" height="500" fill="url(#spotlight)"/>
   
-  <g filter="url(#shadow)">
-    <!-- Black suit -->
-    <ellipse cx="400" cy="850" rx="320" ry="200" fill="url(#suit)"/>
-    <rect x="80" y="700" width="640" height="300" fill="url(#suit)"/>
-    
-    <!-- White shirt collar -->
-    <path d="M 350 750 L 380 820 L 420 820 L 450 750 Z" fill="#f0f0f0"/>
-    
-    <!-- Dark tie (FBI) -->
-    <rect x="385" y="760" width="30" height="120" fill="#0a0a0a"/>
-    <polygon points="400,750 385,760 415,760" fill="#1a1a1a"/>
-    
-    <!-- FBI badge (subtle, on suit) -->
-    <g opacity="0.6">
-      <rect x="150" y="780" width="50" height="60" rx="4" fill="#ffd700" stroke="#d4a500" stroke-width="2"/>
-      <text x="175" y="805" fill="#1a1a1a" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">FBI</text>
-    </g>
-    
-    <!-- Neck -->
-    <ellipse cx="400" cy="740" rx="45" ry="60" fill="url(#skinTone)"/>
-    
-    <!-- Head/Face -->
-    <ellipse cx="400" cy="450" rx="160" ry="200" fill="url(#skinTone)"/>
-    
-    <!-- Ears -->
-    <ellipse cx="250" cy="450" rx="25" ry="35" fill="#c49474"/>
-    <ellipse cx="550" cy="450" rx="25" ry="35" fill="#c49474"/>
-    
-    <!-- Hair (short, professional, graying) -->
-    <ellipse cx="400" cy="280" rx="170" ry="100" fill="#3a3a3a"/>
-    <ellipse cx="350" cy="320" rx="90" ry="70" fill="#3a3a3a"/>
-    <ellipse cx="450" cy="320" rx="90" ry="70" fill="#3a3a3a"/>
-    <ellipse cx="400" cy="350" rx="140" ry="60" fill="#3a3a3a"/>
-    <!-- Gray streaks -->
-    <ellipse cx="380" cy="310" rx="20" ry="40" fill="#6a6a6a" opacity="0.5"/>
-    <ellipse cx="420" cy="310" rx="20" ry="40" fill="#6a6a6a" opacity="0.5"/>
-    
-    <!-- Eyebrows (serious, authoritative) -->
-    <path d="M 310 410 Q 330 408 350 410" fill="none" stroke="#2a2a2a" stroke-width="8" stroke-linecap="round"/>
-    <path d="M 450 410 Q 470 408 490 410" fill="none" stroke="#2a2a2a" stroke-width="8" stroke-linecap="round"/>
-    
-    <!-- Eyes (serious, experienced) -->
-    <ellipse cx="330" cy="445" rx="30" ry="20" fill="#ffffff"/>
-    <ellipse cx="470" cy="445" rx="30" ry="20" fill="#ffffff"/>
-    <circle cx="328" cy="445" r="15" fill="#4a4a3a"/>
-    <circle cx="472" cy="445" r="15" fill="#4a4a3a"/>
-    <circle cx="325" cy="443" r="8" fill="#000000"/>
-    <circle cx="475" cy="443" r="8" fill="#000000"/>
-    <circle cx="322" cy="440" r="3" fill="#ffffff" opacity="0.8"/>
-    <circle cx="478" cy="440" r="3" fill="#ffffff" opacity="0.8"/>
-    
-    <!-- Nose -->
-    <ellipse cx="400" cy="490" rx="20" ry="35" fill="#b48464"/>
-    
-    <!-- Mouth (firm, professional) -->
-    <ellipse cx="400" cy="560" rx="40" ry="10" fill="#b47464"/>
-    <line x1="365" y1="560" x2="435" y2="560" stroke="#945454" stroke-width="2.5"/>
-    
-    <!-- Jaw (strong) -->
-    <ellipse cx="400" cy="650" rx="135" ry="65" fill="url(#skinTone)"/>
-  </g>
+  <!-- Overhead FBI hangar lighting -->
+  <rect x="0" y="0" width="400" height="200" fill="#2a2a2a" opacity="0.3"/>
+  
+  <!-- Subject: Agent Torres - FBI Special Agent, authoritative briefing -->
+  
+  <!-- Neck/shoulders -->
+  <path d="M 140 430 Q 165 410 200 400 Q 235 410 260 430 L 275 500 L 125 500 Z" 
+        fill="url(#skinTone)" opacity="0.9"/>
+  
+  <!-- FBI windbreaker/tactical jacket - navy blue with FBI logo -->
+  <path d="M 125 465 L 140 430 Q 165 415 200 410 Q 235 415 260 430 L 275 465 L 290 500 L 110 500 Z"
+        fill="#0a1a2a" stroke="#1a2a3a" stroke-width="2"/>
+  
+  <!-- FBI logo patch on chest -->
+  <rect x="165" y="425" width="30" height="35" rx="2" fill="#ffcc00" opacity="0.9"/>
+  <text x="180" y="440" font-family="Arial Black, sans-serif" font-size="14" font-weight="bold" fill="#0a1a2a" text-anchor="middle">FBI</text>
+  <rect x="165" y="445" width="30" height="2" fill="#0a1a2a"/>
+  <text x="180" y="456" font-family="Arial, sans-serif" font-size="6" fill="#0a1a2a" text-anchor="middle">FEDERAL</text>
+  
+  <!-- High collar/zipper -->
+  <rect x="198" y="405" width="4" height="55" fill="#888888"/>
+  
+  <!-- Head/face - authoritative, professional -->
+  <ellipse cx="200" cy="285" rx="70" ry="88" fill="url(#skinTone)"/>
+  
+  <!-- Hair - short, professional cut with slight gray at temples -->
+  <ellipse cx="200" cy="225" rx="72" ry="55" fill="#2a2a2a"/>
+  <ellipse cx="200" cy="238" rx="70" ry="50" fill="#3a3a3a"/>
+  <!-- Gray temples -->
+  <ellipse cx="150" cy="240" rx="15" ry="25" fill="#808080" opacity="0.5"/>
+  <ellipse cx="250" cy="240" rx="15" ry="25" fill="#808080" opacity="0.5"/>
+  
+  <!-- Facial features - stern, professional FBI agent -->
+  <!-- Left eye - direct, authoritative gaze -->
+  <ellipse cx="175" cy="275" rx="11" ry="8" fill="#2a1a0a"/>
+  <ellipse cx="177" cy="274" rx="4" ry="4" fill="#1a1a1a"/>
+  <ellipse cx="179" cy="273" rx="2" ry="2" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- Right eye - direct, authoritative gaze -->
+  <ellipse cx="225" cy="275" rx="11" ry="8" fill="#2a1a0a"/>
+  <ellipse cx="227" cy="274" rx="4" ry="4" fill="#1a1a1a"/>
+  <ellipse cx="229" cy="273" rx="2" ry="2" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- Eyebrows - strong, authoritative -->
+  <path d="M 160 263 Q 175 261 190 263" fill="none" stroke="#2a1a0a" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 210 263 Q 225 261 240 263" fill="none" stroke="#2a1a0a" stroke-width="3.5" stroke-linecap="round"/>
+  
+  <!-- Nose - strong, defined -->
+  <path d="M 200 280 L 197 302 L 200 306 L 203 302 Z" fill="#a88868" opacity="0.6"/>
+  <ellipse cx="192" cy="304" rx="4" ry="2" fill="#987858" opacity="0.4"/>
+  <ellipse cx="208" cy="304" rx="4" ry="2" fill="#987858" opacity="0.4"/>
+  
+  <!-- Mouth - firm, authoritative line -->
+  <path d="M 183 327 Q 200 328 217 327" fill="none" stroke="#887858" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Well-groomed mustache (optional but adds authority) -->
+  <path d="M 185 320 Q 200 322 215 320" fill="#2a2a2a" opacity="0.7"/>
+  <ellipse cx="190" cy="320" rx="8" ry="3" fill="#2a2a2a" opacity="0.7"/>
+  <ellipse cx="210" cy="320" rx="8" ry="3" fill="#2a2a2a" opacity="0.7"/>
+  
+  <!-- Clean shaven/5 o'clock shadow -->
+  <ellipse cx="200" cy="340" rx="48" ry="26" fill="#2a2a2a" opacity="0.08"/>
+  
+  <!-- Jaw definition - strong, masculine -->
+  <path d="M 148 345 L 153 360 L 160 372" fill="none" stroke="#887858" stroke-width="2" opacity="0.3"/>
+  <path d="M 252 345 L 247 360 L 240 372" fill="none" stroke="#887858" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Crow's feet (experience lines) -->
+  <path d="M 188 275 Q 190 277 192 275" fill="none" stroke="#887858" stroke-width="1" opacity="0.4"/>
+  <path d="M 208 275 Q 210 277 212 275" fill="none" stroke="#887858" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Cheekbone definition -->
+  <ellipse cx="157" cy="297" rx="13" ry="25" fill="#987858" opacity="0.2" transform="rotate(-15 157 297)"/>
+  <ellipse cx="243" cy="297" rx="13" ry="25" fill="#987858" opacity="0.2" transform="rotate(15 243 297)"/>
+  
+  <!-- Shadow under chin -->
+  <ellipse cx="200" cy="365" rx="44" ry="17" fill="#000000" opacity="0.25"/>
+  
+  <!-- Radio earpiece (FBI communications) -->
+  <circle cx="130" cy="280" r="4" fill="#1a1a1a"/>
+  <path d="M 130 280 L 125 278" stroke="#1a1a1a" stroke-width="2"/>
   
   <!-- Name plate -->
-  <rect x="50" y="850" width="700" height="120" rx="8" fill="#0a0a0a" stroke="#ffd700" stroke-width="4" opacity="0.95"/>
-  <text x="400" y="895" fill="#e8e8e8" font-family="Arial" font-size="36" font-weight="bold" text-anchor="middle">AGENT TORRES</text>
-  <text x="400" y="935" fill="#94a3b8" font-family="Arial" font-size="22" text-anchor="middle">FBI Special Agent - Alaska Division</text>
-  <text x="400" y="960" fill="#7f8c8d" font-family="'Courier New'" font-size="16" text-anchor="middle">42 years | 18 years service | Lead Investigator</text>
-  
-  <rect x="50" y="50" width="250" height="80" rx="6" fill="#ffd700" opacity="0.9"/>
-  <text x="175" y="80" fill="#000" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">FBI LEAD</text>
-  <text x="175" y="110" fill="#000" font-family="'Courier New'" font-size="20" font-weight="bold" text-anchor="middle">INVESTIGATOR</text>
-  
+  <rect x="20" y="450" width="360" height="45" fill="#0a1a2a" stroke="#ffcc00" stroke-width="3"/>
+  <text x="200" y="472" font-family="Arial Black, sans-serif" font-size="18" font-weight="bold" fill="#ffcc00" text-anchor="middle">
+    SPECIAL AGENT TORRES
+  </text>
+  <text x="200" y="488" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">
+    FBI • ALASKA FIELD OFFICE
+  </text>
 </svg>

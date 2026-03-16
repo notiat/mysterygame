@@ -1,94 +1,97 @@
-<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="skinTone" x1="30%" y1="0%" x2="70%" y2="100%">
-      <stop offset="0%" style="stop-color:#f4e4d4;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#e4d4c4;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#d4c4b4;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="uniform" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#2a3a4a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1a2a3a;stop-opacity:1" />
-    </linearGradient>
-    <radialGradient id="dramaticLight">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.25" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    <radialGradient id="spotlight" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
     </radialGradient>
-    <filter id="shadow">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
-      <feOffset dx="0" dy="6"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+    <linearGradient id="skinTone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8c4a8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d8b498;stop-opacity:1" />
+    </linearGradient>
   </defs>
   
-  <rect width="800" height="1000" fill="url(#bgGrad)"/>
-  <ellipse cx="400" cy="250" rx="350" ry="400" fill="url(#dramaticLight)"/>
+  <!-- Interrogation room background -->
+  <rect width="400" height="500" fill="url(#spotlight)"/>
   
-  <g filter="url(#shadow)">
-    <!-- Pilot uniform -->
-    <ellipse cx="400" cy="850" rx="320" ry="200" fill="url(#uniform)"/>
-    <rect x="80" y="700" width="640" height="300" fill="url(#uniform)"/>
-    
-    <!-- White shirt collar -->
-    <path d="M 350 750 L 380 820 L 420 820 L 450 750 Z" fill="#f0f0f0"/>
-    
-    <!-- Tie with stripes -->
-    <rect x="385" y="760" width="30" height="120" fill="#1a2a4a"/>
-    <rect x="385" y="780" width="30" height="3" fill="#4a90e2"/>
-    <rect x="385" y="800" width="30" height="3" fill="#4a90e2"/>
-    
-    <!-- Neck -->
-    <ellipse cx="400" cy="740" rx="45" ry="60" fill="url(#skinTone)"/>
-    
-    <!-- Head/Face -->
-    <ellipse cx="400" cy="450" rx="160" ry="200" fill="url(#skinTone)"/>
-    
-    <!-- Ears -->
-    <ellipse cx="250" cy="450" rx="25" ry="35" fill="#e4d4c4"/>
-    <ellipse cx="550" cy="450" rx="25" ry="35" fill="#e4d4c4"/>
-    
-    <!-- Hair (dark, pulled back professionally) -->
-    <ellipse cx="400" cy="280" rx="170" ry="100" fill="#1a1a1a"/>
-    <ellipse cx="350" cy="320" rx="90" ry="70" fill="#1a1a1a"/>
-    <ellipse cx="450" cy="320" rx="90" ry="70" fill="#1a1a1a"/>
-    <ellipse cx="400" cy="350" rx="140" ry="60" fill="#1a1a1a"/>
-    
-    <!-- Eyebrows (sharp, focused) -->
-    <path d="M 310 410 Q 330 403 350 406" fill="none" stroke="#0a0a0a" stroke-width="7" stroke-linecap="round"/>
-    <path d="M 450 406 Q 470 403 490 410" fill="none" stroke="#0a0a0a" stroke-width="7" stroke-linecap="round"/>
-    
-    <!-- Eyes (alert, observant) -->
-    <ellipse cx="330" cy="445" rx="30" ry="20" fill="#ffffff"/>
-    <ellipse cx="470" cy="445" rx="30" ry="20" fill="#ffffff"/>
-    <circle cx="328" cy="445" r="15" fill="#3a3a3a"/>
-    <circle cx="472" cy="445" r="15" fill="#3a3a3a"/>
-    <circle cx="325" cy="443" r="8" fill="#000000"/>
-    <circle cx="475" cy="443" r="8" fill="#000000"/>
-    <circle cx="322" cy="440" r="3" fill="#ffffff" opacity="0.8"/>
-    <circle cx="478" cy="440" r="3" fill="#ffffff" opacity="0.8"/>
-    
-    <!-- Nose -->
-    <ellipse cx="400" cy="490" rx="18" ry="35" fill="#d4c4b4"/>
-    
-    <!-- Mouth (professional, neutral) -->
-    <ellipse cx="400" cy="560" rx="42" ry="12" fill="#d4a4a4"/>
-    <line x1="362" y1="560" x2="438" y2="560" stroke="#b48484" stroke-width="2"/>
-    
-    <!-- Jaw -->
-    <ellipse cx="400" cy="650" rx="130" ry="60" fill="url(#skinTone)"/>
-  </g>
+  <!-- Soft side lighting -->
+  <rect x="0" y="0" width="100" height="500" fill="#2a2a2a" opacity="0.5"/>
+  
+  <!-- Subject: Rebecca Park - Co-Pilot, professional and methodical -->
+  
+  <!-- Neck/shoulders -->
+  <path d="M 150 425 Q 170 405 200 395 Q 230 405 250 425 L 260 500 L 140 500 Z" 
+        fill="url(#skinTone)" opacity="0.9"/>
+  
+  <!-- Pilot uniform - white shirt with epaulettes -->
+  <path d="M 140 455 L 150 425 Q 170 410 200 405 Q 230 410 250 425 L 260 455 L 270 500 L 130 500 Z"
+        fill="#f0f0f0" stroke="#d0d0d0" stroke-width="2"/>
+  
+  <!-- Epaulettes (pilot shoulder stripes) - gold with black stripes -->
+  <rect x="145" y="425" width="35" height="12" rx="2" fill="#d4af37" opacity="0.8"/>
+  <line x1="150" y1="427" x2="175" y2="427" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="150" y1="431" x2="175" y2="431" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="150" y1="435" x2="175" y2="435" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <rect x="220" y="425" width="35" height="12" rx="2" fill="#d4af37" opacity="0.8"/>
+  <line x1="225" y1="427" x2="250" y2="427" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="225" y1="431" x2="250" y2="431" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="225" y1="435" x2="250" y2="435" stroke="#1a1a1a" stroke-width="1"/>
+  
+  <!-- Head/face -->
+  <ellipse cx="200" cy="280" rx="68" ry="86" fill="url(#skinTone)"/>
+  
+  <!-- Hair - professional, pulled back in low bun -->
+  <ellipse cx="200" cy="225" rx="70" ry="52" fill="#1a1a1a"/>
+  <ellipse cx="200" cy="238" rx="68" ry="48" fill="#2a2a2a"/>
+  <circle cx="200" cy="295" r="18" fill="#1a1a1a"/>
+  
+  <!-- Glasses - professional frames -->
+  <ellipse cx="175" cy="272" rx="18" ry="14" fill="none" stroke="#2a2a2a" stroke-width="2"/>
+  <ellipse cx="225" cy="272" rx="18" ry="14" fill="none" stroke="#2a2a2a" stroke-width="2"/>
+  <path d="M 193 272 L 207 272" stroke="#2a2a2a" stroke-width="2"/>
+  
+  <!-- Eyes behind glasses - attentive, observant -->
+  <ellipse cx="175" cy="272" rx="11" ry="8" fill="#2a1a0a"/>
+  <ellipse cx="177" cy="271" rx="4" ry="4" fill="#1a1a1a"/>
+  <ellipse cx="179" cy="270" rx="2" ry="2" fill="#ffffff" opacity="0.7"/>
+  
+  <ellipse cx="225" cy="272" rx="11" ry="8" fill="#2a1a0a"/>
+  <ellipse cx="227" cy="271" rx="4" ry="4" fill="#1a1a1a"/>
+  <ellipse cx="229" cy="270" rx="2" ry="2" fill="#ffffff" opacity="0.7"/>
+  
+  <!-- Eyebrows - straight, methodical -->
+  <path d="M 160 260 Q 175 258 190 260" fill="none" stroke="#1a1a0a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 210 260 Q 225 258 240 260" fill="none" stroke="#1a1a0a" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Nose -->
+  <path d="M 200 277 L 197 297 L 200 300 L 203 297 Z" fill="#d8b498" opacity="0.6"/>
+  <ellipse cx="193" cy="299" rx="3" ry="2" fill="#c8a488" opacity="0.4"/>
+  <ellipse cx="207" cy="299" rx="3" ry="2" fill="#c8a488" opacity="0.4"/>
+  
+  <!-- Mouth - neutral, professional -->
+  <path d="M 185 322 Q 200 324 215 322" fill="none" stroke="#9d7864" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Subtle makeup -->
+  <ellipse cx="175" cy="269" rx="9" ry="2" fill="#b48770" opacity="0.15"/>
+  <ellipse cx="225" cy="269" rx="9" ry="2" fill="#b48770" opacity="0.15"/>
+  
+  <!-- Cheekbone definition -->
+  <ellipse cx="158" cy="293" rx="13" ry="24" fill="#c8a488" opacity="0.2" transform="rotate(-15 158 293)"/>
+  <ellipse cx="242" cy="293" rx="13" ry="24" fill="#c8a488" opacity="0.2" transform="rotate(15 242 293)"/>
+  
+  <!-- Small stud earrings -->
+  <circle cx="137" cy="283" r="3" fill="#c0c0c0" opacity="0.7"/>
+  <circle cx="263" cy="283" r="3" fill="#c0c0c0" opacity="0.7"/>
+  
+  <!-- Shadow under chin -->
+  <ellipse cx="200" cy="358" rx="40" ry="15" fill="#000000" opacity="0.2"/>
   
   <!-- Name plate -->
-  <rect x="50" y="850" width="700" height="120" rx="8" fill="#0a0a0a" stroke="#00ff00" stroke-width="4" opacity="0.95"/>
-  <text x="400" y="895" fill="#e8e8e8" font-family="Arial" font-size="36" font-weight="bold" text-anchor="middle">REBECCA PARK</text>
-  <text x="400" y="935" fill="#94a3b8" font-family="Arial" font-size="22" text-anchor="middle">Co-Pilot</text>
-  <text x="400" y="960" fill="#7f8c8d" font-family="'Courier New'" font-size="16" text-anchor="middle">36 years | Methodical | Observant</text>
-  
-  <rect x="50" y="50" width="250" height="80" rx="6" fill="#00ff00" opacity="0.9"/>
-  <text x="175" y="80" fill="#000" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">KEY WITNESS</text>
-  <text x="175" y="110" fill="#000" font-family="'Courier New'" font-size="20" font-weight="bold" text-anchor="middle">CREDIBLE</text>
-  
+  <rect x="20" y="450" width="360" height="45" fill="#1a1a1a" stroke="#ffcc00" stroke-width="2"/>
+  <text x="200" y="472" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    REBECCA PARK
+  </text>
+  <text x="200" y="488" font-family="Arial, sans-serif" font-size="12" fill="#999999" text-anchor="middle">
+    CO-PILOT • METHODICAL
+  </text>
 </svg>

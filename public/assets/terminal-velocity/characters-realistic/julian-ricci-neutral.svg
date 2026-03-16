@@ -1,92 +1,89 @@
-<svg width="800" height="1000" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1f2e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="skinTone" x1="30%" y1="0%" x2="70%" y2="100%">
-      <stop offset="0%" style="stop-color:#e4c4a4;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#d4b494;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#c4a484;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="uniform" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#3a4a5a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2a3a4a;stop-opacity:1" />
-    </linearGradient>
-    <radialGradient id="dramaticLight">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.25" />
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+    <radialGradient id="spotlight" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
     </radialGradient>
-    <filter id="shadow">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
-      <feOffset dx="0" dy="6"/>
-      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+    <linearGradient id="skinTone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4a070;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c49060;stop-opacity:1" />
+    </linearGradient>
   </defs>
   
-  <rect width="800" height="1000" fill="url(#bgGrad)"/>
-  <ellipse cx="400" cy="250" rx="350" ry="400" fill="url(#dramaticLight)"/>
+  <!-- Interrogation room background -->
+  <rect width="400" height="500" fill="url(#spotlight)"/>
   
-  <g filter="url(#shadow)">
-    <!-- Flight attendant uniform -->
-    <ellipse cx="400" cy="850" rx="320" ry="200" fill="url(#uniform)"/>
-    <rect x="80" y="700" width="640" height="300" fill="url(#uniform)"/>
-    
-    <!-- White shirt collar -->
-    <path d="M 350 750 L 380 820 L 420 820 L 450 750 Z" fill="#f0f0f0"/>
-    
-    <!-- Tie -->
-    <rect x="385" y="760" width="30" height="120" fill="#1a2a3a"/>
-    
-    <!-- Neck -->
-    <ellipse cx="400" cy="740" rx="45" ry="60" fill="url(#skinTone)"/>
-    
-    <!-- Head/Face -->
-    <ellipse cx="400" cy="450" rx="160" ry="200" fill="url(#skinTone)"/>
-    
-    <!-- Ears -->
-    <ellipse cx="250" cy="450" rx="25" ry="35" fill="#d4b494"/>
-    <ellipse cx="550" cy="450" rx="25" ry="35" fill="#d4b494"/>
-    
-    <!-- Hair (dark, styled) -->
-    <ellipse cx="400" cy="280" rx="170" ry="100" fill="#2a2a2a"/>
-    <ellipse cx="350" cy="320" rx="90" ry="70" fill="#2a2a2a"/>
-    <ellipse cx="450" cy="320" rx="90" ry="70" fill="#2a2a2a"/>
-    <ellipse cx="400" cy="350" rx="140" ry="60" fill="#2a2a2a"/>
-    
-    <!-- Eyebrows -->
-    <path d="M 310 410 Q 330 405 350 408" fill="none" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round"/>
-    <path d="M 450 408 Q 470 405 490 410" fill="none" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round"/>
-    
-    <!-- Eyes (friendly, open) -->
-    <ellipse cx="330" cy="445" rx="30" ry="20" fill="#ffffff"/>
-    <ellipse cx="470" cy="445" rx="30" ry="20" fill="#ffffff"/>
-    <circle cx="328" cy="445" r="15" fill="#4a6a4a"/>
-    <circle cx="472" cy="445" r="15" fill="#4a6a4a"/>
-    <circle cx="325" cy="443" r="8" fill="#000000"/>
-    <circle cx="475" cy="443" r="8" fill="#000000"/>
-    <circle cx="322" cy="440" r="3" fill="#ffffff" opacity="0.8"/>
-    <circle cx="478" cy="440" r="3" fill="#ffffff" opacity="0.8"/>
-    
-    <!-- Nose -->
-    <ellipse cx="400" cy="490" rx="18" ry="35" fill="#c4a484"/>
-    
-    <!-- Mouth (slight smile) -->
-    <ellipse cx="400" cy="560" rx="45" ry="14" fill="#c49484"/>
-    <path d="M 360 560 Q 400 568 440 560" fill="none" stroke="#a47464" stroke-width="2"/>
-    
-    <!-- Jaw -->
-    <ellipse cx="400" cy="650" rx="130" ry="60" fill="url(#skinTone)"/>
-  </g>
+  <!-- Dramatic side lighting -->
+  <rect x="0" y="0" width="120" height="500" fill="#1a1a1a" opacity="0.6"/>
+  
+  <!-- Subject: Julian Ricci - Flight Attendant, charismatic -->
+  
+  <!-- Neck/shoulders -->
+  <path d="M 145 430 Q 165 410 200 400 Q 235 410 255 430 L 265 500 L 135 500 Z" 
+        fill="url(#skinTone)" opacity="0.9"/>
+  
+  <!-- Flight attendant uniform - navy blue -->
+  <path d="M 135 460 L 145 430 Q 165 415 200 410 Q 235 415 255 430 L 265 460 L 275 500 L 125 500 Z"
+        fill="#1a2844" stroke="#2a3854" stroke-width="2"/>
+  
+  <!-- White shirt collar -->
+  <path d="M 170 420 L 180 410 L 200 405 L 220 410 L 230 420" 
+        fill="#f0f0f0" stroke="#d0d0d0" stroke-width="1"/>
+  
+  <!-- Tie - airline colors (navy with gold stripe) -->
+  <path d="M 200 405 L 198 430 L 196 460 L 195 480 L 200 485 L 205 480 L 204 460 L 202 430 Z"
+        fill="#1a2844" stroke="#d4af37" stroke-width="1"/>
+  
+  <!-- Head/face -->
+  <ellipse cx="200" cy="285" rx="72" ry="88" fill="url(#skinTone)"/>
+  
+  <!-- Hair - stylish, short sides, longer on top (Italian style) -->
+  <ellipse cx="200" cy="225" rx="73" ry="55" fill="#2a1a0a"/>
+  <ellipse cx="200" cy="235" rx="70" ry="50" fill="#3a2a1a"/>
+  <!-- Styled quiff -->
+  <path d="M 170 215 Q 200 200 230 215" fill="#3a2a1a"/>
+  
+  <!-- Facial features - open, friendly expression -->
+  <!-- Left eye -->
+  <ellipse cx="175" cy="275" rx="12" ry="9" fill="#2a1a0a"/>
+  <ellipse cx="177" cy="274" rx="5" ry="5" fill="#1a1a1a"/>
+  <ellipse cx="179" cy="273" rx="2" ry="2" fill="#ffffff" opacity="0.7"/>
+  
+  <!-- Right eye -->
+  <ellipse cx="225" cy="275" rx="12" ry="9" fill="#2a1a0a"/>
+  <ellipse cx="227" cy="274" rx="5" ry="5" fill="#1a1a1a"/>
+  <ellipse cx="229" cy="273" rx="2" ry="2" fill="#ffffff" opacity="0.7"/>
+  
+  <!-- Eyebrows - expressive, friendly -->
+  <path d="M 160 263 Q 173 260 186 262" fill="none" stroke="#2a1a0a" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 214 262 Q 227 260 240 263" fill="none" stroke="#2a1a0a" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Nose -->
+  <path d="M 200 280 L 197 300 L 200 303 L 203 300 Z" fill="#c49060" opacity="0.6"/>
+  <ellipse cx="193" cy="302" rx="3" ry="2" fill="#a47050" opacity="0.4"/>
+  <ellipse cx="207" cy="302" rx="3" ry="2" fill="#a47050" opacity="0.4"/>
+  
+  <!-- Mouth - neutral, professional smile -->
+  <path d="M 183 325 Q 200 328 217 325" fill="none" stroke="#8d5844" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Stubble/5 o'clock shadow -->
+  <ellipse cx="200" cy="335" rx="45" ry="25" fill="#2a1a0a" opacity="0.12"/>
+  <ellipse cx="165" cy="310" rx="15" ry="20" fill="#2a1a0a" opacity="0.1" transform="rotate(-20 165 310)"/>
+  <ellipse cx="235" cy="310" rx="15" ry="20" fill="#2a1a0a" opacity="0.1" transform="rotate(20 235 310)"/>
+  
+  <!-- Cheekbone definition -->
+  <ellipse cx="158" cy="295" rx="14" ry="26" fill="#b48060" opacity="0.25" transform="rotate(-15 158 295)"/>
+  <ellipse cx="242" cy="295" rx="14" ry="26" fill="#b48060" opacity="0.25" transform="rotate(15 242 295)"/>
+  
+  <!-- Shadow under chin -->
+  <ellipse cx="200" cy="365" rx="42" ry="16" fill="#000000" opacity="0.2"/>
   
   <!-- Name plate -->
-  <rect x="50" y="850" width="700" height="120" rx="8" fill="#0a0a0a" stroke="#4a90e2" stroke-width="4" opacity="0.95"/>
-  <text x="400" y="895" fill="#e8e8e8" font-family="Arial" font-size="36" font-weight="bold" text-anchor="middle">JULIAN RICCI</text>
-  <text x="400" y="935" fill="#94a3b8" font-family="Arial" font-size="22" text-anchor="middle">Flight Attendant</text>
-  <text x="400" y="960" fill="#7f8c8d" font-family="'Courier New'" font-size="16" text-anchor="middle">29 years | Charismatic | Defensive</text>
-  
-  <rect x="50" y="50" width="250" height="80" rx="6" fill="#4a90e2" opacity="0.9"/>
-  <text x="175" y="80" fill="#fff" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">RED HERRING</text>
-  <text x="175" y="110" fill="#fff" font-family="'Courier New'" font-size="20" font-weight="bold" text-anchor="middle">INNOCENT</text>
-  
+  <rect x="20" y="450" width="360" height="45" fill="#1a1a1a" stroke="#ffcc00" stroke-width="2"/>
+  <text x="200" y="472" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    JULIAN RICCI
+  </text>
+  <text x="200" y="488" font-family="Arial, sans-serif" font-size="12" fill="#999999" text-anchor="middle">
+    FLIGHT ATTENDANT • PROFESSIONAL
+  </text>
 </svg>
