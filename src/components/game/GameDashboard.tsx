@@ -21,6 +21,9 @@ const CollabTools = dynamic(() => import('./CollabTools'));
 const DeductionPanel = dynamic(() => import('./DeductionPanel'));
 const DialogueInterface = dynamic(() => import('./DialogueInterface'));
 const PuzzlePanel = dynamic(() => import('./PuzzlePanel'));
+const ProgressIndicator = dynamic(() => import('./ProgressIndicator'));
+const TutorialOverlay = dynamic(() => import('./TutorialOverlay'));
+const KeyboardShortcuts = dynamic(() => import('./KeyboardShortcuts'));
 
 interface GameDashboardProps {
   content: StoryContent;
@@ -62,8 +65,13 @@ export default function GameDashboard({ content }: GameDashboardProps) {
     caseboard: false
   });
   const [showChapterCard, setShowChapterCard] = useState(true);
+  const [tutorialComplete, setTutorialComplete] = useState(false);
   const orientation = useOrientation();
   const { messages: toastMessages, showToast, dismissToast } = useToast();
+
+  const closeAllWindows = () => {
+    setWindowOpen({ investigation: false, suspects: false, caseboard: false });
+  };
 
   if (!session) return null;
 
@@ -128,6 +136,13 @@ export default function GameDashboard({ content }: GameDashboardProps) {
   return (
     <div className="relative min-h-screen overflow-hidden bg-black text-slate-100">
       <ToastContainer messages={toastMessages} onDismiss={dismissToast} />
+      <TutorialOverlay onComplete={() => setTutorialComplete(true)} />
+      <KeyboardShortcuts
+        onToggleInvestigation={() => setWindowOpen(s => ({ ...s, investigation: !s.investigation }))}
+        onToggleSuspects={() => setWindowOpen(s => ({ ...s, suspects: !s.suspects }))}
+        onToggleCaseboard={() => setWindowOpen(s => ({ ...s, caseboard: !s.caseboard }))}
+        onCloseAll={closeAllWindows}
+      />
       <div className="absolute inset-0">
         <ResponsiveSceneImage
           src={currentScene?.image ?? content.metadata.sceneGallery[0]?.image ?? '/assets/terminal-velocity/cover.svg'}
@@ -141,7 +156,7 @@ export default function GameDashboard({ content }: GameDashboardProps) {
       </div>
 
       <header className="relative z-20 p-4 md:p-6 bg-gradient-to-b from-black/90 to-transparent">
-        <div className="flex items-center justify-between">
+        <div className="flex items-start justify-between gap-4 flex-wrap">
           <div className="flex items-center gap-3">
             <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/20 border-2 border-amber-500/50">
               <span className="text-2xl">🔍</span>
@@ -152,6 +167,17 @@ export default function GameDashboard({ content }: GameDashboardProps) {
                 {phaseLabel} • ⚡ {session.progress.analyzerCharges} charges
               </p>
             </div>
+          </div>
+          <div className="w-full md:w-64">
+            <ProgressIndicator
+              totalEvidence={content.evidence.length}
+              collectedEvidence={session.progress.inventory.length}
+              analyzedEvidence={session.progress.analyzedItems.length}
+              totalPuzzles={2}
+              solvedPuzzles={session.progress.solvedPuzzles.length}
+              suspectsTalkedTo={Object.keys(activeDialogueByCharacter).length}
+              totalSuspects={content.characters.length}
+            />
           </div>
         </div>
       </header>

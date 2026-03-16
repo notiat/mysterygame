@@ -10,7 +10,7 @@ export const terminalVelocityStory: Story = {
       'A CEO dies mid-flight from anaphylactic shock. Determine whether this was a tragic accident or a precision assassination.',
     setting: 'FBI Anchorage Field Office + Impounded Gulfstream G650',
     playerCount: '1-4 online co-op',
-    thumbnail: '/assets/terminal-velocity/cover.svg'
+    thumbnail: '/assets/terminal-velocity/cover-realistic.svg'
   },
   config: {
     phases: [
