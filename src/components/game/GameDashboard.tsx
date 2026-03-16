@@ -24,6 +24,7 @@ const PuzzlePanel = dynamic(() => import('./PuzzlePanel'));
 const ProgressIndicator = dynamic(() => import('./ProgressIndicator'));
 const TutorialOverlay = dynamic(() => import('./TutorialOverlay'));
 const KeyboardShortcuts = dynamic(() => import('./KeyboardShortcuts'));
+const EvidenceZoomModal = dynamic(() => import('./EvidenceZoomModal'));
 
 interface GameDashboardProps {
   content: StoryContent;
@@ -66,12 +67,15 @@ export default function GameDashboard({ content }: GameDashboardProps) {
   });
   const [showChapterCard, setShowChapterCard] = useState(true);
   const [tutorialComplete, setTutorialComplete] = useState(false);
+  const [zoomedEvidenceId, setZoomedEvidenceId] = useState<string | null>(null);
   const orientation = useOrientation();
   const { messages: toastMessages, showToast, dismissToast } = useToast();
 
   const closeAllWindows = () => {
     setWindowOpen({ investigation: false, suspects: false, caseboard: false });
   };
+
+  const zoomedEvidence = content.evidence.find((item) => item.id === zoomedEvidenceId) ?? null;
 
   if (!session) return null;
 
@@ -300,13 +304,21 @@ export default function GameDashboard({ content }: GameDashboardProps) {
                 <p className="text-base font-bold text-white">{selectedEvidence.name}</p>
                 <p className="text-sm text-slate-300 mt-2">{selectedEvidence.description}</p>
               </div>
-              <button
-                onClick={runAnalysis}
-                disabled={session.progress.analyzerCharges === 0}
-                className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-3 text-base font-bold text-white hover:from-blue-500 hover:to-blue-400 transition-all disabled:from-slate-700 disabled:to-slate-600 disabled:text-slate-400 disabled:cursor-not-allowed"
-              >
-                🔬 Run Analysis ({session.progress.analyzerCharges} charges remaining)
-              </button>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setZoomedEvidenceId(selectedEvidence.id)}
+                  className="flex-1 rounded-xl border-2 border-amber-500 bg-amber-950/30 px-4 py-3 text-base font-bold text-amber-300 hover:bg-amber-950/50 transition-all"
+                >
+                  🔍 View Details
+                </button>
+                <button
+                  onClick={runAnalysis}
+                  disabled={session.progress.analyzerCharges === 0}
+                  className="flex-1 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-3 text-base font-bold text-white hover:from-blue-500 hover:to-blue-400 transition-all disabled:from-slate-700 disabled:to-slate-600 disabled:text-slate-400 disabled:cursor-not-allowed"
+                >
+                  🔬 Analyze ({session.progress.analyzerCharges})
+                </button>
+              </div>
               {analyzerOutput !== 'Analyzer ready.' && (
                 <div className="rounded-lg bg-slate-900/80 border border-slate-700 p-3">
                   <p className="text-sm text-emerald-300 font-medium">{analyzerOutput}</p>
@@ -430,6 +442,12 @@ export default function GameDashboard({ content }: GameDashboardProps) {
           })()}
         </div>
       </FloatingWindow>
+
+      <EvidenceZoomModal
+        evidence={zoomedEvidence}
+        isAnalyzed={zoomedEvidence ? session.progress.analyzedItems.includes(zoomedEvidence.id) : false}
+        onClose={() => setZoomedEvidenceId(null)}
+      />
     </div>
   );
 }
