@@ -404,11 +404,6 @@ export default function GameDashboard({ content }: GameDashboardProps) {
           })()}
         </div>
       </FloatingWindow>
-
-
-    </div>
-  );
-}
     </div>
   );
 }
