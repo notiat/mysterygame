@@ -152,13 +152,14 @@ export const useGameStore = create<GameState>((set, get) => ({
   accusationVotes: {},
 
   loadStory: async (storyId) => {
-    set({ isLoading: true, error: null });
-    const loaded = await loadStoryById(storyId);
+    try {
+      set({ isLoading: true, error: null });
+      const loaded = await loadStoryById(storyId);
 
-    if (!loaded) {
-      set({ isLoading: false, error: `Story "${storyId}" not found.` });
-      return;
-    }
+      if (!loaded) {
+        set({ isLoading: false, error: `Story "${storyId}" not found.` });
+        return;
+      }
 
     const { roomCode, nickname } = get();
     const effectiveRoomCode = roomCode === 'solo' ? `solo-${storyId}` : roomCode;
@@ -221,20 +222,27 @@ export const useGameStore = create<GameState>((set, get) => ({
       window.localStorage.setItem(storageKey, JSON.stringify(session));
     }
 
-    set({
-      isLoading: false,
-      story: loaded.story,
-      content: loaded,
-      session,
-      roomCode: session.roomCode,
-      activeDialogueByCharacter: {},
-      resolutionText: null,
-      flowEvents: [],
-      roomPings: session.roomPings ?? [],
-      roomAnnotations: session.roomAnnotations ?? [],
-      accusationVotes: session.accusationVotes ?? {},
-      activityFeed: session.activityFeed ?? []
-    });
+      set({
+        isLoading: false,
+        story: loaded.story,
+        content: loaded,
+        session,
+        roomCode: session.roomCode,
+        activeDialogueByCharacter: {},
+        resolutionText: null,
+        flowEvents: [],
+        roomPings: session.roomPings ?? [],
+        roomAnnotations: session.roomAnnotations ?? [],
+        accusationVotes: session.accusationVotes ?? {},
+        activityFeed: session.activityFeed ?? []
+      });
+    } catch (err) {
+      console.error('Error loading story:', err);
+      set({ 
+        isLoading: false, 
+        error: err instanceof Error ? err.message : 'Failed to load story'
+      });
+    }
   },
 
   initializeRoom: ({ roomCode, nickname, isHost }) => {

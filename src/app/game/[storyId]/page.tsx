@@ -31,9 +31,25 @@ export default function StoryGamePage() {
   }
 
   if (error || !content || !session) {
+    const debugInfo = [];
+    if (error) debugInfo.push(`Error: ${error}`);
+    if (!content) debugInfo.push('Content is null');
+    if (!session) debugInfo.push('Session is null');
+    
     return (
       <div className="min-h-screen bg-slate-950 p-8 text-rose-300">
-        Failed to load story: {error ?? 'Unknown error'}
+        <div className="max-w-2xl mx-auto">
+          <h1 className="text-2xl font-bold mb-4">Failed to load story</h1>
+          <div className="bg-slate-900 p-4 rounded-lg text-sm space-y-2">
+            {debugInfo.map((info, i) => (
+              <div key={i}>{info}</div>
+            ))}
+            <div className="mt-4 text-slate-400">
+              Story ID: {storyId}<br />
+              Loading: {isLoading ? 'Yes' : 'No'}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
