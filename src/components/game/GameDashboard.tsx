@@ -21,10 +21,10 @@ const CollabTools = dynamic(() => import('./CollabTools'));
 const DeductionPanel = dynamic(() => import('./DeductionPanel'));
 const DialogueInterface = dynamic(() => import('./DialogueInterface'));
 const PuzzlePanel = dynamic(() => import('./PuzzlePanel'));
-const ProgressIndicator = dynamic(() => import('./ProgressIndicator'));
-const TutorialOverlay = dynamic(() => import('./TutorialOverlay'));
-const KeyboardShortcuts = dynamic(() => import('./KeyboardShortcuts'));
-const EvidenceZoomModal = dynamic(() => import('./EvidenceZoomModal'));
+const ProgressIndicator = dynamic(() => import('./ProgressIndicator'), { ssr: false });
+const TutorialOverlay = dynamic(() => import('./TutorialOverlay'), { ssr: false });
+const KeyboardShortcuts = dynamic(() => import('./KeyboardShortcuts'), { ssr: false });
+const EvidenceZoomModal = dynamic(() => import('./EvidenceZoomModal'), { ssr: false });
 
 interface GameDashboardProps {
   content: StoryContent;
@@ -88,9 +88,7 @@ export default function GameDashboard({ content }: GameDashboardProps) {
 
   const accusationReady = Boolean(
     session.progress.accusedKiller &&
-      session.progress.selectedMethod &&
-      session.progress.selectedDelivery &&
-      session.progress.selectedInsurance
+      session.progress.selectedMethod
   );
 
   const runAnalysis = () => {
