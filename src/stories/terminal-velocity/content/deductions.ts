@@ -9,7 +9,7 @@ export const terminalVelocityDeductions: Deduction[] = [
     title: 'Method: Time-Delayed Poison Capsule',
     description: 'HPMC capsule dissolved in whiskey released concentrated sesame oil after ~22 minutes.',
     unlockedBy: ['whiskey-glass', 'practice-log'],
-    category: 'means'
+    category: 'method'
   },
   {
     id: 'insurance-epipen-swap',
@@ -17,7 +17,7 @@ export const terminalVelocityDeductions: Deduction[] = [
     title: 'Insurance: Sabotaged EpiPen',
     description: 'Victim used a swapped injector with drastically reduced epinephrine dose.',
     unlockedBy: ['fake-epipen', 'medical-records', 'mylan-empty-box'],
-    category: 'means'
+    category: 'insurance'
   },
   {
     id: 'opportunity-video-freeze',
@@ -25,7 +25,7 @@ export const terminalVelocityDeductions: Deduction[] = [
     title: 'Opportunity: Video Freeze Window',
     description: '3-second packet loss gave Chloe a covert action window while preserving alibi optics.',
     unlockedBy: ['video-call-logs', 'copilot-logbook'],
-    category: 'opportunity'
+    category: 'delivery'
   },
   {
     id: 'motive-board-contract',

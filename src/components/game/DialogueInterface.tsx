@@ -1,12 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { Character, DialogueNode } from '@/types/story';
+import { Character, DialogueNode, EvidenceItem } from '@/types/story';
 
 interface DialogueInterfaceProps {
   character: Character;
   node: DialogueNode | null;
   inventory: string[];
+  evidenceList?: EvidenceItem[];
   onSelectResponse: (nextNodeId: string | null) => void;
 }
 
@@ -14,8 +15,14 @@ export default function DialogueInterface({
   character,
   node,
   inventory,
+  evidenceList = [],
   onSelectResponse
 }: DialogueInterfaceProps) {
+  const getEvidenceName = (evidenceId: string): string => {
+    const evidence = evidenceList.find((item) => item.id === evidenceId);
+    return evidence?.name ?? evidenceId;
+  };
+
   return (
     <section className="rounded-xl border-2 border-slate-700 bg-slate-950/90 p-5">
       <div className="mb-5 flex items-start gap-4 border-b border-slate-700 pb-4">
@@ -47,6 +54,8 @@ export default function DialogueInterface({
             const missing =
               response.requiresEvidence?.filter((evidenceId) => !inventory.includes(evidenceId)) ?? [];
             const disabled = missing.length > 0;
+            const missingNames = missing.map(getEvidenceName);
+            
             return (
               <button
                 key={response.id}
@@ -61,7 +70,7 @@ export default function DialogueInterface({
                 <span className="font-medium">{response.text}</span>
                 {disabled ? (
                   <span className="mt-2 block text-xs text-rose-400">
-                    🔒 Requires evidence: {missing.join(', ')}
+                    🔒 Need to find: {missingNames.join(' • ')}
                   </span>
                 ) : null}
               </button>

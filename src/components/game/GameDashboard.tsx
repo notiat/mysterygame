@@ -25,6 +25,7 @@ const ProgressIndicator = dynamic(() => import('./ProgressIndicator'), { ssr: fa
 const TutorialOverlay = dynamic(() => import('./TutorialOverlay'), { ssr: false });
 const KeyboardShortcuts = dynamic(() => import('./KeyboardShortcuts'), { ssr: false });
 const EvidenceZoomModal = dynamic(() => import('./EvidenceZoomModal'), { ssr: false });
+const DetectiveNotebook = dynamic(() => import('./DetectiveNotebook'), { ssr: false });
 
 interface GameDashboardProps {
   content: StoryContent;
@@ -68,6 +69,7 @@ export default function GameDashboard({ content }: GameDashboardProps) {
   const [showChapterCard, setShowChapterCard] = useState(true);
   const [tutorialComplete, setTutorialComplete] = useState(false);
   const [zoomedEvidenceId, setZoomedEvidenceId] = useState<string | null>(null);
+  const [showNotebook, setShowNotebook] = useState(false);
   const orientation = useOrientation();
   const { messages: toastMessages, showToast, dismissToast } = useToast();
 
@@ -88,7 +90,9 @@ export default function GameDashboard({ content }: GameDashboardProps) {
 
   const accusationReady = Boolean(
     session.progress.accusedKiller &&
-      session.progress.selectedMethod
+      session.progress.selectedMethod &&
+      session.progress.selectedDelivery &&
+      session.progress.selectedInsurance
   );
 
   const runAnalysis = () => {
@@ -97,6 +101,20 @@ export default function GameDashboard({ content }: GameDashboardProps) {
       showToast('No evidence selected', 'warning');
       return;
     }
+    
+    // Warn on last charge
+    if (session.progress.analyzerCharges === 1) {
+      const confirmed = window.confirm(
+        '⚠️ This is your LAST analyzer charge!\n\nAre you sure you want to analyze this evidence now?\n\n' +
+        `Evidence: ${selectedEvidence.name}\n` +
+        'Choose wisely - you won\'t be able to analyze any more items after this.'
+      );
+      if (!confirmed) {
+        showToast('Analysis canceled', 'info');
+        return;
+      }
+    }
+    
     const result = analyzeEvidence(selectedEvidence.id);
     if (!result.ok) {
       setAnalyzerOutput(result.error ?? 'Analysis failed.');
@@ -106,6 +124,11 @@ export default function GameDashboard({ content }: GameDashboardProps) {
     const item = content.evidence.find((entry) => entry.id === selectedEvidence.id);
     setAnalyzerOutput(item?.analysisData.result ?? 'Analysis complete.');
     showToast(`Analysis complete: ${selectedEvidence.name}`, 'success');
+    
+    // Show warning after using last charge
+    if (session.progress.analyzerCharges === 0) {
+      showToast('⚠️ No analyzer charges remaining!', 'warning');
+    }
   };
 
   const phaseLabel = getPhaseDisplayName(content.story, session.phaseId);
@@ -169,6 +192,14 @@ export default function GameDashboard({ content }: GameDashboardProps) {
                 {phaseLabel} • ⚡ {session.progress.analyzerCharges} charges
               </p>
             </div>
+            <button
+              onClick={() => setShowNotebook(true)}
+              className="ml-2 inline-flex items-center gap-2 rounded-xl border-2 border-amber-500/50 bg-amber-950/30 px-4 py-2 text-sm font-bold text-amber-300 hover:bg-amber-950/50 hover:border-amber-500 transition-all shadow-lg"
+              aria-label="Open detective notebook"
+            >
+              <span className="text-lg">📓</span>
+              <span className="hidden sm:inline">Notebook</span>
+            </button>
           </div>
           <div className="w-full md:w-64">
             <ProgressIndicator
@@ -354,32 +385,77 @@ export default function GameDashboard({ content }: GameDashboardProps) {
             
             <div className="mt-4 space-y-3 rounded-xl border-2 border-slate-700 bg-slate-950/50 p-4">
               <p className="text-sm font-bold text-white uppercase tracking-wider">Final Accusation</p>
-              <select
-                className="w-full rounded-lg border-2 border-slate-700 bg-slate-900 px-3 py-2 text-sm focus:border-amber-500 focus:outline-none"
-                value={session.progress.accusedKiller ?? ''}
-                onChange={(event) => selectAccusation({ killerId: event.target.value || null })}
-              >
-                <option value="">Who is the killer?</option>
-                {content.characters.map((character) => (
-                  <option key={character.id} value={character.id}>
-                    {character.name}
-                  </option>
-                ))}
-              </select>
-              <select
-                className="w-full rounded-lg border-2 border-slate-700 bg-slate-900 px-3 py-2 text-sm focus:border-amber-500 focus:outline-none"
-                value={session.progress.selectedMethod ?? ''}
-                onChange={(event) => selectAccusation({ methodId: event.target.value || null })}
-              >
-                <option value="">How did they do it?</option>
-                {content.deductions
-                  .filter((entry) => entry.category === 'means')
-                  .map((deduction) => (
-                    <option key={deduction.id} value={deduction.id}>
-                      {deduction.title}
+              <p className="text-xs text-slate-400 mb-2">Build your complete case with all 4 components:</p>
+              
+              <div className="space-y-2">
+                <label className="block text-xs font-semibold text-amber-400 uppercase">1. The Killer</label>
+                <select
+                  className="w-full rounded-lg border-2 border-slate-700 bg-slate-900 px-3 py-2 text-sm focus:border-amber-500 focus:outline-none"
+                  value={session.progress.accusedKiller ?? ''}
+                  onChange={(event) => selectAccusation({ killerId: event.target.value || null })}
+                >
+                  <option value="">Who committed the murder?</option>
+                  {content.characters.map((character) => (
+                    <option key={character.id} value={character.id}>
+                      {character.name} - {character.role}
                     </option>
                   ))}
-              </select>
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="block text-xs font-semibold text-amber-400 uppercase">2. The Method</label>
+                <select
+                  className="w-full rounded-lg border-2 border-slate-700 bg-slate-900 px-3 py-2 text-sm focus:border-amber-500 focus:outline-none"
+                  value={session.progress.selectedMethod ?? ''}
+                  onChange={(event) => selectAccusation({ methodId: event.target.value || null })}
+                >
+                  <option value="">What was the murder weapon/technique?</option>
+                  {content.deductions
+                    .filter((entry) => entry.category === 'method')
+                    .map((deduction) => (
+                      <option key={deduction.id} value={deduction.id} disabled={!session.progress.unlockedDeductions.includes(deduction.id)}>
+                        {deduction.title} {!session.progress.unlockedDeductions.includes(deduction.id) ? '(Locked)' : ''}
+                      </option>
+                    ))}
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="block text-xs font-semibold text-amber-400 uppercase">3. The Delivery</label>
+                <select
+                  className="w-full rounded-lg border-2 border-slate-700 bg-slate-900 px-3 py-2 text-sm focus:border-amber-500 focus:outline-none"
+                  value={session.progress.selectedDelivery ?? ''}
+                  onChange={(event) => selectAccusation({ deliveryId: event.target.value || null })}
+                >
+                  <option value="">How did they execute the plan?</option>
+                  {content.deductions
+                    .filter((entry) => entry.category === 'delivery')
+                    .map((deduction) => (
+                      <option key={deduction.id} value={deduction.id} disabled={!session.progress.unlockedDeductions.includes(deduction.id)}>
+                        {deduction.title} {!session.progress.unlockedDeductions.includes(deduction.id) ? '(Locked)' : ''}
+                      </option>
+                    ))}
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="block text-xs font-semibold text-amber-400 uppercase">4. The Insurance</label>
+                <select
+                  className="w-full rounded-lg border-2 border-slate-700 bg-slate-900 px-3 py-2 text-sm focus:border-amber-500 focus:outline-none"
+                  value={session.progress.selectedInsurance ?? ''}
+                  onChange={(event) => selectAccusation({ insuranceId: event.target.value || null })}
+                >
+                  <option value="">What was their backup plan?</option>
+                  {content.deductions
+                    .filter((entry) => entry.category === 'insurance')
+                    .map((deduction) => (
+                      <option key={deduction.id} value={deduction.id} disabled={!session.progress.unlockedDeductions.includes(deduction.id)}>
+                        {deduction.title} {!session.progress.unlockedDeductions.includes(deduction.id) ? '(Locked)' : ''}
+                      </option>
+                    ))}
+                </select>
+              </div>
               <button
                 onClick={() => {
                   if (leadingVote) {
@@ -434,6 +510,7 @@ export default function GameDashboard({ content }: GameDashboardProps) {
                 character={character}
                 node={activeNode}
                 inventory={session.progress.inventory}
+                evidenceList={content.evidence}
                 onSelectResponse={(nextNodeId) => advanceDialogue(activeCharacterId, nextNodeId)}
               />
             );
@@ -446,6 +523,15 @@ export default function GameDashboard({ content }: GameDashboardProps) {
         isAnalyzed={zoomedEvidence ? session.progress.analyzedItems.includes(zoomedEvidence.id) : false}
         onClose={() => setZoomedEvidenceId(null)}
       />
+
+      {showNotebook && (
+        <DetectiveNotebook
+          progress={session.progress}
+          allEvidence={content.evidence}
+          allDeductions={content.deductions}
+          onClose={() => setShowNotebook(false)}
+        />
+      )}
     </div>
   );
 }

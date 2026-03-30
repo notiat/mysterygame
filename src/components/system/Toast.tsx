@@ -69,12 +69,18 @@ export default function ToastContainer({ messages, onDismiss }: ToastContainerPr
 }
 
 // Hook for using toasts
+const MAX_VISIBLE_TOASTS = 3;
+
 export function useToast() {
   const [messages, setMessages] = useState<ToastMessage[]>([]);
 
   const showToast = (text: string, type: ToastMessage['type'] = 'info') => {
     const id = `toast-${Date.now()}-${Math.random()}`;
-    setMessages((prev) => [...prev, { id, text, type }]);
+    setMessages((prev) => {
+      const newMessages = [...prev, { id, text, type }];
+      // Keep only the last MAX_VISIBLE_TOASTS messages
+      return newMessages.slice(-MAX_VISIBLE_TOASTS);
+    });
   };
 
   const dismissToast = (id: string) => {

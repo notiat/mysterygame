@@ -50,7 +50,7 @@ export interface Deduction {
   title: string;
   description: string;
   unlockedBy: string[];
-  category: 'motive' | 'means' | 'opportunity' | 'timeline';
+  category: 'motive' | 'method' | 'delivery' | 'insurance' | 'timeline' | 'means' | 'opportunity';
 }
 
 export interface TimelineEvent {
